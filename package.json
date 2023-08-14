@@ -7,7 +7,9 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test:unit": "vitest --environment jsdom",
-    "test:unit-util": "vitest --environment node --dir ./resources/js/utils/__tests__"
+    "test:unit-util": "vitest --environment node --dir ./resources/js/utils/__tests__",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^7.2.3",
@@ -19,6 +21,7 @@
     "@types/react-dom": "^18.2.7",
     "@types/styled-components": "^5.1.26",
     "axios": "^1.4.0",
+    "cypress": "^12.17.3",
     "eslint-plugin-storybook": "^0.6.13",
     "jsdom": "^22.1.0",
     "laravel-vite-plugin": "^0.8.0",

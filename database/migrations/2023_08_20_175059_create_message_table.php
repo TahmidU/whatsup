@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('message', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('message');
             $table->boolean('read');
-            $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
-            $table->foreign('chat_id')->references('id')->on('chat')->onDelete('cascade');
+            $table->foreignId('user_id');
+            $table->foreignId('chat_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('chat_id')->references('id')->on('chats')->onDelete('cascade');
         });
     }
 

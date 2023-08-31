@@ -6,5 +6,5 @@ export default function Button() {
         toast('Easy peasy!');
     }
 
-    return (<button onClick={showToast}>Test</button>)
+    return (<Container onClick={showToast}>Test</Container>)
 }

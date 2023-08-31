@@ -26,14 +26,16 @@ export type Fonts = {
     '2xl': string;
 }
 
+export type ThemeValues = {
+    colours: {
+        [key in keyof (PrimaryColours & CPrimaryColours)]: string;
+    };
+    fonts: Fonts;
+    fontFamilies: {}
+}
+
 export type useThemeType = {
     toggle: () => void;
     current: ColourTheme;
-    value: {
-        colours: {
-            [key in keyof (PrimaryColours & CPrimaryColours)]: string;
-        };
-        fonts: Fonts;
-        fontFamilies: {}
-    }
+    value: ThemeValues;
 }

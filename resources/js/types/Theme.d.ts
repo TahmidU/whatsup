@@ -1,4 +1,5 @@
 import { DynamicKeys } from "@/utils/TypeUtil";
+import Color from "color";
 
 export type ColourTheme = 'dark' | 'light';
 
@@ -14,7 +15,7 @@ export type PrimaryColours = {
 };
 
 export type CPrimaryColours = {
-    [key in DynamicKeys<'C', keyof PrimaryColours>]: string;
+    [key in DynamicKeys<'C', keyof PrimaryColours>]: Color<string>;
 }
 
 export type Fonts = {
@@ -26,12 +27,23 @@ export type Fonts = {
     '2xl': string;
 }
 
+export type FontFamilies = {
+    "arial": string;
+    "roboto": string;
+}
+
 export type ThemeValues = {
     colours: {
-        [key in keyof (PrimaryColours & CPrimaryColours)]: string;
+        normal: {
+            [key in keyof PrimaryColours]: string;
+        },
+        mod: {
+            [key in keyof CPrimaryColours]: Color<string>;
+        }
+
     };
     fonts: Fonts;
-    fontFamilies: {}
+    fontFamilies: FontFamilies;
 }
 
 export type useThemeType = {

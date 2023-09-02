@@ -1,6 +1,7 @@
 import { CPrimaryColours, ColourTheme, PrimaryColours, useThemeType } from "@/types/Theme";
+import Color from "color";
 
-// This will change over time, im not an artist/designer
+// This will change over time...
 function getPrimaryColours(theme: ColourTheme): PrimaryColours {
     return {
         dark: {
@@ -32,14 +33,16 @@ function getCColours(theme: ColourTheme) {
     let cColours = {};
 
     (Object.keys(primaryColours) as (keyof PrimaryColours)[]).forEach((key) => {
-        const value = primaryColours[key];
-        const name = `C${key.substring(0)}${key.substring(1, key.length)}`;
+        const value = Color(primaryColours[key]);
+        const name = `C${key.substring(0, 1).toUpperCase()}${key.substring(1, key.length)}`;
 
         cColours = {
             ...cColours,
             [name]: value
         };
     });
+
+    console.log(cColours);
 
     return (cColours as CPrimaryColours);
 }
@@ -53,14 +56,20 @@ const fonts = {
     '2xl': '32px',
 };
 
-// TODO
-const fontFamilies = {}
+const fontFamilies = {
+    'arial': "Arial, sans-serif",
+    'roboto': "'Roboto', sans-serif"
+};
 
 export function getTheme(theme: ColourTheme): useThemeType['value'] {
     return {
         colours: {
-            ...getPrimaryColours(theme),
-            ...getCColours(theme),
+            normal: {
+                ...getPrimaryColours(theme),
+            },
+            mod: {
+                ...getCColours(theme),
+            }
         },
         fonts,
         fontFamilies

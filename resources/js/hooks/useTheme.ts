@@ -4,7 +4,7 @@ import { useState } from "react";
 
 
 export default function useTheme() {
-    const [currentTheme, setCurrentTheme] = useState<ColourTheme>('light');
+    const [currentTheme, setCurrentTheme] = useState<ColourTheme>('dark');
 
     return {
         toggle: () => setCurrentTheme(prev => prev === 'light' ? 'dark' : 'light'),

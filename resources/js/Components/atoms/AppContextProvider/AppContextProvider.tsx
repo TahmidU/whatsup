@@ -1,3 +1,5 @@
+import '@/../css/app.css';
+
 import AppContext from "@/context/AppContext";
 import useTheme from "@/hooks/useTheme";
 import { ReactNode } from "react";

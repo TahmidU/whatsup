@@ -42,18 +42,17 @@ function getCColours(theme: ColourTheme) {
         };
     });
 
-    console.log(cColours);
-
     return (cColours as CPrimaryColours);
 }
 
 const fonts = {
-    xs: '6px',
-    sm: '8px',
+    xs: '8px',
+    sm: '11px',
     md: '14px',
     lg: '18px',
-    xl: '24px',
-    '2xl': '32px',
+    xl: '20px',
+    '2xl': '24px',
+    '3xl': '32px',
 };
 
 const fontFamilies = {

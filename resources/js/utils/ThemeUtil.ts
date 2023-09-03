@@ -5,10 +5,9 @@ import Color from "color";
 function getPrimaryColours(theme: ColourTheme): PrimaryColours {
     return {
         dark: {
-            primary: '#1A1E43',
-            secondary: '#17301C',
+            primary: '#16171B',
+            secondary: '#1F2125',
             mainText: '#FFFFFF',
-            secondaryText: '#17301C',
             accent: '#4DFFA1',
             danger: '#ED2939',
             success: '#4DFFA1',
@@ -18,7 +17,6 @@ function getPrimaryColours(theme: ColourTheme): PrimaryColours {
             primary: '#FFFFFF',
             secondary: '#17301C',
             mainText: '#FFFFFF',
-            secondaryText: '#17301C',
             accent: '#4DFFA1',
             danger: '#ED2939',
             success: '#4DFFA1',
@@ -42,23 +40,23 @@ function getCColours(theme: ColourTheme) {
         };
     });
 
-    console.log(cColours);
-
     return (cColours as CPrimaryColours);
 }
 
 const fonts = {
-    xs: '6px',
-    sm: '8px',
+    xs: '8px',
+    sm: '11px',
     md: '14px',
     lg: '18px',
-    xl: '24px',
-    '2xl': '32px',
+    xl: '20px',
+    '2xl': '24px',
+    '3xl': '32px',
 };
 
 const fontFamilies = {
     'arial': "Arial, sans-serif",
-    'roboto': "'Roboto', sans-serif"
+    'roboto': "'Roboto', sans-serif",
+    'inter': "'Inter', sans-serif",
 };
 
 export function getTheme(theme: ColourTheme): useThemeType['value'] {

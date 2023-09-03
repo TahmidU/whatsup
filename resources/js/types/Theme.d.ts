@@ -7,7 +7,6 @@ export type PrimaryColours = {
     primary: string,
     secondary: string,
     mainText: string,
-    secondaryText: string,
     accent: string,
     danger: string,
     success: string,

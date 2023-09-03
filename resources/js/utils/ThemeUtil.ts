@@ -58,7 +58,8 @@ const fonts = {
 
 const fontFamilies = {
     'arial': "Arial, sans-serif",
-    'roboto': "'Roboto', sans-serif"
+    'roboto': "'Roboto', sans-serif",
+    'inter': "'Inter', sans-serif",
 };
 
 export function getTheme(theme: ColourTheme): useThemeType['value'] {

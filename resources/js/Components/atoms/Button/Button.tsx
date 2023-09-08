@@ -1,10 +1,25 @@
-import { toast } from "react-toastify";
 import { Container } from "./styles";
 
-export default function Button() {
-    function showToast() {
-        toast('Easy peasy!');
+type TextButton = {
+    variant: "Text";
+    type: "ghost" | "bold";
+};
+
+type NormalButton = {
+    variant: "Normal";
+    type: "action" | "danger";
+    borderSize?: "sm" | "md" | "lg";
+};
+
+type Props = NormalButton | TextButton;
+export default function Button(props: Props) {
+    if (props.variant === "Normal") {
+        const { colour, borderSize = "sm" } = props;
+
+        return <Container>Normal</Container>;
     }
 
-    return (<Container onClick={showToast}>Test</Container>)
+    const { colour } = props;
+
+    return <Container>Text</Container>;
 }

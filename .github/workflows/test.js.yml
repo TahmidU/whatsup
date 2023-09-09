@@ -5,7 +5,7 @@ name: Test - Unit & E2E
 
 on:
   pull_request:
-    branches: [master, dev]
+    branches: "**"
   push:
     branches: [master, dev]
 

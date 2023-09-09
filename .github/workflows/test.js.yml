@@ -36,4 +36,4 @@ jobs:
       - name: Run vitest tests
         uses: borales/actions-yarn@v4
         with:
-          cmd: test:unit
+          cmd: test:unit:non-watch

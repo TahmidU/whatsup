@@ -4,6 +4,8 @@
 name: Test - Unit & E2E
 
 on:
+  pull_request:
+    branches: [master, dev]
   push:
     branches: [master, dev]
 

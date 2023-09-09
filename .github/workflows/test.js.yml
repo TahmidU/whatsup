@@ -28,12 +28,7 @@ jobs:
         with:
           cmd: install --frozen-lockfile
 
-      - name: Build yarn project for production
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build
-
       - name: Run vitest tests
         uses: borales/actions-yarn@v4
         with:
-          cmd: test:unit:non-watch
+          cmd: LARAVEL_BYPASS_ENV_CHECK=1 test:unit:non-watch

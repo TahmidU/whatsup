@@ -70,12 +70,10 @@ const fontFamilies = {
 export function getTheme(theme: ColourTheme): useThemeType["value"] {
     return {
         colours: {
-            normal: {
-                ...getPrimaryColours(theme),
-            },
-            mod: {
-                ...getCColours(theme),
-            },
+            ...getPrimaryColours(theme),
+        },
+        cColours: {
+            ...getCColours(theme),
         },
         fonts,
         fontFamilies,

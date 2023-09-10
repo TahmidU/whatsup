@@ -1,25 +1,41 @@
-import { Container } from "./styles";
+import { ReactNode, MouseEvent, Fragment } from "react";
+import { NormalBtnContainer } from "./styles";
 
-type TextButton = {
+export type TextButtonType = {
     variant: "Text";
-    type: "ghost" | "bold";
+    type?: "ghost" | "bold";
 };
 
-type NormalButton = {
+export type NormalButtonType = {
     variant: "Normal";
-    type: "action" | "danger";
+    type?: "action" | "danger";
     borderSize?: "sm" | "md" | "lg";
 };
 
-type Props = NormalButton | TextButton;
-export default function Button(props: Props) {
-    if (props.variant === "Normal") {
-        const { colour, borderSize = "sm" } = props;
+type Props = {
+    children?: ReactNode;
+    onClick?: (e: MouseEvent) => void;
+} & (NormalButtonType | TextButtonType);
+export default function Button({
+    children,
+    onClick = () => {},
+    ...restProps
+}: Props) {
+    if (restProps.variant === "Normal") {
+        const { type = "action", borderSize = "sm" } = restProps;
 
-        return <Container>Normal</Container>;
+        return (
+            <NormalBtnContainer
+                type={type}
+                borderSize={borderSize}
+                onClick={onClick}
+            >
+                {children}
+            </NormalBtnContainer>
+        );
     }
 
-    const { colour } = props;
+    const {} = restProps;
 
-    return <Container>Text</Container>;
+    return <Fragment>{children}</Fragment>;
 }

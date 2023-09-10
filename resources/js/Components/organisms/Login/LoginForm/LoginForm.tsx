@@ -1,3 +1,4 @@
+import Button from "@/Components/atoms/Button";
 import { Container, Footer, Header } from "./styles";
 
 export default function LoginForm() {
@@ -8,6 +9,9 @@ export default function LoginForm() {
                 {/* Input component */}
                 {/* Checkbox component */}
                 {/* Button component */}
+                <Button variant="Normal" borderSize="lg">
+                    Login
+                </Button>
             </section>
             <Footer></Footer>
         </Container>

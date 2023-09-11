@@ -2,6 +2,7 @@ import Button from "@/Components/atoms/Button";
 import { Container, Footer, Header } from "./styles";
 
 export default function LoginForm() {
+    // Refactor this, create and use Card component
     return (
         <Container>
             <Header>

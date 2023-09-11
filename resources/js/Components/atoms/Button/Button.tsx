@@ -1,12 +1,12 @@
-import { ReactNode, MouseEvent, Fragment } from "react";
+import { ReactNode, MouseEvent, Fragment, HTMLProps } from "react";
 import { NormalBtnContainer } from "./styles";
 
-export type TextButtonType = {
+export type TextButtonVariant = {
     variant: "Text";
     type?: "ghost" | "bold";
 };
 
-export type NormalButtonType = {
+export type NormalButtonVariant = {
     variant: "Normal";
     type?: "action" | "danger";
     borderSize?: "sm" | "md" | "lg";
@@ -15,7 +15,8 @@ export type NormalButtonType = {
 type Props = {
     children?: ReactNode;
     onClick?: (e: MouseEvent) => void;
-} & (NormalButtonType | TextButtonType);
+} & (NormalButtonVariant | TextButtonVariant) &
+    HTMLProps<HTMLButtonElement>;
 export default function Button({
     children,
     onClick = () => {},
@@ -29,6 +30,7 @@ export default function Button({
                 type={type}
                 borderSize={borderSize}
                 onClick={onClick}
+                {...restProps}
             >
                 {children}
             </NormalBtnContainer>

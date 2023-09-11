@@ -4,7 +4,15 @@ import { Container, Footer, Header } from "./styles";
 export default function LoginForm() {
     return (
         <Container>
-            <Header></Header>
+            <Header>
+                <div>
+                    <img src="logo/logo_alt.png" />
+                </div>
+                <section>
+                    <span>Welcome back!</span>
+                    <span>Please enter your details</span>
+                </section>
+            </Header>
             <section>
                 {/* Input component */}
                 {/* Checkbox component */}

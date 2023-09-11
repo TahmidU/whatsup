@@ -24,11 +24,13 @@ export type Fonts = {
     lg: string;
     xl: string;
     "2xl": string;
+    "3xl": string;
 };
 
 export type FontFamilies = {
     arial: string;
     roboto: string;
+    inter: string;
 };
 
 export type ThemeValues = {

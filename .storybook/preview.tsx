@@ -2,6 +2,7 @@ import { getTheme } from "../resources/js/utils/ThemeUtil";
 import { ThemeProvider } from "styled-components";
 import { Decorator, Preview } from "@storybook/react";
 import React from "react";
+import GlobalStyle from "../resources/js/Components/atoms/GlobalStyle";
 
 export const parameters: Preview = {};
 
@@ -11,6 +12,7 @@ const withTheme: Decorator = (StoryFn, context) => {
     const storyTheme = getTheme(theme);
     return (
         <ThemeProvider theme={storyTheme}>
+            <GlobalStyle />
             <StoryFn />
         </ThemeProvider>
     );

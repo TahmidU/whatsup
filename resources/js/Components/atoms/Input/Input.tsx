@@ -1,8 +1,12 @@
-export default function Input() {
+import { HTMLProps } from "react";
+import { Container } from "./styles";
+
+type Props = {} & HTMLProps<HTMLInputElement>;
+export default function Input({ ...restProps }: Props) {
     return (
-        <div>
-            <input />
+        <Container>
+            <input {...restProps} />
             {/* MdOutlineRemoveRedEye */}
-        </div>
+        </Container>
     );
 }

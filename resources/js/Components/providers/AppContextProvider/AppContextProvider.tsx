@@ -1,4 +1,5 @@
-import '@/../css/app.css';
+import "@/../css/app.css";
+import GlobalStyle from "@/Components/atoms/GlobalStyle";
 
 import AppContext from "@/context/AppContext";
 import useTheme from "@/hooks/useTheme";
@@ -7,15 +8,14 @@ import { ThemeProvider } from "styled-components";
 
 type Props = {
     children: ReactNode;
-}
+};
 export default function AppContextProvider({ children }: Props) {
     const appTheme = useTheme();
 
     return (
         <AppContext.Provider value={{ theme: appTheme }}>
-            <ThemeProvider theme={appTheme.value}>
-                {children}
-            </ThemeProvider>
+            <GlobalStyle />
+            <ThemeProvider theme={appTheme.value}>{children}</ThemeProvider>
         </AppContext.Provider>
     );
 }

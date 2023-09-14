@@ -14,7 +14,7 @@ export type PrimaryColours = {
 };
 
 export type CPrimaryColours = {
-    [key in DynamicKeys<"C", keyof PrimaryColours>]: Color<string>;
+    [key in DynamicKeys<"c", keyof PrimaryColours>]: Color<string>;
 };
 
 export type Fonts = {

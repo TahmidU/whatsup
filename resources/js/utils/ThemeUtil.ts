@@ -39,7 +39,7 @@ function getCColours(theme: ColourTheme) {
 
     (Object.keys(primaryColours) as (keyof PrimaryColours)[]).forEach((key) => {
         const value = Color(primaryColours[key]);
-        const name = `C${key.substring(0, 1).toUpperCase()}${key.substring(
+        const name = `c${key.substring(0, 1).toUpperCase()}${key.substring(
             1,
             key.length
         )}`;

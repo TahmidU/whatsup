@@ -1,10 +1,11 @@
-import { HTMLProps, useRef } from "react";
+import { HTMLProps, useRef, useState } from "react";
 import { Container, PasswordVisibilityBtn } from "./styles";
 import EyeIcon from "@/icons/EyeIcon";
 
 type Props = {} & HTMLProps<HTMLInputElement>;
 export default function Input({ type, ...restProps }: Props) {
     const inputRef = useRef<HTMLInputElement>(null);
+    const [showPassword, setShowPassword] = useState(false);
     const isPasswordType = type === "password";
 
     function togglePasswordVisibility() {
@@ -13,8 +14,10 @@ export default function Input({ type, ...restProps }: Props) {
         if (inputElm) {
             if (inputElm.type === "password") {
                 inputElm.type = "text";
+                setShowPassword(false);
             } else {
                 inputElm.type = "password";
+                setShowPassword(true);
             }
         }
     }
@@ -23,7 +26,10 @@ export default function Input({ type, ...restProps }: Props) {
         <Container>
             <input ref={inputRef} {...restProps} />
             {isPasswordType && (
-                <PasswordVisibilityBtn onClick={togglePasswordVisibility}>
+                <PasswordVisibilityBtn
+                    showPassword={showPassword}
+                    onClick={togglePasswordVisibility}
+                >
                     <EyeIcon />
                 </PasswordVisibilityBtn>
             )}

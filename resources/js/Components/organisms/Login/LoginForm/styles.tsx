@@ -1,3 +1,4 @@
+import Button from "@/Components/atoms/Button";
 import styled from "styled-components";
 
 export const Container = styled.article`
@@ -5,8 +6,8 @@ export const Container = styled.article`
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    width: 40rem;
-    height: 35rem;
+    width: 35rem;
+    height: 30rem;
     background-color: ${({theme}) => theme.colours.secondary};
     border-radius: 1rem;
 `;
@@ -54,9 +55,21 @@ export const Header = styled.header`
 `;
 Header.displayName = "Header";
 
-export const WelcomeContainer = styled.section``;
-WelcomeContainer.displayName = 'WelcomeContainer';
+export const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 40%;
+`;
+Form.displayName = "Form";
 
-export const Form = styled.section``;
+export const LoginButton = styled(Button)`
+    text-align: center;
+    width: 100%;
+`;
+LoginButton.displayName = "LoginButton";
 
 export const Footer = styled.footer``;
+Footer.displayName = 'Footer';

@@ -12,6 +12,8 @@ export default {
         options: {},
     },
 
+    staticDirs: ["../public"],
+
     async viteFinal(config) {
         if (config.resolve) {
             config.resolve.alias = {

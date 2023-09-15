@@ -1,4 +1,4 @@
-import { ReactNode, MouseEvent, Fragment, HTMLProps } from "react";
+import { ReactNode, Fragment, ComponentPropsWithRef } from "react";
 import { NormalBtnContainer } from "./styles";
 
 export type TextButtonVariant = {
@@ -12,14 +12,16 @@ export type NormalButtonVariant = {
     borderSize?: "sm" | "md" | "lg";
 };
 
+export type ButtonWithVariants = (NormalButtonVariant | TextButtonVariant) &
+    ComponentPropsWithRef<"button">;
+
 type Props = {
     children?: ReactNode;
-    onClick?: (e: MouseEvent) => void;
-} & (NormalButtonVariant | TextButtonVariant) &
-    HTMLProps<HTMLButtonElement>;
+    className?: string;
+} & ButtonWithVariants;
 export default function Button({
     children,
-    onClick = () => {},
+    className = "",
     ...restProps
 }: Props) {
     if (restProps.variant === "Normal") {
@@ -29,7 +31,7 @@ export default function Button({
             <NormalBtnContainer
                 type={type}
                 borderSize={borderSize}
-                onClick={onClick}
+                className={className}
                 {...restProps}
             >
                 {children}

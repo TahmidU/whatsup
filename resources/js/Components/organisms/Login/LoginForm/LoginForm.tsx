@@ -1,7 +1,14 @@
 import Button from "@/Components/atoms/Button";
-import { Container, Footer, Header } from "./styles";
+import { FormEvent } from "react";
+import { Container, Footer, Form, Header, LoginButton } from "./styles";
+import Input from "@/Components/atoms/Input";
 
-export default function LoginForm() {
+type Props = {};
+export default function LoginForm({}: Props) {
+    function handleSubmit(e: FormEvent) {
+        e.preventDefault();
+    }
+
     // Refactor this, create and use Card component
     return (
         <Container>
@@ -14,14 +21,13 @@ export default function LoginForm() {
                     <span>Please enter your details</span>
                 </section>
             </Header>
-            <section>
-                {/* Input component */}
+            <Form onSubmit={handleSubmit}>
+                <Input />
                 {/* Checkbox component */}
-                {/* Button component */}
-                <Button variant="Normal" borderSize="lg">
+                <LoginButton variant="Normal" borderSize="lg">
                     Login
-                </Button>
-            </section>
+                </LoginButton>
+            </Form>
             <Footer></Footer>
         </Container>
     );

@@ -1,5 +1,6 @@
 import Input from ".";
 import { IPayload } from "@/types/story";
+import { ComponentProps } from "react";
 
 const payload: IPayload = {
     title: "ATOMS/Input",
@@ -15,7 +16,10 @@ const payload: IPayload = {
 };
 export default payload;
 
-export const Basic = (args: any) => <Input {...args} />;
+export const Basic = (args: ComponentProps<typeof Input>) => (
+    <Input {...args} />
+);
 Basic.args = {
     type: "text",
+    placeholder: "Enter text here",
 };

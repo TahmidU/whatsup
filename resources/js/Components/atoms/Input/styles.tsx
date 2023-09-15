@@ -4,10 +4,15 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     position: relative;
-    width: 50%;
-    height: 24px;
-    padding-bottom: 0.1rem;
-    border-bottom: 1px solid ${({theme}) => theme.colours.mainText};
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;
+    border: 1px solid ${({theme}) => theme.cColours.cMainText.alpha(0.6).toString()};
+    border-radius: 0.5rem;
+
+    &:focus-within{
+        border: 1px solid ${({theme}) => theme.colours.mainText};
+    }
 
     & > input:first-child {
         all:unset;
@@ -15,6 +20,7 @@ export const Container = styled.div`
         width: 100%;
         font-family: ${({theme}) => theme.fontFamilies.inter};
         color: ${({theme}) => theme.colours.mainText};
+        font-size: ${({theme}) => theme.fonts.md};
     }
 
 `;
@@ -28,7 +34,7 @@ export const PasswordVisibilityBtn = styled.button<{showPassword:boolean}>`
     justify-content: center;
     position: absolute;
     z-index: 10;
-    right: 5px;
+    right: 1rem;
     margin: auto 0;
     width: 18px;
     height: 18px;

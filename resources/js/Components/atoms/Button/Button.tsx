@@ -2,7 +2,7 @@ import { ReactNode, ComponentPropsWithRef } from "react";
 import { ButtonContainer } from "./styles";
 
 export type ButtonType = "action" | "danger";
-export type BorderSizeType = "sm" | "md" | "lg";
+export type BorderSizeType = "sm" | "md" | "lg" | "xl";
 export type ButtonStyle = {
     buttonType?: ButtonType;
     borderSize?: BorderSizeType;

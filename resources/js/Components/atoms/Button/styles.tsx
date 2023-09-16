@@ -15,6 +15,7 @@ type ButtonContainerType = PrefixObjectKeys<'$', Pick<ButtonStyle, 'borderSize' 
 export const ButtonContainer = styled(ButtonDefaults)<ButtonContainerType>`
     padding: 0.5rem 1rem;
     border-radius: ${({$borderSize}) => 
+        $borderSize === 'xl' ? '1rem' :
         $borderSize === 'lg' ? '0.5rem' : 
         $borderSize === 'md' ? '0.25rem' : '0.125rem'};
     font-family: ${({theme}) => theme.fontFamilies.inter};

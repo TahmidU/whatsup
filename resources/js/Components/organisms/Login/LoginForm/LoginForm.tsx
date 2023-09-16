@@ -32,7 +32,7 @@ export default function LoginForm({}: Props) {
                     type="password"
                 />
                 {/* Checkbox component */}
-                <Button borderSize="lg">Login</Button>
+                <Button borderSize="xl">Login</Button>
             </Form>
             <Footer>
                 <span></span>

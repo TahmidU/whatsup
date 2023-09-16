@@ -1,10 +1,12 @@
 import { ReactNode, Fragment, ComponentPropsWithRef } from "react";
 import { NormalBtnContainer } from "./styles";
 
+export type NormalButtonType = "action" | "danger";
+export type NormalButtonBorderSize = "sm" | "md" | "lg";
 export type NormalButtonVariant = {
     variant: "Normal";
-    type?: "action" | "danger";
-    borderSize?: "sm" | "md" | "lg";
+    type?: NormalButtonType;
+    borderSize?: NormalButtonBorderSize;
 };
 
 export type ButtonWithVariants = NormalButtonVariant &
@@ -15,19 +17,24 @@ type Props = {
     className?: string;
 } & ButtonWithVariants;
 export default function Button({
+    variant,
     children,
     className = "",
     ...restProps
 }: Props) {
-    if (restProps.variant === "Normal") {
-        const { type = "action", borderSize = "sm" } = restProps;
+    if (variant === "Normal") {
+        const {
+            type = "action",
+            borderSize = "sm",
+            ...restVariantProps
+        } = restProps;
 
         return (
             <NormalBtnContainer
-                type={type}
-                borderSize={borderSize}
+                $type={type}
+                $borderSize={borderSize}
                 className={className}
-                {...restProps}
+                {...restVariantProps}
             >
                 {children}
             </NormalBtnContainer>

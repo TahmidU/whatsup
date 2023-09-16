@@ -1,4 +1,4 @@
-import { DynamicKeys } from "@/utils/TypeUtil";
+import { PrefixKeys } from "@/utils/TypeUtil";
 import Color from "color";
 
 export type ColourTheme = "dark" | "light";
@@ -14,7 +14,7 @@ export type PrimaryColours = {
 };
 
 export type CPrimaryColours = {
-    [key in DynamicKeys<"c", keyof PrimaryColours>]: Color<string>;
+    [key in PrefixKeys<"c", Capitalize<keyof PrimaryColours>>]: Color<string>;
 };
 
 export type Fonts = {

@@ -1,6 +1,7 @@
 import { FormEvent } from "react";
-import { Container, Footer, Form, Header, LoginButton } from "./styles";
+import { Container, Footer, Form, Header } from "./styles";
 import LabelledInput from "@/Components/molecules/LabelledInput";
+import Button from "@/Components/atoms/Button";
 
 type Props = {};
 export default function LoginForm({}: Props) {
@@ -31,9 +32,9 @@ export default function LoginForm({}: Props) {
                     type="password"
                 />
                 {/* Checkbox component */}
-                <LoginButton variant="Normal" borderSize="lg">
+                <Button variant="Normal" borderSize="lg">
                     Login
-                </LoginButton>
+                </Button>
             </Form>
             <Footer>
                 <span></span>

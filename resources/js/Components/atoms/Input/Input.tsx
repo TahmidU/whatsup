@@ -27,7 +27,7 @@ export default function Input({ type, ...restProps }: Props) {
             <input ref={inputRef} type={type} {...restProps} />
             {isPasswordType && (
                 <PasswordVisibilityBtn
-                    showPassword={showPassword}
+                    $showPassword={showPassword}
                     onClick={togglePasswordVisibility}
                 >
                     <EyeIcon />

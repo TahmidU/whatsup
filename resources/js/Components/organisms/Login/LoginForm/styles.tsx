@@ -66,11 +66,11 @@ export const Form = styled.form`
 `;
 Form.displayName = "Form";
 
-export const LoginButton = styled(Button)`
-    text-align: center;
-    width: 100%;
-`;
-LoginButton.displayName = "LoginButton";
+// export const LoginButton = styled(Button)`
+//     text-align: center;
+//     width: 100%;
+// `;
+// LoginButton.displayName = "LoginButton";
 
 export const Footer = styled.footer`
     display: flex;

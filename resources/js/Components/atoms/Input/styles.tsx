@@ -28,7 +28,7 @@ export const Container = styled.div`
 `;
 Container.displayName = "Container";
 
-export const PasswordVisibilityBtn = styled.button<{showPassword:boolean}>`
+export const PasswordVisibilityBtn = styled.button<{$showPassword:boolean}>`
     all:unset;
     cursor: pointer;
     display: flex;
@@ -47,11 +47,11 @@ export const PasswordVisibilityBtn = styled.button<{showPassword:boolean}>`
         height: 100%;
         cursor: pointer;
 
-        color: ${({theme, showPassword}) => showPassword ? 
+        color: ${({theme, $showPassword}) => $showPassword ? 
             theme.colours.mainText : theme.cColours.cMainText.alpha(0.6).toString()};
 
         &:hover{
-            color: ${({theme, showPassword}) => showPassword ? 
+            color: ${({theme, $showPassword}) => $showPassword ? 
             theme.colours.mainText : theme.cColours.cMainText.alpha(0.8).toString()};
         }
 

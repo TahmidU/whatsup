@@ -1,6 +1,5 @@
-export type DynamicKeys<FK, SK> =
-    FK extends string ?
-    SK extends string ?
-    `${FK}${Capitalize<SK>}`
-    : never
+export type PrefixKeys<P, K> = P extends string
+    ? K extends string
+        ? `${P}${K}`
+        : never
     : never;

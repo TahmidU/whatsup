@@ -1,18 +1,13 @@
 import { ReactNode, Fragment, ComponentPropsWithRef } from "react";
 import { NormalBtnContainer } from "./styles";
 
-export type TextButtonVariant = {
-    variant: "Text";
-    type?: "ghost" | "bold";
-};
-
 export type NormalButtonVariant = {
     variant: "Normal";
     type?: "action" | "danger";
     borderSize?: "sm" | "md" | "lg";
 };
 
-export type ButtonWithVariants = (NormalButtonVariant | TextButtonVariant) &
+export type ButtonWithVariants = NormalButtonVariant &
     ComponentPropsWithRef<"button">;
 
 type Props = {

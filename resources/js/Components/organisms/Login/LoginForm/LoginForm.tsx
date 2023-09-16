@@ -35,7 +35,9 @@ export default function LoginForm({}: Props) {
                     Login
                 </LoginButton>
             </Form>
-            <Footer></Footer>
+            <Footer>
+                <span></span>
+            </Footer>
         </Container>
     );
 }

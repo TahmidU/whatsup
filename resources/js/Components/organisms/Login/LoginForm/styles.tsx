@@ -72,5 +72,9 @@ export const LoginButton = styled(Button)`
 `;
 LoginButton.displayName = "LoginButton";
 
-export const Footer = styled.footer``;
+export const Footer = styled.footer`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
 Footer.displayName = 'Footer';

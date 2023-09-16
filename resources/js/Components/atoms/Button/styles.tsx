@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
-import { NormalButtonBorderSize, NormalButtonType, NormalButtonVariant } from "./Button";
+import { ButtonStyle } from "./Button";
+import { PrefixKey, PrefixObjectKeys } from "@/utils/TypeUtil";
 
 export const ButtonDefaults = styled.button`
     all:unset;
@@ -10,14 +11,15 @@ export const ButtonDefaults = styled.button`
 `;
 ButtonDefaults.displayName = "ButtonDefaults";
 
-export const NormalBtnContainer = styled(ButtonDefaults)<{$borderSize: NormalButtonBorderSize, $type: NormalButtonType,}>`
+type ButtonContainerType = PrefixObjectKeys<'$', Pick<ButtonStyle, 'borderSize' | 'buttonType'>> ;
+export const ButtonContainer = styled(ButtonDefaults)<ButtonContainerType>`
     padding: 0.5rem 1rem;
     border-radius: ${({$borderSize}) => 
         $borderSize === 'lg' ? '0.5rem' : 
         $borderSize === 'md' ? '0.25rem' : '0.125rem'};
     font-family: ${({theme}) => theme.fontFamilies.inter};
-    background-color: ${({$type, theme}) => 
-        $type === 'action' ? theme.colours.accent : theme.colours.danger};
+    background-color: ${({$buttonType, theme}) => 
+        $buttonType === 'action' ? theme.colours.accent : theme.colours.danger};
     color: ${({theme}) => theme.colours.mainText};
 `;
-NormalBtnContainer.displayName = "NormalBtnContainer";
+ButtonContainer.displayName = "NormalBtnContainer";

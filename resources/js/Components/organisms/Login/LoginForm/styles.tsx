@@ -57,11 +57,12 @@ Header.displayName = "Header";
 
 export const Form = styled.form`
     display: flex;
+    gap: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: fit-content;
-    width: 40%;
+    width: 60%;
 `;
 Form.displayName = "Form";
 

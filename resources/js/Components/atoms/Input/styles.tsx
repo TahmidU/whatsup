@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
+const xPadding = '0.5rem';
 export const Container = styled.div`
     display: flex;
     align-items: center;
     position: relative;
-    width: fit-content;
-    height: fit-content;
-    padding: 1rem;
+    width: 100%;
+    height: 36px;
+    padding: 0.25rem ${xPadding};
     border: 1px solid ${({theme}) => theme.cColours.cMainText.alpha(0.6).toString()};
     border-radius: 0.5rem;
+    box-sizing: border-box;
 
     &:focus-within{
         border: 1px solid ${({theme}) => theme.colours.mainText};
@@ -34,7 +36,7 @@ export const PasswordVisibilityBtn = styled.button<{showPassword:boolean}>`
     justify-content: center;
     position: absolute;
     z-index: 10;
-    right: 1rem;
+    right: ${xPadding};
     margin: auto 0;
     width: 18px;
     height: 18px;

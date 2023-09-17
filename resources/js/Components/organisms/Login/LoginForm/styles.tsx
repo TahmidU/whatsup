@@ -76,5 +76,15 @@ export const Footer = styled.footer`
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: ${({theme}) => theme.fonts.sm};
+    color: ${({theme}) => theme.colours.mainText};
+
+    font-weight: 100;
+
+    & > span:first-child{
+        & > a{
+            font-weight: bold;
+        }
+    }
 `;
 Footer.displayName = 'Footer';

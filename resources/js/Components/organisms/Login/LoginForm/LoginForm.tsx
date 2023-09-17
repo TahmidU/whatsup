@@ -2,6 +2,7 @@ import { FormEvent } from "react";
 import { Container, Footer, Form, Header } from "./styles";
 import LabelledInput from "@/Components/molecules/LabelledInput";
 import Button from "@/Components/atoms/Button";
+import LinkButton from "@/Components/atoms/LinkButton";
 
 type Props = {};
 export default function LoginForm({}: Props) {
@@ -35,7 +36,10 @@ export default function LoginForm({}: Props) {
                 <Button borderSize="xl">Login</Button>
             </Form>
             <Footer>
-                <span></span>
+                <span>
+                    {"Don't"} have an account?{" "}
+                    <LinkButton href="">Sign Up</LinkButton>
+                </span>
             </Footer>
         </Container>
     );

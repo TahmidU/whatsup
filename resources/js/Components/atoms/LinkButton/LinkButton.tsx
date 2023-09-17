@@ -1,9 +1,9 @@
-import { Link } from "@inertiajs/react";
 import { ComponentPropsWithRef, ReactNode } from "react";
+import { LinkButtonContainer } from "./styles";
 
-interface Props extends ComponentPropsWithRef<typeof Link> {
+interface Props extends ComponentPropsWithRef<typeof LinkButtonContainer> {
     children?: ReactNode;
 }
 export default function LinkButton({ children, ...restProps }: Props) {
-    return <Link {...restProps}>{children}</Link>;
+    return <LinkButtonContainer {...restProps}>{children}</LinkButtonContainer>;
 }

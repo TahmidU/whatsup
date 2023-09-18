@@ -4,14 +4,16 @@ export const CheckboxContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 0.15rem;
-    font-size: ${({theme}) => theme.fonts.md};
+    gap: 0.25rem;
+    font-size: ${({theme}) => theme.fonts.sm};
     font-family: ${({theme}) => theme.fontFamilies.inter};
-    color: ${({theme}) => theme.colours.mainText};
+    /* color: ${({theme}) => theme.colours.mainText}; */
 
     label{
         user-select: none;
         cursor: pointer;
+        font-weight: 100;
+        color: ${({theme}) => theme.colours.mainText};
     }
 `;
 CheckboxContainer.displayName = "Container";
@@ -21,13 +23,22 @@ export const Toggle = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-left: 0.25rem;
-    height: 1rem;
-    width: 1rem;
+    height: 0.75rem;
+    width: 0.75rem;
     border: 1px solid ${({theme}) => theme.colours.mainText};
     border-radius: 0.25rem;
     cursor: pointer;
-    background-color: ${({theme}) => theme.colours.secondary};
+    overflow: hidden;
+
+    background-color: ${({theme}) => theme.colours.mainText};
+
+    &:has(input[type='checkbox']:not(:checked)){
+        background-color: ${({theme}) => theme.colours.primary};
+    }
+
+    &:has(input[type='checkbox']:checked){
+        background-color: ${({theme}) => theme.colours.mainText};
+    }
 
     input{
         all: unset;
@@ -36,6 +47,7 @@ export const Toggle = styled.div`
         height: 100%;
         z-index: 10;
     }
+
 
     input[type='checkbox']:checked + svg{
         opacity: 1;
@@ -48,6 +60,7 @@ export const Toggle = styled.div`
     svg{
         width: 80%;
         height: 80%;
+        color: ${({theme}) => theme.colours.primary};
     }
 `;
 Toggle.displayName = "Toggle"

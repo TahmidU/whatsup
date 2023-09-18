@@ -1,4 +1,3 @@
-import Button from "@/Components/atoms/Button";
 import styled from "styled-components";
 
 export const Container = styled.article`
@@ -64,12 +63,27 @@ export const Form = styled.form`
     height: fit-content;
     width: 60%;
 
-    & > div:first-child{
+    .login-main-segment{
         display: flex;
         flex-direction: column;
         gap: 1.25rem;
         width: 100%;
+        margin: 1rem 0;
     }
+
+    .login-typed-inputs{
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+    }
+
+    .login-main-options{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
 `;
 Form.displayName = "Form";
 
@@ -79,6 +93,7 @@ export const Footer = styled.footer`
     align-items: center;
     font-size: ${({theme}) => theme.fonts.sm};
     color: ${({theme}) => theme.colours.mainText};
+    font-family: ${({theme}) => theme.fontFamilies.inter};
 
     font-weight: 100;
 

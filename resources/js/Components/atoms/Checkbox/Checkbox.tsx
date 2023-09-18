@@ -5,11 +5,16 @@ import CheckIcon from "@/icons/CheckIcon";
 interface Props extends ComponentPropsWithRef<"input"> {
     title: string;
     idAttribute?: string;
+    className?: string;
 }
-export default function Checkbox({ title, idAttribute, ...restProps }: Props) {
+export default function Checkbox({
+    title,
+    idAttribute,
+    className,
+    ...restProps
+}: Props) {
     return (
-        <CheckboxContainer>
-            <label htmlFor={idAttribute ?? title}>{title}</label>
+        <CheckboxContainer className={className}>
             <Toggle>
                 <input
                     id={idAttribute ?? title}
@@ -18,6 +23,8 @@ export default function Checkbox({ title, idAttribute, ...restProps }: Props) {
                 />
                 <CheckIcon />
             </Toggle>
+
+            <label htmlFor={idAttribute ?? title}>{title}</label>
         </CheckboxContainer>
     );
 }

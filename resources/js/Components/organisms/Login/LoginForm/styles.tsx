@@ -63,14 +63,15 @@ export const Form = styled.form`
     align-items: center;
     height: fit-content;
     width: 60%;
+
+    & > div:first-child{
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        width: 100%;
+    }
 `;
 Form.displayName = "Form";
-
-// export const LoginButton = styled(Button)`
-//     text-align: center;
-//     width: 100%;
-// `;
-// LoginButton.displayName = "LoginButton";
 
 export const Footer = styled.footer`
     display: flex;

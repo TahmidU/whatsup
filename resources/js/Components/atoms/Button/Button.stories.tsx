@@ -1,7 +1,7 @@
+import { IPayload } from "@/types/story";
 import Button from ".";
-// import { IPayload } from "types/story";
 
-const payload = {
+const payload: IPayload = {
     title: "ATOMS/Button",
     component: Button,
 };

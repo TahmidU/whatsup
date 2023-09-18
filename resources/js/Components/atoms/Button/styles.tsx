@@ -22,5 +22,9 @@ export const ButtonContainer = styled(ButtonDefaults)<ButtonContainerType>`
     background-color: ${({$buttonType, theme}) => 
         $buttonType === 'action' ? theme.colours.accent : theme.colours.danger};
     color: ${({theme}) => theme.colours.mainText};
+
+    &:hover{
+        background-color: ${({theme}) => theme.cColours.cAccent.lighten(0.05).toString()};
+    }
 `;
 ButtonContainer.displayName = "NormalBtnContainer";

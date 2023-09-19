@@ -15,10 +15,10 @@ export default function LoginForm({}: Props) {
     return (
         <Container>
             <Header>
-                <div>
+                <div className="logo-container">
                     <img src="logo/logo_alt.png" />
                 </div>
-                <section>
+                <section className="welcome-segment">
                     <span>Welcome back!</span>
                     <span>Please enter your details</span>
                 </section>

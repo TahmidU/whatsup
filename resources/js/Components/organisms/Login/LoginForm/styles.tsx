@@ -18,8 +18,7 @@ export const Header = styled.header`
     flex-direction: column;
     align-items: center;
 
-    // Logo
-    > div:first-child{
+    .logo-container{
         width: 3rem;
         height: 3rem;
 
@@ -29,8 +28,7 @@ export const Header = styled.header`
         }
     }
 
-    // Welcome Message
-    > section:last-child{
+    .welcome-segment{
         display: flex;
         flex-direction: column;
         justify-content: center;

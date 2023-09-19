@@ -7,7 +7,6 @@ export const CheckboxContainer = styled.div`
     gap: 0.25rem;
     font-size: ${({theme}) => theme.fonts.sm};
     font-family: ${({theme}) => theme.fontFamilies.inter};
-    /* color: ${({theme}) => theme.colours.mainText}; */
 
     label{
         user-select: none;

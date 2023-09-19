@@ -41,7 +41,7 @@ export const PasswordVisibilityBtn = styled.button<{$showPassword:boolean}>`
     width: 18px;
     height: 18px;
 
-    & > svg:first-child {
+    svg {
             
         width: 100%;
         height: 100%;

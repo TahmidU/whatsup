@@ -1,3 +1,3 @@
-type IconType = {
+interface IconType {
     className?: string;
-};
+}

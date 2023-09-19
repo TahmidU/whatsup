@@ -1,12 +1,12 @@
-import { ComponentProps, ComponentType } from "react";
+import { ComponentProps } from "react";
 import { Container } from "./styles";
 import Input from "@/Components/atoms/Input";
 
-type Props = {
+interface Props extends ComponentProps<typeof Input> {
     labelName: string;
     idAttribute?: string;
     className?: string;
-} & ComponentProps<typeof Input>;
+}
 export default function LabelledInput({
     labelName,
     idAttribute = "",

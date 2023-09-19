@@ -6,9 +6,9 @@ import useTheme from "@/hooks/useTheme";
 import { ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
 
-type Props = {
+interface Props {
     children: ReactNode;
-};
+}
 export default function AppContextProvider({ children }: Props) {
     const appTheme = useTheme();
 

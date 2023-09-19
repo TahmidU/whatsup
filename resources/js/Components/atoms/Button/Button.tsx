@@ -3,17 +3,19 @@ import { ButtonContainer } from "./styles";
 
 export type ButtonType = "action" | "danger";
 export type BorderSizeType = "sm" | "md" | "lg" | "xl";
-export type ButtonStyle = {
+export interface ButtonStyle {
     buttonType?: ButtonType;
     borderSize?: BorderSizeType;
-};
+}
 
-export type ButtonWithVariants = ButtonStyle & ComponentPropsWithRef<"button">;
+export interface ButtonWithVariants
+    extends ButtonStyle,
+        ComponentPropsWithRef<"button"> {}
 
-type Props = {
+interface Props extends ButtonWithVariants {
     children?: ReactNode;
     className?: string;
-} & ButtonWithVariants;
+}
 export default function Button({
     buttonType = "action",
     borderSize = "sm",

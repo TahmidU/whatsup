@@ -5,7 +5,7 @@ import Button from "@/Components/atoms/Button";
 import LinkButton from "@/Components/atoms/LinkButton";
 import Checkbox from "@/Components/atoms/Checkbox";
 
-type Props = {};
+interface Props {}
 export default function LoginForm({}: Props) {
     function handleSubmit(e: FormEvent) {
         e.preventDefault();

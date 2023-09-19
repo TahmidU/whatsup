@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { ButtonStyle } from "./Button";
-import { PrefixKey, PrefixObjectKeys } from "@/utils/TypeUtil";
+import { PrefixObjectKeys } from "@/utils/TypeUtil";
 
 export const ButtonDefaults = styled.button`
     all:unset;

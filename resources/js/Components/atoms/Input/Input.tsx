@@ -2,7 +2,7 @@ import { HTMLProps, useRef, useState } from "react";
 import { Container, PasswordVisibilityBtn } from "./styles";
 import EyeIcon from "@/icons/EyeIcon";
 
-type Props = {} & HTMLProps<HTMLInputElement>;
+interface Props extends HTMLProps<HTMLInputElement> {}
 export default function Input({ type, ...restProps }: Props) {
     const inputRef = useRef<HTMLInputElement>(null);
     const isPasswordType = type === "password";

@@ -3,7 +3,7 @@ import Color from "color";
 
 export type ColourTheme = "dark" | "light";
 
-export type PrimaryColours = {
+export interface PrimaryColours {
     primary: string;
     secondary: string;
     mainText: string;
@@ -11,13 +11,13 @@ export type PrimaryColours = {
     danger: string;
     success: string;
     info: string;
-};
+}
 
 export type CPrimaryColours = {
     [key in PrefixKey<"c", Capitalize<keyof PrimaryColours>>]: Color<string>;
 };
 
-export type Fonts = {
+export interface Fonts {
     xs: string;
     sm: string;
     md: string;
@@ -25,27 +25,23 @@ export type Fonts = {
     xl: string;
     "2xl": string;
     "3xl": string;
-};
+}
 
-export type FontFamilies = {
+export interface FontFamilies {
     arial: string;
     roboto: string;
     inter: string;
-};
+}
 
-export type ThemeValues = {
-    colours: {
-        [key in keyof PrimaryColours]: string;
-    };
-    cColours: {
-        [key in keyof CPrimaryColours]: Color<string>;
-    };
+export interface ThemeValues {
+    colours: PrimaryColours;
+    cColours: CPrimaryColours;
     fonts: Fonts;
     fontFamilies: FontFamilies;
-};
+}
 
-export type useThemeType = {
+export interface useThemeType {
     toggle: () => void;
     current: ColourTheme;
     value: ThemeValues;
-};
+}

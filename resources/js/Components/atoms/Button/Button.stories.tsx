@@ -1,5 +1,6 @@
 import { MetaPayload } from "@/types/Story";
 import Button from ".";
+import { ComponentProps } from "react";
 
 const payload: MetaPayload<typeof Button> = {
     title: "ATOMS/Button",
@@ -7,5 +8,10 @@ const payload: MetaPayload<typeof Button> = {
 };
 export default payload;
 
-export const Basic = (args: any) => <Button {...args} />;
-Basic.args = {};
+export const Basic = (args: ComponentProps<typeof Button>) => (
+    <Button {...args}>Test</Button>
+);
+Basic.args = {
+    buttonType: "action",
+    borderSize: "md",
+};

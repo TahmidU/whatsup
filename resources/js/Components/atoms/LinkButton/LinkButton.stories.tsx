@@ -9,6 +9,6 @@ const payload: MetaPayload<typeof LinkButton> = {
 export default payload;
 
 export const Basic = (args: ComponentProps<typeof LinkButton>) => (
-    <LinkButton {...args} />
+    <LinkButton {...args}>Link</LinkButton>
 );
 Basic.args = {};

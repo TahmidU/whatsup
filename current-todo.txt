@@ -3,5 +3,5 @@
     - Create a Card component
 - Go to the styles, use classnames more often - DONE
 - Refactor Props and types to interfaces - DONE
-- Fix stories
-- Style components interface and type fix
+- Fix stories - DONE
+- Style components interface and type fix - DONE

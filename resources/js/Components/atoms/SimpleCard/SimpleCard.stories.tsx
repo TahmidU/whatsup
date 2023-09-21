@@ -9,7 +9,9 @@ const payload: MetaPayload<typeof SimpleCard> = {
 export default payload;
 
 export const Basic = (args: ComponentProps<typeof SimpleCard>) => (
-    <SimpleCard {...args} />
+    <SimpleCard {...args}>
+        <div style={{ height: "10rem", width: "100%" }}>Empty Div</div>
+    </SimpleCard>
 );
 Basic.args = {
     shadow: "sm",

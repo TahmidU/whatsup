@@ -1,8 +1,8 @@
 import LoginForm from ".";
-import { IPayload } from "@/types/story";
+import { MetaPayload } from "@/types/Story";
 import { ComponentProps } from "react";
 
-const payload: IPayload = {
+const payload: MetaPayload<typeof LoginForm> = {
     title: "ORGANISMS/LoginForm",
     component: LoginForm,
 };

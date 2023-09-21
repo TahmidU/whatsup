@@ -1,9 +1,9 @@
+import type { Meta } from "@storybook/react";
+
 export type StoryType = "ATOMS" | "MOLECULES" | "ORGANISMS";
 
 export type PayloadTitle = `${StoryType}/${string}`;
 
-export interface IPayload {
+export type MetaPayload<T> = {
     title: PayloadTitle;
-    component: any;
-    [extra: string | number | symbol]: unknown;
-}
+} & Meta<T>;

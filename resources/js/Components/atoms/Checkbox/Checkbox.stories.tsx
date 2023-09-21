@@ -1,8 +1,8 @@
-import { IPayload } from "@/types/story";
 import { ComponentProps } from "react";
 import Checkbox from ".";
+import { MetaPayload } from "@/types/Story";
 
-const payload: IPayload = {
+const payload: MetaPayload<typeof Checkbox> = {
     title: "ATOMS/Checkbox",
     component: Checkbox,
 };

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SimpleCardContainerStyle } from "./Styles";
+import { SimpleCardContainerStyle } from "./types/Styles";
 import { PrefixObjectKeys } from "@/utils/TypeUtil";
 
 export const SimpleCardContainer = styled.div<PrefixObjectKeys<'$',SimpleCardContainerStyle>>`

@@ -1,4 +1,6 @@
+import { PrefixObjectKeys } from "@/utils/TypeUtil";
 import styled from "styled-components";
+import { PasswordVisibilityBtnStyle } from "./types/Styles";
 
 const xPadding = '0.5rem';
 export const Container = styled.div`
@@ -28,7 +30,7 @@ export const Container = styled.div`
 `;
 Container.displayName = "Container";
 
-export const PasswordVisibilityBtn = styled.button<{$showPassword:boolean}>`
+export const PasswordVisibilityBtn = styled.button<PrefixObjectKeys<'$', PasswordVisibilityBtnStyle>>`
     all:unset;
     cursor: pointer;
     display: flex;

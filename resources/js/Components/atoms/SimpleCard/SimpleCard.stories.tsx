@@ -1,8 +1,8 @@
-import { IPayload } from "@/types/story";
 import SimpleCard from ".";
 import { ComponentProps } from "react";
+import { MetaPayload } from "@/types/Story";
 
-const payload: IPayload = {
+const payload: MetaPayload<typeof SimpleCard> = {
     title: "ATOMS/SimpleCard",
     component: SimpleCard,
 };

@@ -1,8 +1,8 @@
-import { IPayload } from "@/types/story";
 import LinkButton from ".";
 import { ComponentProps } from "react";
+import { MetaPayload } from "@/types/Story";
 
-const payload: IPayload = {
+const payload: MetaPayload<typeof LinkButton> = {
     title: "ATOMS/LinkButton",
     component: LinkButton,
 };

@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import { ButtonStyle } from "./Button";
 import { PrefixObjectKeys } from "@/utils/TypeUtil";
+import { ButtonContainerStyle } from "./types/Styles";
 
 export const ButtonDefaults = styled.button`
     all:unset;
@@ -11,8 +11,7 @@ export const ButtonDefaults = styled.button`
 `;
 ButtonDefaults.displayName = "ButtonDefaults";
 
-type ButtonContainerType = PrefixObjectKeys<'$', Pick<ButtonStyle, 'borderSize' | 'buttonType'>> ;
-export const ButtonContainer = styled(ButtonDefaults)<ButtonContainerType>`
+export const ButtonContainer = styled(ButtonDefaults)<PrefixObjectKeys<'$', ButtonContainerStyle>>`
     padding: 0.5rem 1rem;
     border-radius: ${({$borderSize}) => 
         $borderSize === 'xl' ? '1rem' :

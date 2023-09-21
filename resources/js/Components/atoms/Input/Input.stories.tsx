@@ -1,8 +1,8 @@
+import { MetaPayload } from "@/types/Story";
 import Input from ".";
-import { IPayload } from "@/types/story";
 import { ComponentProps } from "react";
 
-const payload: IPayload = {
+const payload: MetaPayload<typeof Input> = {
     title: "ATOMS/Input",
     component: Input,
     argTypes: {

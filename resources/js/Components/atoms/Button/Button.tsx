@@ -1,18 +1,8 @@
 import { ReactNode, ComponentPropsWithRef } from "react";
 import { ButtonContainer } from "./styles";
+import { ButtonContainerStyle } from "./types/Styles";
 
-export type ButtonType = "action" | "danger";
-export type BorderSizeType = "sm" | "md" | "lg" | "xl";
-export interface ButtonStyle {
-    buttonType?: ButtonType;
-    borderSize?: BorderSizeType;
-}
-
-export interface ButtonWithVariants
-    extends ButtonStyle,
-        ComponentPropsWithRef<"button"> {}
-
-interface Props extends ButtonWithVariants {
+interface Props extends ButtonContainerStyle, ComponentPropsWithRef<"button"> {
     children?: ReactNode;
     className?: string;
 }

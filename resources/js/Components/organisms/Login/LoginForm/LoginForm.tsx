@@ -1,5 +1,5 @@
-import { FormEvent } from "react";
-import { Container, Footer, Form, Header } from "./styles";
+import { FormEvent, Fragment } from "react";
+import { LoginFormContainer, Form } from "./styles";
 import LabelledInput from "@/Components/molecules/LabelledInput";
 import Button from "@/Components/atoms/Button";
 import LinkButton from "@/Components/atoms/LinkButton";
@@ -11,18 +11,30 @@ export default function LoginForm({}: Props) {
         e.preventDefault();
     }
 
-    // Refactor this, create and use Card component
     return (
-        <Container>
-            <Header>
-                <div className="logo-container">
-                    <img src="logo/logo_alt.png" />
-                </div>
-                <section className="welcome-segment">
-                    <span>Welcome back!</span>
-                    <span>Please enter your details</span>
-                </section>
-            </Header>
+        <LoginFormContainer
+            header={
+                <Fragment>
+                    <div className="logo-container">
+                        <img src="logo/logo_alt.png" />
+                    </div>
+                    <section className="welcome-segment">
+                        <span>Welcome back!</span>
+                        <span>Please enter your details</span>
+                    </section>
+                </Fragment>
+            }
+            footer={
+                <Fragment>
+                    <span>
+                        {"Don't"} have an account?{" "}
+                        <LinkButton href="" className="sign-up-link">
+                            Sign Up
+                        </LinkButton>
+                    </span>
+                </Fragment>
+            }
+        >
             <Form onSubmit={handleSubmit}>
                 <div className="login-main-segment">
                     <div className="login-typed-inputs">
@@ -48,12 +60,6 @@ export default function LoginForm({}: Props) {
 
                 <Button borderSize="xl">Login</Button>
             </Form>
-            <Footer>
-                <span>
-                    {"Don't"} have an account?{" "}
-                    <LinkButton href="">Sign Up</LinkButton>
-                </span>
-            </Footer>
-        </Container>
+        </LoginFormContainer>
     );
 }

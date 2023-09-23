@@ -4,9 +4,16 @@ import { SimpleCardContainerStyle } from "./types/Styles";
 
 export interface Props extends SimpleCardContainerStyle {
     children: ReactNode;
+    className?: string;
 }
-export default function SimpleCard({ shadow = "sm", children }: Props) {
+export default function SimpleCard({
+    shadow = "sm",
+    children,
+    className = "",
+}: Props) {
     return (
-        <SimpleCardContainer $shadow={shadow}>{children}</SimpleCardContainer>
+        <SimpleCardContainer $shadow={shadow} className={className}>
+            {children}
+        </SimpleCardContainer>
     );
 }

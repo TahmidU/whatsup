@@ -1,6 +1,8 @@
 import {
     CPrimaryColours,
     ColourTheme,
+    FontFamilies,
+    Fonts,
     PrimaryColours,
     useThemeType,
 } from "@/types/Theme";
@@ -13,18 +15,18 @@ function getPrimaryColours(theme: ColourTheme): PrimaryColours {
             primary: "#16171B",
             secondary: "#1F2125",
             mainText: "#FFFFFF",
-            accent: "#4DFFA1",
+            accent: "#1CD774",
             danger: "#ED2939",
-            success: "#4DFFA1",
+            success: "#1CD774",
             info: "#FFFFFF",
         },
         light: {
             primary: "#FFFFFF",
             secondary: "#17301C",
             mainText: "#FFFFFF",
-            accent: "#4DFFA1",
+            accent: "#1CD774",
             danger: "#ED2939",
-            success: "#4DFFA1",
+            success: "#1CD774",
             info: "#FFFFFF",
         },
     }[theme];
@@ -37,7 +39,7 @@ function getCColours(theme: ColourTheme) {
 
     (Object.keys(primaryColours) as (keyof PrimaryColours)[]).forEach((key) => {
         const value = Color(primaryColours[key]);
-        const name = `C${key.substring(0, 1).toUpperCase()}${key.substring(
+        const name = `c${key.substring(0, 1).toUpperCase()}${key.substring(
             1,
             key.length
         )}`;
@@ -51,7 +53,7 @@ function getCColours(theme: ColourTheme) {
     return cColours as CPrimaryColours;
 }
 
-const fonts = {
+const fonts: Fonts = {
     xs: "8px",
     sm: "11px",
     md: "14px",
@@ -61,7 +63,7 @@ const fonts = {
     "3xl": "32px",
 };
 
-const fontFamilies = {
+const fontFamilies: FontFamilies = {
     arial: "Arial, sans-serif",
     roboto: "'Roboto', sans-serif",
     inter: "'Inter', sans-serif",

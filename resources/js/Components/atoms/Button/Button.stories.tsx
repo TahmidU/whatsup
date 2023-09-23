@@ -1,17 +1,17 @@
+import { MetaPayload } from "@/types/Story";
 import Button from ".";
-// import { IPayload } from "types/story";
+import { ComponentProps } from "react";
 
-const payload = {
+const payload: MetaPayload<typeof Button> = {
     title: "ATOMS/Button",
     component: Button,
 };
 export default payload;
 
-export const Basic = (args: any) => (
-    <div style={{ background: "red" }}>
-        <Button {...args} />
-    </div>
+export const Basic = (args: ComponentProps<typeof Button>) => (
+    <Button {...args}>Test</Button>
 );
 Basic.args = {
-    variant: "text",
+    buttonType: "action",
+    borderSize: "md",
 };

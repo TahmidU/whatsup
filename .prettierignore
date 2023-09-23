@@ -1,0 +1,3 @@
+## Ignore style files - Sometimes auto complete stops working for them if they're formatted differently
+styles.ts
+styles.tsx

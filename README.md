@@ -45,11 +45,11 @@ This section focuses on how I went about structuring my code and my project's di
     -   Related sub-components that follow the same rules/points as above.
 -   Global hooks, types, utils and contexts will be outside the `Components` folder
 
-### Style:
+#### Style:
 
 -   For styles I've used Styled-Components since it organically works well with React.
 
-### Design Architecture:
+#### Design Architecture:
 
 -   The architecture pattern that I've decided for the FE is the atomic design principle
     -   This means that components are split up as:

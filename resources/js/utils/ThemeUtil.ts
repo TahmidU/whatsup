@@ -1,27 +1,34 @@
-import { CPrimaryColours, ColourTheme, PrimaryColours, useThemeType } from "@/types/Theme";
+import {
+    CPrimaryColours,
+    ColourTheme,
+    FontFamilies,
+    Fonts,
+    PrimaryColours,
+    useThemeType,
+} from "@/types/Theme";
 import Color from "color";
 
 // This will change over time...
 function getPrimaryColours(theme: ColourTheme): PrimaryColours {
     return {
         dark: {
-            primary: '#16171B',
-            secondary: '#1F2125',
-            mainText: '#FFFFFF',
-            accent: '#4DFFA1',
-            danger: '#ED2939',
-            success: '#4DFFA1',
-            info: '#FFFFFF',
+            primary: "#16171B",
+            secondary: "#1F2125",
+            mainText: "#FFFFFF",
+            accent: "#1CD774",
+            danger: "#ED2939",
+            success: "#1CD774",
+            info: "#FFFFFF",
         },
         light: {
-            primary: '#FFFFFF',
-            secondary: '#17301C',
-            mainText: '#FFFFFF',
-            accent: '#4DFFA1',
-            danger: '#ED2939',
-            success: '#4DFFA1',
-            info: '#FFFFFF',
-        }
+            primary: "#FFFFFF",
+            secondary: "#17301C",
+            mainText: "#FFFFFF",
+            accent: "#1CD774",
+            danger: "#ED2939",
+            success: "#1CD774",
+            info: "#FFFFFF",
+        },
     }[theme];
 }
 
@@ -32,44 +39,45 @@ function getCColours(theme: ColourTheme) {
 
     (Object.keys(primaryColours) as (keyof PrimaryColours)[]).forEach((key) => {
         const value = Color(primaryColours[key]);
-        const name = `C${key.substring(0, 1).toUpperCase()}${key.substring(1, key.length)}`;
+        const name = `c${key.substring(0, 1).toUpperCase()}${key.substring(
+            1,
+            key.length
+        )}`;
 
         cColours = {
             ...cColours,
-            [name]: value
+            [name]: value,
         };
     });
 
-    return (cColours as CPrimaryColours);
+    return cColours as CPrimaryColours;
 }
 
-const fonts = {
-    xs: '8px',
-    sm: '11px',
-    md: '14px',
-    lg: '18px',
-    xl: '20px',
-    '2xl': '24px',
-    '3xl': '32px',
+const fonts: Fonts = {
+    xs: "8px",
+    sm: "11px",
+    md: "14px",
+    lg: "18px",
+    xl: "20px",
+    "2xl": "24px",
+    "3xl": "32px",
 };
 
-const fontFamilies = {
-    'arial': "Arial, sans-serif",
-    'roboto': "'Roboto', sans-serif",
-    'inter': "'Inter', sans-serif",
+const fontFamilies: FontFamilies = {
+    arial: "Arial, sans-serif",
+    roboto: "'Roboto', sans-serif",
+    inter: "'Inter', sans-serif",
 };
 
-export function getTheme(theme: ColourTheme): useThemeType['value'] {
+export function getTheme(theme: ColourTheme): useThemeType["value"] {
     return {
         colours: {
-            normal: {
-                ...getPrimaryColours(theme),
-            },
-            mod: {
-                ...getCColours(theme),
-            }
+            ...getPrimaryColours(theme),
+        },
+        cColours: {
+            ...getCColours(theme),
         },
         fonts,
-        fontFamilies
-    }
+        fontFamilies,
+    };
 }

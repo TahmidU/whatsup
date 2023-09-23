@@ -1,7 +1,0 @@
-- Refactor LoginForm - DONE
-    - Create a SimpleCard component - DONE
-    - Create a Card component - DONE
-- Go to the styles, use classnames more often - DONE
-- Refactor Props and types to interfaces - DONE
-- Fix stories - DONE
-- Style components interface and type fix - DONE

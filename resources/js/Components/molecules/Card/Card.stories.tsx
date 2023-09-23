@@ -1,5 +1,6 @@
 import { MetaPayload } from "@/types/Story";
 import Card from ".";
+import { Fragment } from "react";
 
 const payload: MetaPayload<typeof Card> = {
     title: "MOLECULES/Card",
@@ -7,5 +8,21 @@ const payload: MetaPayload<typeof Card> = {
 };
 export default payload;
 
-export const Basic = (args: any) => <Card {...args} />;
+export const Basic = (args: any) => (
+    <Card
+        {...args}
+        header={
+            <Fragment>
+                <span>This is a header</span>
+            </Fragment>
+        }
+        footer={
+            <Fragment>
+                <span>This is a footer</span>
+            </Fragment>
+        }
+    >
+        <span>This is the main segment</span>
+    </Card>
+);
 Basic.args = {};

@@ -12,4 +12,8 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    test: {
+        include: ["**/__tests__/**/*.test.*"],
+        globals: true,
+    },
 });

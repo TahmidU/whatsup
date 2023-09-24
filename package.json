@@ -8,7 +8,7 @@
         "build-storybook": "storybook build",
         "test:unit": "vitest --environment jsdom",
         "test:unit-util": "vitest --environment node --dir ./resources/js/utils/__tests__",
-        "test:unit:non-watch": "vitest run --environment node",
+        "test:unit:non-watch": "vitest run --environment jsdom",
         "cypress": "cypress open",
         "cypress:headless": "cypress run"
     },

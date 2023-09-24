@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from "@/utils/RTLUtils";
-import { vitest, expect } from "vitest";
+import { vitest, expect, describe } from "vitest";
 import Button from "..";
 
-describe.only("Button", () => {
+describe("Button", () => {
     test("Button onClick event", () => {
         // Given
         const buttonId = "button-id";

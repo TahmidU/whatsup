@@ -12,18 +12,27 @@ export const ButtonDefaults = styled.button`
 ButtonDefaults.displayName = "ButtonDefaults";
 
 export const ButtonContainer = styled(ButtonDefaults)<PrefixObjectKeys<'$', ButtonContainerStyle>>`
+    
+
     padding: 0.5rem 1rem;
     border-radius: ${({$borderSize}) => 
         $borderSize === 'xl' ? '1rem' :
         $borderSize === 'lg' ? '0.5rem' : 
         $borderSize === 'md' ? '0.25rem' : '0.125rem'};
     font-family: ${({theme}) => theme.fontFamilies.inter};
-    background-color: ${({$buttonType, theme}) => 
-        $buttonType === 'action' ? theme.colours.accent : theme.colours.danger};
+    background-color: ${({$buttonType, theme, disabled}) => 
+        $buttonType === 'action' ? 
+        theme.cColours.cAccent.darken(disabled ? 0.5 : 0).toString() : 
+        theme.cColours.cDanger.darken(disabled ? 0.5 : 0).toString()};
     color: ${({theme}) => theme.colours.mainText};
 
     &:hover{
-        background-color: ${({theme}) => theme.cColours.cAccent.lighten(0.05).toString()};
+        ${({disabled, $buttonType, theme}) => !disabled && `
+            background-color: ${$buttonType === 'action' ? 
+            theme.cColours.cAccent.lighten(0.05).toString() : 
+            theme.cColours.cDanger.lighten(0.05).toString()};`
+        }
+        
     }
 `;
 ButtonContainer.displayName = "NormalBtnContainer";

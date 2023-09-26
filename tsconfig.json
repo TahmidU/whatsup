@@ -22,6 +22,7 @@
         "resources/js/**/*.test.ts",
         "cypress/**/*.ts",
         "cypress/**/*.cy.ts",
-        "node_modules/cypress"
+        "node_modules/cypress",
+        "resources/js/configs/SetupTest.ts"
     ]
 }

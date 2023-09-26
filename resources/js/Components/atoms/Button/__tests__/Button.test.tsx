@@ -5,15 +5,10 @@ import Button from "..";
 describe("Button", () => {
     test("Button onClick event", () => {
         // Given
-        const buttonId = "button-id";
         const onClick = vitest.fn();
 
         // When
-        render(
-            <Button id={buttonId} onClick={onClick}>
-                Button
-            </Button>
-        );
+        render(<Button onClick={onClick}>Button</Button>);
 
         // Then
         const renderedButton = screen.getByRole("button");
@@ -22,5 +17,25 @@ describe("Button", () => {
         expect(onClick).toHaveBeenCalled();
     });
 
-    test("Button snapshot", () => {});
+    test("Button not disabled style - action type", () => {
+        // Given
+        const expectedButtonType = "action";
+
+        // When
+        render(<Button buttonType={expectedButtonType}>Button</Button>);
+
+        // Then
+        const renderedButton = screen.getByRole("button");
+
+        expect(renderedButton).not.toBeDisabled();
+        expect(renderedButton).toHaveStyle(`
+            background-color: red; 
+        `);
+    });
+
+    test("Button disabled style - action type", () => {});
+
+    test("Button not disabled style - danger type", () => {});
+
+    test("Button disabled style - danger type", () => {});
 });

@@ -3,17 +3,24 @@ import { expect, describe } from "vitest";
 import Button from "..";
 
 describe("Button", () => {
-    test("Button", () => {
+    test("Button onClick event", () => {
         // Given
         const buttonId = "button-id";
-        const expectedText = "Find this text";
+        const onClick = vitest.fn();
 
         // When
-        render(<Button id={buttonId}>{expectedText}</Button>);
+        render(
+            <Button id={buttonId} onClick={onClick}>
+                Button
+            </Button>
+        );
 
         // Then
         const renderedButton = screen.getByRole("button");
+        fireEvent.click(renderedButton);
 
-        expect(renderedButton).toHaveTextContent(expectedText);
+        expect(onClick).toHaveBeenCalled();
     });
+
+    test("Button snapshot", () => {});
 });

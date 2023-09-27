@@ -1,4 +1,4 @@
-import { PrefixKey } from "@/utils/TypeUtil";
+import { PrefixKey } from "@/utils/TypeUtils";
 import Color from "color";
 
 export type ColourTheme = "dark" | "light";

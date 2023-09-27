@@ -5,7 +5,18 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
     plugins: [
         react({
-            babelrc: true,
+            babel: {
+                plugins: [
+                    [
+                        "babel-plugin-styled-components",
+                        {
+                            ssr: false,
+                            displayName: true,
+                            fileName: false,
+                        },
+                    ],
+                ],
+            },
         }),
         laravel({
             input: ["resources/js/app.tsx"],
@@ -14,7 +25,8 @@ export default defineConfig({
     ],
     test: {
         include: ["**/__tests__/**/*.test.*"],
-        setupFiles: "resources/js/configs/SetupTest.ts",
+        setupFiles: "./resources/js/configs/SetupTest.ts",
         globals: true,
+        css: true,
     },
 });

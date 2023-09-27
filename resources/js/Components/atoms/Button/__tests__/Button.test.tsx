@@ -2,8 +2,6 @@ import { fireEvent, render, screen, cleanup } from "@/utils/TestUtils";
 import { expect, describe } from "vitest";
 import Button from "..";
 
-afterEach(cleanup);
-
 describe("Button", () => {
     test("Button onClick event", () => {
         // Given
@@ -24,13 +22,15 @@ describe("Button", () => {
         const expectedButtonType = "action";
 
         // When
-        render(<Button buttonType={expectedButtonType}>Button</Button>);
+        const { container } = render(
+            <Button buttonType={expectedButtonType}>Button</Button>
+        );
 
         // Then
         const renderedButton = screen.getByRole("button");
 
         expect(renderedButton).not.toBeDisabled();
-        expect(getComputedStyle(renderedButton).borderRadius).toBe("red");
+        expect(container.firstChild).toHaveStyleRule("color", "red");
     });
 
     test("Button disabled style - action type", () => {});

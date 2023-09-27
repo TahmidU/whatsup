@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { PrefixObjectKeys } from "@/utils/TypeUtil";
+import { PrefixObjectKeys } from "@/utils/TypeUtils";
 import { ButtonContainerStyle } from "./types/Styles";
 
 export const ButtonDefaults = styled.button`
@@ -35,4 +35,4 @@ export const ButtonContainer = styled(ButtonDefaults)<PrefixObjectKeys<'$', Butt
         
     }
 `;
-ButtonContainer.displayName = "NormalBtnContainer";
+ButtonContainer.displayName = "ButtonContainer";

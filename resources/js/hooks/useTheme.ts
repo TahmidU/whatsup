@@ -1,14 +1,14 @@
 import { ColourTheme } from "@/types/Theme";
-import { getTheme } from "@/utils/ThemeUtil";
+import { getTheme } from "@/utils/ThemeUtils";
 import { useState } from "react";
 
-
 export default function useTheme() {
-    const [currentTheme, setCurrentTheme] = useState<ColourTheme>('dark');
+    const [currentTheme, setCurrentTheme] = useState<ColourTheme>("dark");
 
     return {
-        toggle: () => setCurrentTheme(prev => prev === 'light' ? 'dark' : 'light'),
+        toggle: () =>
+            setCurrentTheme((prev) => (prev === "light" ? "dark" : "light")),
         current: currentTheme,
-        value: getTheme(currentTheme)
-    }
+        value: getTheme(currentTheme),
+    };
 }

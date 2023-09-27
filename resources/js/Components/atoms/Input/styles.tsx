@@ -1,4 +1,4 @@
-import { PrefixObjectKeys } from "@/utils/TypeUtil";
+import { PrefixObjectKeys } from "@/utils/TypeUtils";
 import styled from "styled-components";
 import { PasswordVisibilityBtnStyle } from "./types/Styles";
 

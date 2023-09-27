@@ -1,6 +1,8 @@
-import { fireEvent, render, screen } from "@/Components/providers/RTLProvider";
+import { fireEvent, render, screen, cleanup } from "@/utils/TestUtils";
 import { expect, describe } from "vitest";
 import Button from "..";
+
+afterEach(cleanup);
 
 describe("Button", () => {
     test("Button onClick event", () => {
@@ -28,9 +30,7 @@ describe("Button", () => {
         const renderedButton = screen.getByRole("button");
 
         expect(renderedButton).not.toBeDisabled();
-        expect(renderedButton).toHaveStyle(`
-            background-color: red; 
-        `);
+        expect(getComputedStyle(renderedButton).borderRadius).toBe("red");
     });
 
     test("Button disabled style - action type", () => {});

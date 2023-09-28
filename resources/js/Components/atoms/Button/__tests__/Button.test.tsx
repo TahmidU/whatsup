@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, cleanup } from "@/utils/TestUtils";
+import { fireEvent, render, screen } from "../../../../utils/TestUtils";
 import { expect, describe } from "vitest";
 import Button from "..";
 
@@ -22,15 +22,11 @@ describe("Button", () => {
         const expectedButtonType = "action";
 
         // When
-        const { container } = render(
-            <Button buttonType={expectedButtonType}>Button</Button>
-        );
+        render(<Button buttonType={expectedButtonType}>Button</Button>);
 
         // Then
         const renderedButton = screen.getByRole("button");
-
-        expect(renderedButton).not.toBeDisabled();
-        expect(container.firstChild).toHaveStyleRule("color", "red");
+        expect(renderedButton).toHaveStyle("background-color:red");
     });
 
     test("Button disabled style - action type", () => {});

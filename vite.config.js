@@ -6,16 +6,7 @@ export default defineConfig({
     plugins: [
         react({
             babel: {
-                plugins: [
-                    [
-                        "babel-plugin-styled-components",
-                        {
-                            ssr: false,
-                            displayName: true,
-                            fileName: false,
-                        },
-                    ],
-                ],
+                configFile: "./babel.config.json",
             },
         }),
         laravel({
@@ -27,6 +18,6 @@ export default defineConfig({
         include: ["**/__tests__/**/*.test.*"],
         setupFiles: "./resources/js/configs/SetupTest.ts",
         globals: true,
-        css: true,
+        environment: "jsdom",
     },
 });

@@ -11,7 +11,9 @@
         "test:unit-util": "vitest --environment node --dir ./resources/js/utils/__tests__",
         "test:unit:non-watch": "vitest run --environment jsdom",
         "cypress": "cypress open",
-        "cypress:headless": "cypress run"
+        "cypress:headless:components": "cypress run --component",
+        "cypress:headless:e2e": "cypress run --e2e",
+        "cypress:headless": "yarn cypress:headless:components && yarn cypress:headless:e2e"
     },
     "devDependencies": {
         "@storybook/addon-actions": "^7.2.3",
@@ -28,6 +30,7 @@
         "axios": "^1.4.0",
         "babel-plugin-styled-components": "^2.1.4",
         "cypress": "13.3.0",
+        "cypress-real-events": "^1.10.3",
         "eslint-plugin-storybook": "^0.6.13",
         "jest-styled-components": "^7.1.1",
         "jsdom": "^22.1.0",

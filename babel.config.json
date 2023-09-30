@@ -4,7 +4,8 @@
             "babel-plugin-styled-components",
             {
                 "displayName": true,
-                "fileName": false
+                "fileName": false,
+                "ssr": false
             }
         ],
         "styled-jsx/babel"

@@ -19,10 +19,13 @@
         "resources/js/**/*.ts",
         "resources/js/**/*.tsx",
         "resources/js/**/*.d.ts",
-        "resources/js/**/*.test.ts",
-        "cypress/**/*.ts",
-        "cypress/**/*.cy.ts",
+        "cypress/component/**/*.ts",
+        "cypress/component/**/*.tsx",
+        "cypress/e2e/**/*.ts",
+        "cypress/e2e/**/*.tsx",
+        "cypress/support/**/*.ts",
+        "cypress/support/**/*.tsx",
         "node_modules/cypress",
-        "resources/js/configs/SetupTest.ts"
+        "cypress/support/component.tsx"
     ]
 }

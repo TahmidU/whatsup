@@ -1,16 +1,29 @@
-import { fireEvent, render, screen } from "@/utils/RTLUtils";
-import { vitest, expect, describe } from "vitest";
+import { fireEvent, render, screen } from "../../../../utils/TestUtils";
+import { expect, describe } from "vitest";
 import Button from "..";
 
 describe("Button", () => {
-    test("Button onClick event", () => {
+    test("Button click event", () => {
         // Given
-        const buttonId = "button-id";
+        const onClick = vitest.fn();
+
+        // When
+        render(<Button onClick={onClick}>Button</Button>);
+
+        // Then
+        const renderedButton = screen.getByRole("button");
+        fireEvent.click(renderedButton);
+
+        expect(onClick).toHaveBeenCalled();
+    });
+
+    test("Button disable click", () => {
+        // Given
         const onClick = vitest.fn();
 
         // When
         render(
-            <Button id={buttonId} onClick={onClick}>
+            <Button onClick={onClick} disabled>
                 Button
             </Button>
         );
@@ -19,6 +32,6 @@ describe("Button", () => {
         const renderedButton = screen.getByRole("button");
         fireEvent.click(renderedButton);
 
-        expect(onClick).toHaveBeenCalled();
+        expect(onClick).not.toHaveBeenCalled();
     });
 });

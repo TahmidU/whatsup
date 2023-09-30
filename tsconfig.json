@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "types": ["vite/client", "vitest/globals"],
+        "types": ["vite/client", "vitest/globals", "cypress-real-events"],
         "allowJs": true,
         "module": "ESNext",
         "moduleResolution": "bundler",
@@ -19,9 +19,13 @@
         "resources/js/**/*.ts",
         "resources/js/**/*.tsx",
         "resources/js/**/*.d.ts",
-        "resources/js/**/*.test.ts",
-        "cypress/**/*.ts",
-        "cypress/**/*.cy.ts",
-        "node_modules/cypress"
+        "cypress/component/**/*.ts",
+        "cypress/component/**/*.tsx",
+        "cypress/e2e/**/*.ts",
+        "cypress/e2e/**/*.tsx",
+        "cypress/support/**/*.ts",
+        "cypress/support/**/*.tsx",
+        "node_modules/cypress",
+        "cypress/support/component.tsx"
     ]
 }

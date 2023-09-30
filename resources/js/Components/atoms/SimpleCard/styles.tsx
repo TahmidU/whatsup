@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SimpleCardContainerStyle } from "./types/Styles";
-import { PrefixObjectKeys } from "@/utils/TypeUtil";
+import { PrefixObjectKeys } from "@/utils/TypeUtils";
 
 export const SimpleCardContainer = styled.div<PrefixObjectKeys<'$',SimpleCardContainerStyle>>`
     filter: ${({$shadow}) => 

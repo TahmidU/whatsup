@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import SimpleCard from "@/Components/atoms/SimpleCard";
-import { PrefixObjectKeys } from "@/utils/TypeUtil";
+import { PrefixObjectKeys } from "@/utils/TypeUtils";
 
 export const CardContainer = styled(SimpleCard)<PrefixObjectKeys<'$', CardContainerStyle>>`
     display: flex;

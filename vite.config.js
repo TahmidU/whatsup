@@ -5,7 +5,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
     plugins: [
         react({
-            babelrc: true,
+            babel: {
+                configFile: "./babel.config.json",
+            },
         }),
         laravel({
             input: ["resources/js/app.tsx"],
@@ -14,6 +16,8 @@ export default defineConfig({
     ],
     test: {
         include: ["**/__tests__/**/*.test.*"],
+        setupFiles: "./resources/js/configs/SetupTest.ts",
         globals: true,
+        environment: "jsdom",
     },
 });

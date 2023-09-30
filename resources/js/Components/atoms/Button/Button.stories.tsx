@@ -14,4 +14,5 @@ export const Basic = (args: ComponentProps<typeof Button>) => (
 Basic.args = {
     buttonType: "action",
     borderSize: "md",
+    disabled: false,
 };

@@ -1,4 +1,4 @@
-import { getTheme } from "../resources/js/utils/ThemeUtil";
+import { getTheme } from "../resources/js/utils/ThemeUtils";
 import { ThemeProvider } from "styled-components";
 import { Decorator, Preview } from "@storybook/react";
 import React from "react";

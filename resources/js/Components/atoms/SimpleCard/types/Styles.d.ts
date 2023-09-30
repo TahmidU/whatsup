@@ -1,4 +1,4 @@
-import { PrefixObjectKeys } from "@/utils/TypeUtil";
+import { PrefixObjectKeys } from "@/utils/TypeUtils";
 
 export type ShadowType = "lg" | "md" | "sm";
 

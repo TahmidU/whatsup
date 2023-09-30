@@ -7,7 +7,6 @@
                 "fileName": false,
                 "ssr": false
             }
-        ],
-        "styled-jsx/babel"
+        ]
     ]
 }

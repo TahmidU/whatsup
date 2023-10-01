@@ -29,11 +29,28 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install node packages
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install --frozen-lockfile
+        run: npm ci
 
       - name: Run vitest tests
-        uses: borales/actions-yarn@v4
+        run: npm run test:unit:non-watch
+
+      - name: Setup php tools
+        uses: shivammathur/setup-php@v2
         with:
-          cmd: test:unit:non-watch
+          php-version: "8.1"
+
+      - name: Install composer packages
+        uses: php-actions/composer@v6
+        with:
+          command: composer install
+
+      - name: Serve php
+        run: php artisan serve
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
+        with:
+          component: true
+          browser: chrome
+          build: npm run build
+          start: npm run preview

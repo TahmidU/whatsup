@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: Test - Unit & E2E
 
 on:
@@ -38,8 +35,8 @@ jobs:
         with:
           cmd: install --frozen-lockfile
 
-      # - name: Run vitest tests
-      #   run: yarn test:unit:non-watch
+      - name: Run vitest tests
+        run: yarn test:unit:non-watch
 
       - name: Setup PHP tools
         uses: shivammathur/setup-php@v2
@@ -55,11 +52,11 @@ jobs:
       - name: Serve PHP Laravel
         run: php artisan serve > /dev/null 2>&1 &
 
-      # - name: Run Cypress component tests
-      #   uses: cypress-io/github-action@v6
-      #   with:
-      #     component: true
-      #     browser: chrome
+      - name: Run Cypress component tests
+        uses: cypress-io/github-action@v6
+        with:
+          component: true
+          browser: chrome
 
       - name: Run Cypress e2e tests
         uses: cypress-io/github-action@v6

@@ -44,7 +44,8 @@ jobs:
       - name: Install composer packages
         uses: php-actions/composer@v6
         with:
-          command: php composer install
+          php_version: "8.1"
+          command: composer install
 
       - name: Serve php
         run: php artisan serve

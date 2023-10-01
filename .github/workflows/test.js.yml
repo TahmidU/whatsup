@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install node packages
+      - name: Setup yarn & install node packages
         uses: borales/actions-yarn@v4
         with:
           cmd: install --frozen-lockfile
@@ -44,7 +44,7 @@ jobs:
       - name: Install composer packages
         uses: php-actions/composer@v6
         with:
-          command: composer install
+          command: php composer install
 
       - name: Serve php
         run: php artisan serve

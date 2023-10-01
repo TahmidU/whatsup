@@ -11,6 +11,10 @@ on:
 
 env:
   LARAVEL_BYPASS_ENV_CHECK: 1
+  APP_NAME: Laravel
+  APP_ENV: local
+  APP_DEBUG: true
+  APP_URL: http://localhost
 
 jobs:
   test:
@@ -64,5 +68,4 @@ jobs:
           install: false
           build: yarn build
           start: yarn preview
-          wait-on: http://127.0.0.1:8000
           config: baseUrl=http://127.0.0.1:8000

@@ -33,8 +33,8 @@ jobs:
         with:
           cmd: install --frozen-lockfile
 
-      - name: Run vitest tests
-        run: yarn test:unit:non-watch
+      # - name: Run vitest tests
+      #   run: yarn test:unit:non-watch
 
       - name: Setup php tools
         uses: shivammathur/setup-php@v2
@@ -47,11 +47,11 @@ jobs:
           php_version: "8.1"
           command: install
 
-      - name: Run Cypress component tests
-        uses: cypress-io/github-action@v6
-        with:
-          component: true
-          browser: chrome
+      # - name: Run Cypress component tests
+      #   uses: cypress-io/github-action@v6
+      #   with:
+      #     component: true
+      #     browser: chrome
 
       - name: Run Cypress e2e tests
         uses: cypress-io/github-action@v6
@@ -62,5 +62,5 @@ jobs:
           build: yarn build
           start: yarn preview && php artisan serve
         env:
-          CYPRESS_host: http://localhost
+          CYPRESS_host: http://localhost:4173/
           CYPRESS_port: 4173

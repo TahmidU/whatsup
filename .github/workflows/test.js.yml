@@ -61,6 +61,4 @@ jobs:
           install: false
           build: yarn build
           start: yarn preview && php artisan serve
-        env:
-          CYPRESS_host: http://localhost:4173/
-          CYPRESS_port: 4173
+          config: pageLoadTimeout=100000,baseUrl=http://localhost:4173/

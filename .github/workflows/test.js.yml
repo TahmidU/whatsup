@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Setup yarn & install node packages
+      - name: Setup Yarn & install Node packages
         uses: borales/actions-yarn@v4
         with:
           cmd: install --frozen-lockfile
@@ -36,19 +36,19 @@ jobs:
       # - name: Run vitest tests
       #   run: yarn test:unit:non-watch
 
-      - name: Setup php tools
+      - name: Setup PHP tools
         uses: shivammathur/setup-php@v2
         with:
           php-version: "8.1"
 
-      - name: Install composer packages
+      - name: Install Composer packages
         uses: php-actions/composer@v6
         with:
           php_version: "8.1"
           command: install
 
-      - name: Serve php laravel
-        run: php artisan serve
+      - name: Serve PHP Laravel
+        run: php artisan serve > /dev/null 2>&1 &
 
       # - name: Run Cypress component tests
       #   uses: cypress-io/github-action@v6

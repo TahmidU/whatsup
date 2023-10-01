@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [master, dev]
   push:
-    branches: [master, dev, feature/add-cypress-test-ci]
+    branches: [master, dev]
 
 env:
   LARAVEL_BYPASS_ENV_CHECK: 1

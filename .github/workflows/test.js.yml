@@ -47,10 +47,17 @@ jobs:
           php_version: "8.1"
           command: install
 
-      - name: Run Cypress tests
+      - name: Run Cypress component tests
         uses: cypress-io/github-action@v6
         with:
           component: true
           browser: chrome
-          build: yarn build
-          start: yarn preview && php artisan serve
+          # build: yarn build
+          # start: yarn preview && php artisan serve
+
+      - name: Run Cypress component tests
+        uses: cypress-io/github-action@v6
+        with:
+          component: false
+          browser: chrome
+          install: false

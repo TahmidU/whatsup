@@ -52,8 +52,6 @@ jobs:
         with:
           component: true
           browser: chrome
-          # build: yarn build
-          # start: yarn preview && php artisan serve
 
       - name: Run Cypress e2e tests
         uses: cypress-io/github-action@v6

@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: Test - Unit & E2E
 
 on:
@@ -11,6 +8,11 @@ on:
 
 env:
   LARAVEL_BYPASS_ENV_CHECK: 1
+  APP_NAME: Laravel
+  APP_ENV: local
+  APP_DEBUG: true
+  APP_URL: http://localhost
+  APP_KEY: ${{ secrets.APP_KEY }}
 
 jobs:
   test:
@@ -28,12 +30,40 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install node packages
+      - name: Setup Yarn & install Node packages
         uses: borales/actions-yarn@v4
         with:
           cmd: install --frozen-lockfile
 
       - name: Run vitest tests
-        uses: borales/actions-yarn@v4
+        run: yarn test:unit:non-watch
+
+      - name: Setup PHP tools
+        uses: shivammathur/setup-php@v2
         with:
-          cmd: test:unit:non-watch
+          php-version: "8.1"
+
+      - name: Install Composer packages
+        uses: php-actions/composer@v6
+        with:
+          php_version: "8.1"
+          command: install
+
+      - name: Serve PHP Laravel
+        run: php artisan serve > /dev/null 2>&1 &
+
+      - name: Run Cypress component tests
+        uses: cypress-io/github-action@v6
+        with:
+          component: true
+          browser: chrome
+
+      - name: Run Cypress e2e tests
+        uses: cypress-io/github-action@v6
+        with:
+          component: false
+          browser: chrome
+          install: false
+          build: yarn build
+          start: yarn preview
+          config: baseUrl=http://127.0.0.1:8000

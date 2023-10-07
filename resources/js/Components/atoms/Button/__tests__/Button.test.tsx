@@ -5,25 +5,25 @@ import Button from "..";
 describe("Button", () => {
     test("Button click event", () => {
         // Given
-        const onClick = vitest.fn();
+        const onClickSpy = vitest.fn();
 
         // When
-        render(<Button onClick={onClick}>Button</Button>);
+        render(<Button onClick={onClickSpy}>Button</Button>);
 
         // Then
         const renderedButton = screen.getByRole("button");
         fireEvent.click(renderedButton);
 
-        expect(onClick).toHaveBeenCalled();
+        expect(onClickSpy).toHaveBeenCalled();
     });
 
     test("Button disable click", () => {
         // Given
-        const onClick = vitest.fn();
+        const onClickSpy = vitest.fn();
 
         // When
         render(
-            <Button onClick={onClick} disabled>
+            <Button onClick={onClickSpy} disabled>
                 Button
             </Button>
         );
@@ -32,6 +32,6 @@ describe("Button", () => {
         const renderedButton = screen.getByRole("button");
         fireEvent.click(renderedButton);
 
-        expect(onClick).not.toHaveBeenCalled();
+        expect(onClickSpy).not.toHaveBeenCalled();
     });
 });

@@ -15,6 +15,7 @@ export default function Checkbox({
 }: Props) {
     return (
         <CheckboxContainer className={className}>
+            {/* Hide the default checkbox to maintain its feature. Display a styled pseudo-element */}
             <Toggle>
                 <input
                     id={idAttribute ?? title}

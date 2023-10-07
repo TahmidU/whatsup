@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef } from "react";
-import { CheckboxContainer, Toggle } from "./styles";
+import { CheckboxContainer, CustomStyleCheckbox } from "./styles";
 import CheckIcon from "@/icons/CheckIcon";
 
 interface Props extends ComponentPropsWithRef<"input"> {
@@ -16,14 +16,14 @@ export default function Checkbox({
     return (
         <CheckboxContainer className={className}>
             {/* Hide the default checkbox to maintain its feature. Display a styled pseudo-element */}
-            <Toggle>
+            <CustomStyleCheckbox>
                 <input
                     id={idAttribute ?? title}
                     type="checkbox"
                     {...restProps}
                 />
                 <CheckIcon />
-            </Toggle>
+            </CustomStyleCheckbox>
 
             <label htmlFor={idAttribute ?? title}>{title}</label>
         </CheckboxContainer>

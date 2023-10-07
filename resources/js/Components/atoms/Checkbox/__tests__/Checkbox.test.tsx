@@ -1,5 +1,5 @@
 import Checkbox from "..";
-import { fireEvent, render, screen } from "../../../../utils/TestUtils";
+import { fireEvent, render, screen } from "@/utils/TestUtils";
 import { expect, describe } from "vitest";
 
 describe("Checkbox", () => {

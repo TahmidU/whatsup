@@ -1,5 +1,5 @@
 import AppContextProvider from "@/Components/providers/AppContextProvider";
-import { cleanup, queryByAttribute, render } from "@testing-library/react";
+import { cleanup, render } from "@testing-library/react";
 import { afterEach } from "vitest";
 
 afterEach(() => {

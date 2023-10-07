@@ -17,7 +17,7 @@ export const CheckboxContainer = styled.div`
 `;
 CheckboxContainer.displayName = "Container";
 
-export const Toggle = styled.div`
+export const CustomStyleCheckbox = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,4 +62,4 @@ export const Toggle = styled.div`
         color: ${({theme}) => theme.colours.primary};
     }
 `;
-Toggle.displayName = "Toggle"
+CustomStyleCheckbox.displayName = "Toggle"

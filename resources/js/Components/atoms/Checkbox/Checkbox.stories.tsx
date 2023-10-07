@@ -14,4 +14,5 @@ export const Basic = (args: ComponentProps<typeof Checkbox>) => (
 Basic.args = {
     title: "Remember me",
     idAttribute: "test-checkbox",
+    disabled: false,
 };

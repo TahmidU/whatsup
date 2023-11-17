@@ -1,3 +1,5 @@
+# WIP
+
 <p align="center"><img src="https://github.com/TahmidU/whatsup/blob/dev/public/logo/logo_alt.png?raw=true" width="100" alt="Whatsup Logo"></p>
 
 <h2 align="center">Whatsup</h2>
@@ -49,18 +51,13 @@ This section focuses on how I went about structuring my code and my project's di
 
 -   For styles I've used Styled-Components since it organically works well with React.
 
-#### Design Architecture:
+#### Design Architecture & Folder structure (WIP):
 
 -   The architecture pattern that I've decided for the FE is the atomic design principle
     -   This means that components are split up as:
         -   **ATOMS**: Smallest meaningful component possible (such as a button)
         -   **MOLECULES**: Builds on ATOMS. It's a component that's not quite concrete
         -   **ORGANISMS**: Builds on MOLECULES. It's a component that's concrete and makes sense to be used directly on a page
-    -   The why this design principle was used is because:
-        -   It works well with React's philosophy, of splitting up elements into meaningful and organised components
-        -   Stories are easier to find and components are self-defined
-        -   Page components end up looking cleaner
-        -   Encourages component reusability
 
 ### BE
 

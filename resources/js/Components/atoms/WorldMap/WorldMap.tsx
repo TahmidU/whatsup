@@ -1,5 +1,6 @@
 import MapPoints from "./constants/MapPoints";
 import useMapPoints from "./hooks/useMapPoints";
+import { SVGContainer } from "./style";
 
 interface Props {
     selectionInterval?: number;
@@ -12,7 +13,7 @@ export default function WorldMap({
     const { selectedPoints } = useMapPoints(selectionInterval, selectNum);
 
     return (
-        <svg
+        <SVGContainer
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
             xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -35,11 +36,20 @@ export default function WorldMap({
                     fill="rgba(30, 31, 35, 1)"
                 />
                 <path
-                    d={selectedPoints}
+                    key={selectedPoints.in}
+                    d={selectedPoints.in}
                     transform="scale(3.73)"
                     fill="#ffffff"
+                    className="points-in"
+                />
+                <path
+                    key={selectedPoints.out}
+                    d={selectedPoints.out}
+                    transform="scale(3.73)"
+                    fill="#ffffff"
+                    className="points-out"
                 />
             </g>
-        </svg>
+        </SVGContainer>
     );
 }

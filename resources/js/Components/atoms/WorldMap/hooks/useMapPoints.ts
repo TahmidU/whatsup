@@ -29,6 +29,7 @@ export default function useMapPoints(selectionInterval = 5000, selectNum = 50) {
             setSelectedPoints(randomlySelectPoints(memoMapPoints, selectNum));
         }
 
+        setNewPoints();
         const findPointsToSelectInterval = setInterval(
             setNewPoints,
             selectionInterval

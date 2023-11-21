@@ -7,10 +7,13 @@ interface Props {
     selectNum?: number;
 }
 export default function WorldMap({
-    selectionInterval = 5000,
+    selectionInterval = 2500,
     selectNum = 50,
 }: Props) {
-    const { selectedPoints } = useMapPoints(selectionInterval, selectNum);
+    const { selectedPoints, inRef, outRef } = useMapPoints(
+        selectionInterval,
+        selectNum
+    );
 
     return (
         <SVGContainer
@@ -37,16 +40,17 @@ export default function WorldMap({
                 />
                 <path
                     key={selectedPoints.in}
+                    ref={inRef}
                     d={selectedPoints.in}
                     transform="scale(3.73)"
-                    fill="#ffffff"
                     className="points-in"
                 />
+
                 <path
                     key={selectedPoints.out}
+                    ref={outRef}
                     d={selectedPoints.out}
                     transform="scale(3.73)"
-                    fill="#ffffff"
                     className="points-out"
                 />
             </g>

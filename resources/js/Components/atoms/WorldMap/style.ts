@@ -2,34 +2,34 @@ import styled from "styled-components";
 
 export const SVGContainer = styled.svg`
     .points-in {
-        -webkit-animation: fade-in 5s; /* Safari, Chrome and Opera > 12.1 */
-        -moz-animation: fade-in 5s; /* Firefox < 16 */
-        -ms-animation: fade-in 5s; /* Internet Explorer */
-        -o-animation: fade-in 5s; /* Opera < 12.1 */
-        animation: fade-in 5s;
+        animation: fade-in 2.5s;
+
+        fill: white;
 
         @keyframes fade-in {
             from {
+                fill: transparent;
                 opacity: 0;
             }
             to {
+                fill: white;
                 opacity: 1;
             }
         }
     }
 
     .points-out {
-        -webkit-animation: fade-out 5s; /* Safari, Chrome and Opera > 12.1 */
-        -moz-animation: fade-out 5s; /* Firefox < 16 */
-        -ms-animation: fade-out 5s; /* Internet Explorer */
-        -o-animation: fade-out 5s; /* Opera < 12.1 */
-        animation: fade-out 5s;
+        animation: fade-out 2.5s;
+
+        fill: transparent;
 
         @keyframes fade-out {
             from {
+                fill: white;
                 opacity: 1;
             }
             to {
+                fill: transparent;
                 opacity: 0;
             }
         }

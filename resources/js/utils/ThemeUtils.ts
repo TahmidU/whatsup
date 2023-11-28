@@ -7,7 +7,6 @@ import {
     UseThemeType,
 } from "@/types/Theme";
 import Color from "color";
-import { ShallowFlatten } from "./TypeUtils";
 
 // This will change over time...
 function getPrimaryColours(theme: ColourTheme): PrimaryColours {

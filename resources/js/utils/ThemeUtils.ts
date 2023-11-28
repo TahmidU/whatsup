@@ -4,9 +4,10 @@ import {
     FontFamilies,
     Fonts,
     PrimaryColours,
-    useThemeType,
+    UseThemeType,
 } from "@/types/Theme";
 import Color from "color";
+import { ShallowFlatten } from "./TypeUtils";
 
 // This will change over time...
 function getPrimaryColours(theme: ColourTheme): PrimaryColours {
@@ -69,8 +70,11 @@ const fontFamilies: FontFamilies = {
     inter: "'Inter', sans-serif",
 };
 
-export function getTheme(theme: ColourTheme): useThemeType["value"] {
+export function getTheme(
+    theme: ColourTheme
+): UseThemeType["value"] & { current: UseThemeType["current"] } {
     return {
+        current: theme,
         colours: {
             ...getPrimaryColours(theme),
         },

@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { SVGContainerStyleTransient } from "./types/Styles";
 
-export const SVGContainer = styled.svg`
+export const SVGContainer = styled.svg<SVGContainerStyleTransient>`
     .points-in {
-        animation: fade-in 2.5s;
+        animation: fade-in
+            ${({ $selectionInterval }) => `${$selectionInterval}s`};
 
         fill: white;
 
@@ -19,7 +21,8 @@ export const SVGContainer = styled.svg`
     }
 
     .points-out {
-        animation: fade-out 2.5s;
+        animation: fade-out
+            ${({ $selectionInterval }) => `${$selectionInterval}s`};
 
         fill: transparent;
 
@@ -33,5 +36,16 @@ export const SVGContainer = styled.svg`
                 opacity: 0;
             }
         }
+    }
+
+    .background {
+        fill: ${({ theme }) => theme.colours.primary};
+    }
+
+    .inactive {
+        fill: ${({ theme }) =>
+            theme.current === "dark"
+                ? theme.cColours.cPrimary.lighten(0.3).toString()
+                : theme.colours.primary};
     }
 `;

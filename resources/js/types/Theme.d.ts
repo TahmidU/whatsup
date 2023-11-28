@@ -34,13 +34,14 @@ export interface FontFamilies {
 }
 
 export interface ThemeValues {
+    current: ColourTheme;
     colours: PrimaryColours;
     cColours: CPrimaryColours;
     fonts: Fonts;
     fontFamilies: FontFamilies;
 }
 
-export interface useThemeType {
+export interface UseThemeType {
     toggle: () => void;
     current: ColourTheme;
     value: ThemeValues;

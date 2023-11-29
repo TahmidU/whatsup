@@ -1,4 +1,4 @@
-import AppContextProvider from "@/Components/providers/AppContextProvider";
+import AppContextProvider from "@/Components/molecules/providers/AppContextProvider";
 import { cleanup, render } from "@testing-library/react";
 import { afterEach } from "vitest";
 

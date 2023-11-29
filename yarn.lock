@@ -8537,9 +8537,9 @@ yocto-queue@^1.0.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-1.0.0.tgz#7f816433fb2cbc511ec8bf7d263c3b58a1a3c251"
   integrity sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==
 
-ziggy-js@^1.6.1:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/ziggy-js/-/ziggy-js-1.6.2.tgz#000cd0b1ceae1b891e7bb1df3c3295f67e093f5c"
-  integrity sha512-abUqQ1hatBLZnxqfgytxB+Rd3uey+ivPxU5alKxB8GS1xbc0mtntxHX/+tZ9q9UjFGxAUHd4IGGkhg5TboxulQ==
+ziggy-js@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/ziggy-js/-/ziggy-js-1.8.1.tgz#582f4c19424cec0f8b80de2d033d70f953314a94"
+  integrity sha512-fnf30uG0yvUQBPL4T8YPgmkBHUdjYaOFgUb1K1gj0+rclnLTNr9/K/cxC3xkCZyYCZz8oTnXkdf3oJXRPSzavw==
   dependencies:
     qs "~6.9.7"

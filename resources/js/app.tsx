@@ -2,7 +2,7 @@ import { createInertiaApp } from "@inertiajs/react";
 import { createRoot } from "react-dom/client";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import AppContextProvider from "./Components/providers/AppContextProvider";
+import AppContextProvider from "./Components/molecules/providers/AppContextProvider";
 
 createInertiaApp({
     resolve: (name) => {

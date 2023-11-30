@@ -1,3 +1,4 @@
+import { dark, light } from "@/constants/Themes";
 import {
     CPrimaryColours,
     ColourTheme,
@@ -11,24 +12,8 @@ import Color from "color";
 // This will change over time...
 function getPrimaryColours(theme: ColourTheme): PrimaryColours {
     return {
-        dark: {
-            primary: "#16171B",
-            secondary: "#1F2125",
-            mainText: "#FFFFFF",
-            accent: "#1CD774",
-            danger: "#ED2939",
-            success: "#1CD774",
-            info: "#FFFFFF",
-        },
-        light: {
-            primary: "#FFFFFF",
-            secondary: "#17301C",
-            mainText: "#FFFFFF",
-            accent: "#1CD774",
-            danger: "#ED2939",
-            success: "#1CD774",
-            info: "#FFFFFF",
-        },
+        dark,
+        light,
     }[theme];
 }
 

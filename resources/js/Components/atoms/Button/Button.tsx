@@ -7,7 +7,7 @@ interface Props extends ButtonContainerStyle, ComponentPropsWithRef<"button"> {
     className?: string;
 }
 export default function Button({
-    buttonType = "action",
+    variant = "action",
     borderSize = "sm",
     children,
     className = "",
@@ -15,7 +15,7 @@ export default function Button({
 }: Props) {
     return (
         <ButtonContainer
-            $buttonType={buttonType}
+            $variant={variant}
             $borderSize={borderSize}
             className={className}
             {...restProps}

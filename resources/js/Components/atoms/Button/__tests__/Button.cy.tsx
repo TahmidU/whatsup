@@ -9,7 +9,7 @@ describe("Button", () => {
 
         // When
         cy.mount(
-            <Button id="button" buttonType="action">
+            <Button id="button" variant="action">
                 Test
             </Button>
         );
@@ -28,7 +28,7 @@ describe("Button", () => {
 
         // When
         cy.mount(
-            <Button id="button" buttonType="danger">
+            <Button id="button" variant="danger">
                 Test
             </Button>
         );
@@ -49,7 +49,7 @@ describe("Button", () => {
 
         // When
         cy.mount(
-            <Button id="button" buttonType="action">
+            <Button id="button" variant="action">
                 Test
             </Button>
         );
@@ -72,7 +72,7 @@ describe("Button", () => {
 
         // When
         cy.mount(
-            <Button id="button" buttonType="danger">
+            <Button id="button" variant="danger">
                 Test
             </Button>
         );
@@ -95,7 +95,7 @@ describe("Button", () => {
 
         // When
         cy.mount(
-            <Button id="button" buttonType="action" disabled>
+            <Button id="button" variant="action" disabled>
                 Test
             </Button>
         );
@@ -116,7 +116,7 @@ describe("Button", () => {
 
         // When
         cy.mount(
-            <Button id="button" buttonType="danger" disabled>
+            <Button id="button" variant="danger" disabled>
                 Test
             </Button>
         );
@@ -137,7 +137,7 @@ describe("Button", () => {
 
         // When
         cy.mount(
-            <Button id="button" buttonType="action" disabled>
+            <Button id="button" variant="action" disabled>
                 Test
             </Button>
         );
@@ -160,7 +160,7 @@ describe("Button", () => {
 
         // When
         cy.mount(
-            <Button id="button" buttonType="danger" disabled>
+            <Button id="button" variant="danger" disabled>
                 Test
             </Button>
         );

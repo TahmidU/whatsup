@@ -1,18 +1,22 @@
-import { NAV_LINKS } from "@/Components/organisms/common/Navbar/constants/Links";
+import { LINK_NAMES } from "@/Components/organisms/common/Navbar/constants/Links";
 import { Container, NavLink } from "./styles";
+import { PageType } from "@/Components/organisms/common/Navbar/types/Link";
+import { getPublicImage } from "@/utils/PublicImagesUtil";
 
 interface Props {
-    selectedPage: (typeof NAV_LINKS)[number];
+    selectedPage: PageType;
 }
 export default function Navbar({ selectedPage }: Props) {
     return (
         <Container>
-            <div>
-                <img />
+            <div className="logo">
+                <img
+                    src={getPublicImage({ name: "logo_dark", type: "logo" })}
+                />
             </div>
 
             <ul className="nav-list">
-                {NAV_LINKS.map((link) => {
+                {LINK_NAMES.map((link) => {
                     return (
                         <li key={link}>
                             <NavLink
@@ -27,7 +31,7 @@ export default function Navbar({ selectedPage }: Props) {
                 })}
             </ul>
 
-            <div></div>
+            <div className="actions">Buttons</div>
         </Container>
     );
 }

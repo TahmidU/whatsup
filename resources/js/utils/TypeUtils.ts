@@ -3,3 +3,9 @@ export type PrefixObjectKeys<P extends string, K> = {
 };
 
 export type ShallowFlatten<T, K extends keyof T> = T[K];
+
+export type CapitalizeKeys<K, V> = keyof K extends string
+    ? {
+          [key in Capitalize<keyof K>]: V;
+      }
+    : never;

@@ -1,4 +1,4 @@
-import { PrefixKey } from "@/utils/TypeUtils";
+import { CapitalizeKeys, PrefixObjectKeys } from "@/utils/TypeUtils";
 import Color from "color";
 
 export type ColourTheme = "dark" | "light";
@@ -13,9 +13,10 @@ export interface PrimaryColours {
     info: string;
 }
 
-export type CPrimaryColours = {
-    [key in PrefixKey<"c", Capitalize<keyof PrimaryColours>>]: Color<string>;
-};
+export type CPrimaryColours = PrefixObjectKeys<
+    "c",
+    CapitalizeKeys<PrimaryColours, Color<string>>
+>;
 
 export interface Fonts {
     xs: string;

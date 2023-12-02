@@ -35,7 +35,17 @@ export const Container = styled.nav`
     }
 
     .actions {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        gap: 1rem;
         margin: 0 2rem 0 0;
+
+        font-size: ${({ theme }) => theme.fonts.md};
+
+        button {
+            width: fit-content;
+        }
     }
 `;
 Container.displayName = "Container";

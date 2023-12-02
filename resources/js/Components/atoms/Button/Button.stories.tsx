@@ -12,7 +12,7 @@ export const Basic = (args: ComponentProps<typeof Button>) => (
     <Button {...args}>Test</Button>
 );
 Basic.args = {
-    buttonType: "action",
+    variant: "action",
     borderSize: "md",
     disabled: false,
 };

@@ -32,6 +32,8 @@ export default function Navbar({ selectedPage }: Props) {
                 })}
             </ul>
 
+            {/* <div className="actions">Test</div> */}
+
             <div className="actions">
                 <Button variant="text">Sign Up</Button>
                 <Button variant="ghost" borderSize="lg">

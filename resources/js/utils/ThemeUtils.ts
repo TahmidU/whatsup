@@ -1,15 +1,12 @@
-import { dark, light } from "@/constants/Themes";
+import { dark, fontFamilies, fonts, light } from "@/constants/Themes";
 import {
     CPrimaryColours,
     ColourTheme,
-    FontFamilies,
-    Fonts,
     PrimaryColours,
     UseThemeType,
 } from "@/types/Theme";
 import Color from "color";
 
-// This will change over time...
 function getPrimaryColours(theme: ColourTheme): PrimaryColours {
     return {
         dark,
@@ -37,22 +34,6 @@ function getCColours(theme: ColourTheme) {
 
     return cColours as CPrimaryColours;
 }
-
-const fonts: Fonts = {
-    xs: "8px",
-    sm: "11px",
-    md: "14px",
-    lg: "18px",
-    xl: "20px",
-    "2xl": "24px",
-    "3xl": "32px",
-};
-
-const fontFamilies: FontFamilies = {
-    arial: "Arial, sans-serif",
-    roboto: "'Roboto', sans-serif",
-    inter: "'Inter', sans-serif",
-};
 
 export function getTheme(
     theme: ColourTheme

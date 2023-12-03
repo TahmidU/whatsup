@@ -18,19 +18,12 @@ export default function WorldMap({
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
             xmlnsXlink="http://www.w3.org/1999/xlink"
-            width="1440"
-            height="560"
             preserveAspectRatio="none"
-            viewBox="0 0 1440 560"
+            width="100%"
+            height="100%"
         >
             <g mask='url("#SvgjsMask1006")' fill="none">
-                <rect
-                    width="1440"
-                    height="560"
-                    x="0"
-                    y="0"
-                    className="background"
-                />
+                <rect x="0" y="0" className="background" />
                 <path
                     d={MapPoints}
                     transform="scale(3.73)"

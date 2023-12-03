@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { SVGContainerStyleTransient } from "./types/Styles";
 
 export const SVGContainer = styled.svg<SVGContainerStyleTransient>`
+    box-sizing: border-box;
+
     .points-in {
         animation: fade-in
             ${({ $selectionInterval }) => `${$selectionInterval}s`};

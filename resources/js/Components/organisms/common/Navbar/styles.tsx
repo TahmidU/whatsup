@@ -9,24 +9,28 @@ export const Container = styled.nav`
     width: 100%;
     height: 72px;
     background: ${({ theme }) => theme.colours.primary};
+    padding: 0 3rem;
+    box-sizing: border-box;
 
     .logo {
-        margin: 0 0 0 2rem;
-        width: 2rem;
+        width: 10rem;
         height: 2rem;
 
         > img {
-            width: 100%;
-            height: 100%;
+            width: 2rem;
+            height: 2rem;
         }
     }
 
     .nav-list {
         ${REMOVE_LIST_STYLE};
         display: flex;
+        width: fit-content;
         justify-content: space-between;
         align-items: center;
         column-gap: 1rem;
+        padding: 0;
+        /* padding-left: 8.25rem; */
 
         li {
             font-size: ${({ theme }) => theme.fonts.md};
@@ -37,10 +41,8 @@ export const Container = styled.nav`
     .actions {
         display: flex;
         align-items: center;
-        width: fit-content;
+        width: 10rem;
         gap: 1rem;
-        margin: 0 2rem 0 0;
-
         font-size: ${({ theme }) => theme.fonts.md};
 
         button {

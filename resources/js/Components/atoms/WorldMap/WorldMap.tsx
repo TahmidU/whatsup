@@ -18,12 +18,12 @@ export default function WorldMap({
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
             xmlnsXlink="http://www.w3.org/1999/xlink"
-            preserveAspectRatio="none"
-            width="100%"
-            height="100%"
+            preserveAspectRatio="xMidYMid meet"
+            width="2880"
+            height="780"
+            viewBox="0 0 1440 560"
         >
-            <g mask='url("#SvgjsMask1006")' fill="none">
-                <rect x="0" y="0" className="background" />
+            <g fill="none" style={{ height: "100%", width: "100%" }}>
                 <path
                     d={MapPoints}
                     transform="scale(3.73)"

@@ -33,7 +33,8 @@ export const ButtonContainer = styled(ButtonDefaults)<ButtonContainerStyleTransi
             ? theme.cColours.cAccent.darken(disabled ? 0.5 : 0).toString()
             : $variant === "danger"
             ? theme.cColours.cDanger.darken(disabled ? 0.5 : 0).toString()
-            : "transparent"};
+            : $variant === "ghost" 
+            ? theme.cColours.cPrimary.alpha(0.85).toString() : "transparent"};
 
     color: ${({ theme }) => theme.colours.mainText};
 

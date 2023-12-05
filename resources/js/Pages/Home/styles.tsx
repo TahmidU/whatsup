@@ -24,6 +24,9 @@ export const Hero = styled.section`
                 font-size: ${({ theme }) => theme.fonts["6xl"]};
                 line-height: normal;
                 margin: 0;
+                text-shadow: 0px 0px 40px
+                    ${({ theme }) =>
+                        theme.cColours.cAccent.alpha(0.2).toString()};
             }
 
             & > p:first-child {
@@ -32,17 +35,6 @@ export const Hero = styled.section`
 
             & > p:nth-child(2) {
                 color: ${({ theme }) => theme.colours.accent};
-            }
-
-            .glow {
-                position: absolute;
-                background-color: ${({ theme }) => theme.colours.accent};
-                opacity: 0.04;
-                filter: blur(32px);
-                width: 100%;
-                height: 100%;
-                z-index: 1000;
-                top: 0;
             }
         }
 
@@ -60,8 +52,10 @@ export const Hero = styled.section`
     }
 
     .hero-background {
-        filter: blur(1.25px);
-        opacity: 0.5;
+        display: flex;
+        justify-content: center;
+        opacity: 0.35;
+        width: 100%;
     }
 `;
 Hero.displayName = "Hero";

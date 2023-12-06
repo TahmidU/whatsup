@@ -19,8 +19,8 @@ export default function WorldMap({
             version="1.1"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             preserveAspectRatio="xMidYMid meet"
-            width="2880"
-            height="780"
+            width="100%"
+            height="100%"
             viewBox="0 0 1440 560"
         >
             <g fill="none" style={{ height: "100%", width: "100%" }}>

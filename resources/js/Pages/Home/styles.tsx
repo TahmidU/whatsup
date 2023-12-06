@@ -1,7 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    min-height: calc(100vh - 72px);
+    max-height: calc(100vh - 72px);
+    display: flex;
+    margin: 5rem 0 0 0;
+    justify-content: center;
     background-color: ${({ theme }) => theme.colours.primary};
+    width: 100%;
+    height: 100%;
     font-family: ${({ theme }) => theme.fontFamilies.inter};
 `;
 Container.displayName = "Container";
@@ -52,10 +59,17 @@ export const Hero = styled.section`
     }
 
     .hero-background {
+        position: absolute;
         display: flex;
-        justify-content: center;
+        align-items: start;
+        justify-content: start;
         opacity: 0.35;
         width: 100%;
+        max-width: calc(1440px * 1.4);
+
+        svg {
+            transform: scale(1);
+        }
     }
 `;
 Hero.displayName = "Hero";

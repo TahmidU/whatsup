@@ -1,19 +1,17 @@
+import { ASSETS } from "@/utils/PublicImagesUtil";
+
 export interface IconInterface {
     className?: string;
 }
 
-type LogoType = "logo";
-type LogoNameType = "logo_dark";
-export type LogoPathType = {
-    [key in LogoNameType]: `/logo/${string}`;
+export type AssetType = {
+    type: "assets";
+    name: keyof (typeof ASSETS)["assets"];
 };
 
-type PublicLogoType = {
-    name: LogoNameType;
-    type: LogoType;
+export type LogoType = {
+    type: "logo";
+    name: keyof (typeof ASSETS)["logo"];
 };
-export type PublicPropsType = PublicLogoType;
 
-export type AssetInterface = {
-    [key in LogoType]: LogoPathType;
-};
+export type ImageAssetsType = AssetType | LogoType;

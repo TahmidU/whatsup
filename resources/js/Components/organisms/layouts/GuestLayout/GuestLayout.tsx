@@ -1,5 +1,5 @@
 import Navbar from "@/Components/organisms/common/Navbar";
-import { Container } from "./styles";
+import { GuestLayoutContainer } from "./styles";
 import { ReactNode } from "react";
 
 interface Props {
@@ -7,9 +7,9 @@ interface Props {
 }
 export default function GuestLayout({ children }: Props) {
     return (
-        <Container>
+        <GuestLayoutContainer>
             <Navbar selectedPage="Home" />
             {children}
-        </Container>
+        </GuestLayoutContainer>
     );
 }

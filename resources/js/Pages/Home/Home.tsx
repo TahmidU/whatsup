@@ -1,16 +1,16 @@
 import Button from "@/Components/atoms/Button";
 import WorldMap from "@/Components/atoms/WorldMap";
 import GuestLayout from "@/Components/organisms/layouts/GuestLayout";
-import { Container, Hero } from "@/Pages/Home/styles";
+import { HomePageContainer, Hero } from "@/Pages/Home/styles";
 import PublicImagesUtil from "@/utils/PublicImagesUtil";
 
 const Home = () => {
     return (
-        <Container>
+        <HomePageContainer>
             <Hero>
-                <section>
+                <section className="hero-intro">
                     <header>
-                        <h1 className="hero-title">
+                        <h1>
                             <p>Next generation web app for</p>
                             <p>secure and private messaging</p>
                             <div className="glow" />
@@ -24,7 +24,7 @@ const Home = () => {
                         </Button>
                     </header>
 
-                    <footer className="hero-preview">
+                    <footer>
                         <img
                             src={PublicImagesUtil.getPublicImage({
                                 type: "assets",
@@ -38,7 +38,7 @@ const Home = () => {
                     <WorldMap selectNum={100} selectionInterval={5} />
                 </div>
             </Hero>
-        </Container>
+        </HomePageContainer>
     );
 };
 

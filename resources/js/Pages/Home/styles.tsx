@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const HomePageContainer = styled.div`
     min-height: calc(100vh - 72px);
-    max-height: calc(100vh - 72px);
-    display: flex;
+    /* max-height: calc(100vh - 72px); */
+    display: block;
+
     margin: 5rem 0 0 0;
     justify-content: center;
     background-color: ${({ theme }) => theme.colours.primary};
@@ -11,50 +12,64 @@ export const Container = styled.div`
     height: 100%;
     font-family: ${({ theme }) => theme.fontFamilies.inter};
 `;
-Container.displayName = "Container";
+HomePageContainer.displayName = "HomePageContainer";
 
-export const Hero = styled.section`
+export const Hero = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
     width: 100%;
+    height: 100%;
 
-    header {
+    .hero-intro {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 100%;
         position: absolute;
         z-index: 100;
-        text-align: center;
 
-        .hero-title {
-            position: relative;
+        header {
+            text-align: center;
 
-            p {
-                font-size: ${({ theme }) => theme.fonts["6xl"]};
-                line-height: normal;
-                margin: 0;
-                text-shadow: 0px 0px 40px
-                    ${({ theme }) =>
-                        theme.cColours.cAccent.alpha(0.2).toString()};
+            h1 {
+                position: relative;
+
+                p {
+                    font-size: ${({ theme }) => theme.fonts["6xl"]};
+                    line-height: normal;
+                    margin: 0;
+                    text-shadow: 0px 0px 40px
+                        ${({ theme }) =>
+                            theme.cColours.cAccent.alpha(0.2).toString()};
+                }
+
+                & > p:first-child {
+                    color: ${({ theme }) => theme.colours.mainText};
+                }
+
+                & > p:nth-child(2) {
+                    color: ${({ theme }) => theme.colours.accent};
+                }
             }
 
-            & > p:first-child {
+            h2 {
                 color: ${({ theme }) => theme.colours.mainText};
+                font-weight: 400;
+                margin-bottom: 4rem;
             }
 
-            & > p:nth-child(2) {
-                color: ${({ theme }) => theme.colours.accent};
+            button {
+                width: 124px;
+                padding: 0.35rem 0.75rem;
+                font-size: ${({ theme }) => theme.fonts.md};
             }
         }
 
-        h2 {
-            color: ${({ theme }) => theme.colours.mainText};
-            font-weight: 400;
-            margin-bottom: 4rem;
-        }
-
-        button {
-            width: 124px;
-            padding: 0.35rem 0.75rem;
-            font-size: ${({ theme }) => theme.fonts.md};
+        footer {
         }
     }
 
@@ -66,6 +81,7 @@ export const Hero = styled.section`
         opacity: 0.35;
         width: 100%;
         max-width: calc(1440px * 1.4);
+        z-index: 0;
 
         svg {
             transform: scale(1);

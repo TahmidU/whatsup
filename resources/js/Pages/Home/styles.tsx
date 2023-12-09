@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const HomePageContainer = styled.div`
-    min-height: calc(100vh - 72px);
     /* max-height: calc(100vh - 72px); */
     display: block;
 
@@ -20,6 +19,7 @@ export const Hero = styled.div`
     justify-content: center;
     width: 100%;
     height: 100%;
+    min-height: calc(100vh - 72px);
 
     .hero-intro {
         display: flex;

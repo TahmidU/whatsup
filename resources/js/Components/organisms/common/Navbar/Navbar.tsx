@@ -1,8 +1,12 @@
-import { LINK_NAMES } from "@/Components/organisms/common/Navbar/constants/Links";
+import {
+    LINK_NAMES,
+    NAV_LINKS_ROUTES,
+} from "@/Components/organisms/common/Navbar/constants/Links";
 import { Container, NavLink } from "./styles";
 import { PageType } from "@/Components/organisms/common/Navbar/types/Link";
 import { getPublicImage } from "@/utils/PublicImagesUtil";
 import Button from "@/Components/atoms/Button";
+// import route from "ziggy-js";
 
 interface Props {
     selectedPage: PageType;
@@ -17,12 +21,12 @@ export default function Navbar({ selectedPage }: Props) {
             </div>
 
             <ul className="nav-list">
-                {LINK_NAMES.map((link) => {
+                {NAV_LINKS_ROUTES.map(({ name: link, route: linkRoute }) => {
                     return (
                         <li key={link}>
                             <NavLink
                                 title={link}
-                                href={link}
+                                href={route(linkRoute)}
                                 $selected={selectedPage === link}
                             >
                                 {link}

@@ -38,6 +38,8 @@ const Home = () => {
                     <WorldMap selectNum={100} selectionInterval={5} />
                 </div>
             </Hero>
+
+            <div></div>
         </HomePageContainer>
     );
 };

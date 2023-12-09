@@ -70,6 +70,85 @@ export const Hero = styled.div`
         }
 
         footer {
+            position: relative;
+
+            width: 90rem;
+            height: 64.25rem;
+
+            .preview-border-animation {
+                --border-size: 2px;
+                --border-angle: 0turn;
+
+                border-radius: 0.5rem;
+                position: absolute;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                background-image: conic-gradient(
+                    from var(--border-angle),
+                    transparent 90%,
+                    #f03
+                );
+
+                -webkit-mask-image: linear-gradient(
+                        to top,
+                        black,
+                        transparent 1%,
+                        transparent 90%,
+                        transparent 99%,
+                        black
+                    ),
+                    linear-gradient(
+                        to left,
+                        black,
+                        transparent 1%,
+                        transparent 90%,
+                        transparent 99%,
+                        black
+                    );
+                -webkit-mask-repeat: no-repeat;
+
+                animation: bg-spin 8s linear infinite;
+                @keyframes bg-spin {
+                    to {
+                        --border-angle: 1turn;
+                    }
+                }
+
+                @property --border-angle {
+                    syntax: "<angle>";
+                    inherits: true;
+                    initial-value: 0turn;
+                }
+            }
+
+            .preview-container {
+                position: absolute;
+                z-index: 200;
+                padding: 0.1rem;
+
+                -webkit-mask-image: linear-gradient(
+                    to bottom,
+                    black 15%,
+                    transparent 60%,
+                    transparent 80%
+                );
+                mask-image: linear-gradient(
+                    to bottom,
+                    black 15%,
+                    transparent 60%,
+                    transparent 80%
+                );
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 0.5rem;
+                    border: 1px solid
+                        ${({ theme }) =>
+                            theme.cColours.cPrimary.lighten(0.2).toString()};
+                }
+            }
         }
     }
 

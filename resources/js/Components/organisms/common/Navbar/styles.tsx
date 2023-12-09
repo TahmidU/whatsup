@@ -2,7 +2,7 @@ import { NavLinkStyleTransient } from "@/Components/organisms/common/Navbar/type
 import { REMOVE_LINK_STYLE, REMOVE_LIST_STYLE } from "@/constants/Styles";
 import styled from "styled-components";
 
-export const Container = styled.nav`
+export const NavBarContainer = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -50,7 +50,7 @@ export const Container = styled.nav`
         }
     }
 `;
-Container.displayName = "Container";
+NavBarContainer.displayName = "NavBarContainer";
 
 export const NavLink = styled.a<NavLinkStyleTransient>`
     ${REMOVE_LINK_STYLE};

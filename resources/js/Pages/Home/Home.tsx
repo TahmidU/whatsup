@@ -25,12 +25,16 @@ const Home = () => {
                     </header>
 
                     <footer>
-                        <img
-                            src={PublicImagesUtil.getPublicImage({
-                                type: "assets",
-                                name: "chat_page",
-                            })}
-                        />
+                        <div className="preview-border-animation" />
+                        <div className="preview-container">
+                            <img
+                                src={PublicImagesUtil.getPublicImage({
+                                    type: "assets",
+                                    name: "chat_page",
+                                })}
+                                alt="chat_page"
+                            />
+                        </div>
                     </footer>
                 </section>
 

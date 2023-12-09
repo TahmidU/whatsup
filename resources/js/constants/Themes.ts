@@ -2,7 +2,7 @@ import { PrimaryColours } from "@/types/Theme";
 
 export const dark: PrimaryColours = {
     primary: "#16171B",
-    secondary: "#1F2125",
+    secondary: "#1F2125", // TODO: remove
     mainText: "#FFFFFF",
     accent: "#1CD774",
     danger: "#ED2939",

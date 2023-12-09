@@ -2,7 +2,7 @@ import {
     LINK_NAMES,
     NAV_LINKS_ROUTES,
 } from "@/Components/organisms/common/Navbar/constants/Links";
-import { Container, NavLink } from "./styles";
+import { NavBarContainer, NavLink } from "./styles";
 import { PageType } from "@/Components/organisms/common/Navbar/types/Link";
 import { getPublicImage } from "@/utils/PublicImagesUtil";
 import Button from "@/Components/atoms/Button";
@@ -13,7 +13,7 @@ interface Props {
 }
 export default function Navbar({ selectedPage }: Props) {
     return (
-        <Container>
+        <NavBarContainer>
             <div className="logo">
                 <img
                     src={getPublicImage({ name: "logo_dark", type: "logo" })}
@@ -44,6 +44,6 @@ export default function Navbar({ selectedPage }: Props) {
                     Login
                 </Button>
             </div>
-        </Container>
+        </NavBarContainer>
     );
 }

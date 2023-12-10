@@ -25,7 +25,19 @@ const Home = () => {
                     </header>
 
                     <footer>
-                        <div className="preview-border-animation" />
+                        <div className="preview-border-animation">
+                            <div className="preview-container">
+                                <img
+                                    src={PublicImagesUtil.getPublicImage({
+                                        type: "assets",
+                                        name: "chat_page",
+                                    })}
+                                    alt="chat_page"
+                                />
+                            </div>
+                        </div>
+
+                        {/* <div className="preview-border-animation" />
                         <div className="preview-container">
                             <img
                                 src={PublicImagesUtil.getPublicImage({
@@ -34,7 +46,7 @@ const Home = () => {
                                 })}
                                 alt="chat_page"
                             />
-                        </div>
+                        </div> */}
                     </footer>
                 </section>
 

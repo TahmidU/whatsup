@@ -70,8 +70,9 @@ export const Hero = styled.div`
         }
 
         footer {
-            position: relative;
+            --preview-border-radius: 0.5rem;
 
+            position: relative;
             width: 90rem;
             height: 64.25rem;
 
@@ -79,34 +80,13 @@ export const Hero = styled.div`
                 --border-size: 2px;
                 --border-angle: 0turn;
 
-                border-radius: 0.5rem;
-                position: absolute;
-                z-index: -1;
-                width: 100%;
-                height: 100%;
+                border-radius: var(--preview-border-radius);
+
                 background-image: conic-gradient(
                     from var(--border-angle),
-                    transparent 90%,
-                    #f03
+                    transparent 75%,
+                    ${({ theme }) => theme.colours.accent}
                 );
-
-                -webkit-mask-image: linear-gradient(
-                        to top,
-                        black,
-                        transparent 1%,
-                        transparent 90%,
-                        transparent 99%,
-                        black
-                    ),
-                    linear-gradient(
-                        to left,
-                        black,
-                        transparent 1%,
-                        transparent 90%,
-                        transparent 99%,
-                        black
-                    );
-                -webkit-mask-repeat: no-repeat;
 
                 animation: bg-spin 8s linear infinite;
                 @keyframes bg-spin {
@@ -123,30 +103,19 @@ export const Hero = styled.div`
             }
 
             .preview-container {
-                position: absolute;
-                z-index: 200;
-                padding: 0.1rem;
+                --img-padding: 0.15rem;
 
-                -webkit-mask-image: linear-gradient(
-                    to bottom,
-                    black 15%,
-                    transparent 60%,
-                    transparent 80%
+                overflow: hidden;
+                padding: var(--img-padding);
+                border-radius: calc(
+                    var(--preview-border-radius) + (var(--img-padding) * 2)
                 );
-                mask-image: linear-gradient(
-                    to bottom,
-                    black 15%,
-                    transparent 60%,
-                    transparent 80%
-                );
+                width: 1440px;
+                height: 1024px;
 
                 img {
                     width: 100%;
                     height: 100%;
-                    border-radius: 0.5rem;
-                    border: 1px solid
-                        ${({ theme }) =>
-                            theme.cColours.cPrimary.lighten(0.2).toString()};
                 }
             }
         }

@@ -9,7 +9,7 @@ export default function GuestLayout({ children }: Props) {
     return (
         <GuestLayoutContainer>
             <Navbar selectedPage="Home" />
-            {children}
+            <div className="guest-children-container">{children}</div>
         </GuestLayoutContainer>
     );
 }

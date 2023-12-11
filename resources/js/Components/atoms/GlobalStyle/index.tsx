@@ -19,6 +19,16 @@ const GlobalStyle = createGlobalStyle`
         max-height: 100%;
     }
 
+    button{
+        border: 0;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    span, p, div, button, a{
+        font-family: ${({ theme }) => theme.fontFamilies.inter};
+    }
+
     * {
         box-sizing: border-box;
     }

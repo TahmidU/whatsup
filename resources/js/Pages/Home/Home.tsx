@@ -1,19 +1,25 @@
 import Button from "@/Components/atoms/Button";
 import WorldMap from "@/Components/atoms/WorldMap";
 import GuestLayout from "@/Components/organisms/layouts/GuestLayout";
-import { HomePageContainer, Hero } from "@/Pages/Home/styles";
+import { HomePageContainer, Hero, Feature } from "@/Pages/Home/styles";
 import PublicImagesUtil from "@/utils/PublicImagesUtil";
 
 const Home = () => {
     return (
         <HomePageContainer>
             <Hero>
+                <div className="hero-background">
+                    <WorldMap selectNum={100} selectionInterval={5} />
+                </div>
+
                 <section className="hero-intro">
                     <header>
                         <h1>
-                            <p>Next generation web app for</p>
-                            <p>secure and private messaging</p>
-                            <div className="glow" />
+                            Next generation web app for{" "}
+                            <span>
+                                <br />
+                                secure and private messaging
+                            </span>
                         </h1>
                         <h2>
                             Easy, reliable, private messaging. Available
@@ -36,26 +42,29 @@ const Home = () => {
                                 />
                             </div>
                         </div>
-
-                        {/* <div className="preview-border-animation" />
-                        <div className="preview-container">
-                            <img
-                                src={PublicImagesUtil.getPublicImage({
-                                    type: "assets",
-                                    name: "chat_page",
-                                })}
-                                alt="chat_page"
-                            />
-                        </div> */}
                     </footer>
                 </section>
-
-                <div className="hero-background">
-                    <WorldMap selectNum={100} selectionInterval={5} />
-                </div>
             </Hero>
 
-            <div></div>
+            <Feature>
+                <div className="feature-intro">
+                    <h1>
+                        Discover the technology that will
+                        <span>
+                            <br /> power you chat
+                        </span>
+                    </h1>
+                    <h4>
+                        We aim to optimise out tech to provide a secure and
+                        reliable experience
+                    </h4>
+                    <Button variant="ghost" borderSize="lg">
+                        Signup for free
+                    </Button>
+                </div>
+
+                <div></div>
+            </Feature>
         </HomePageContainer>
     );
 };

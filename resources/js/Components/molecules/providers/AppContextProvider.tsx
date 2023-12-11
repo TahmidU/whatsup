@@ -14,8 +14,10 @@ export default function AppContextProvider({ children }: Props) {
 
     return (
         <AppContext.Provider value={{ theme: appTheme }}>
-            <GlobalStyle />
-            <ThemeProvider theme={appTheme.value}>{children}</ThemeProvider>
+            <ThemeProvider theme={appTheme.value}>
+                <GlobalStyle />
+                {children}
+            </ThemeProvider>
         </AppContext.Provider>
     );
 }

@@ -1,4 +1,4 @@
-export default function CheckIcon({ className = "" }: IconType) {
+export default function CheckIcon({ className = "" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

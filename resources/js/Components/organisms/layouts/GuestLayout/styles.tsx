@@ -5,5 +5,10 @@ export const GuestLayoutContainer = styled.div`
     height: auto;
     width: 100%;
     background-color: ${({ theme }) => theme.colours.primary};
+
+    .guest-children-container {
+        margin: 0 auto;
+        max-width: 2048px;
+    }
 `;
 GuestLayoutContainer.displayName = "GuestLayoutContainer";

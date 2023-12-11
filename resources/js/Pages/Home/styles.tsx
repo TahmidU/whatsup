@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const HomePageContainer = styled.div`
-    /* max-height: calc(100vh - 72px); */
     display: block;
-
     margin: 5rem 0 0 0;
     justify-content: center;
     background-color: ${({ theme }) => theme.colours.primary};
@@ -16,7 +14,9 @@ HomePageContainer.displayName = "HomePageContainer";
 export const Hero = styled.div`
     position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     width: 100%;
     height: 100%;
     min-height: calc(100vh - 72px);
@@ -28,32 +28,24 @@ export const Hero = styled.div`
         justify-content: flex-start;
         align-items: center;
         width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: 100;
+        height: fit-content;
 
         header {
             text-align: center;
+            z-index: 1;
 
             h1 {
-                position: relative;
+                font-size: ${({ theme }) => theme.fonts["6xl"]};
+                line-height: normal;
+                margin: 0;
+                text-shadow: 0px 0px 40px
+                    ${({ theme }) =>
+                        theme.cColours.cAccent.alpha(0.2).toString()};
+                color: ${({ theme }) => theme.colours.mainText};
+            }
 
-                p {
-                    font-size: ${({ theme }) => theme.fonts["6xl"]};
-                    line-height: normal;
-                    margin: 0;
-                    text-shadow: 0px 0px 40px
-                        ${({ theme }) =>
-                            theme.cColours.cAccent.alpha(0.2).toString()};
-                }
-
-                & > p:first-child {
-                    color: ${({ theme }) => theme.colours.mainText};
-                }
-
-                & > p:nth-child(2) {
-                    color: ${({ theme }) => theme.colours.accent};
-                }
+            span {
+                color: ${({ theme }) => theme.colours.accent};
             }
 
             h2 {
@@ -74,7 +66,14 @@ export const Hero = styled.div`
 
             position: relative;
             width: 90rem;
-            height: 64.25rem;
+            max-height: 64.25rem;
+
+            mask-image: linear-gradient(
+                to bottom,
+                black 50%,
+                transparent 80%,
+                transparent 100%
+            );
 
             .preview-border-animation {
                 --border-size: 2px;
@@ -111,11 +110,11 @@ export const Hero = styled.div`
                     var(--preview-border-radius) + (var(--img-padding) * 2)
                 );
                 width: 1440px;
-                height: 1024px;
+                height: 594px;
 
                 img {
                     width: 100%;
-                    height: 100%;
+                    height: 1024px;
                 }
             }
         }
@@ -123,6 +122,7 @@ export const Hero = styled.div`
 
     .hero-background {
         position: absolute;
+        top: 0;
         display: flex;
         align-items: start;
         justify-content: start;
@@ -137,3 +137,46 @@ export const Hero = styled.div`
     }
 `;
 Hero.displayName = "Hero";
+
+export const Feature = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 4rem;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+
+    .feature-intro {
+        text-align: center;
+        margin-top: 4rem;
+
+        h1 {
+            font-size: ${({ theme }) => theme.fonts["4xl"]};
+            line-height: normal;
+            margin: 0;
+            text-shadow: 0px 0px 40px
+                ${({ theme }) => theme.cColours.cAccent.alpha(0.2).toString()};
+
+            color: ${({ theme }) => theme.colours.mainText};
+        }
+
+        span {
+            color: ${({ theme }) => theme.colours.accent};
+        }
+
+        h4 {
+            color: ${({ theme }) => theme.colours.mainText};
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            width: 154px;
+            padding: 0.35rem 0.75rem;
+            font-size: ${({ theme }) => theme.fonts.md};
+        }
+    }
+`;
+Feature.displayName = "Feature";

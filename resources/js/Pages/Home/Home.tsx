@@ -55,7 +55,7 @@ const Home = () => {
                         </span>
                     </h1>
                     <h4>
-                        We aim to optimise out tech to provide a secure and
+                        We aim to optimise our tech to provide a secure and
                         reliable experience
                     </h4>
                     <Button variant="ghost" borderSize="lg">

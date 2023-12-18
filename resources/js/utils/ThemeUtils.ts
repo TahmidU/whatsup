@@ -35,6 +35,12 @@ function getCColours(theme: ColourTheme) {
     return cColours as CPrimaryColours;
 }
 
+export function ignoreProps(prop: string, ignorePropsObj: object) {
+    const propsToIgnore = Object.keys(ignorePropsObj);
+
+    return !propsToIgnore.includes(prop);
+}
+
 export function getTheme(
     theme: ColourTheme
 ): UseThemeType["value"] & { current: UseThemeType["current"] } {

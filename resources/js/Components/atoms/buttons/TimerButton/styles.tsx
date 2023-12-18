@@ -1,15 +1,18 @@
+import { TimerButtonContainerInterface } from "@/Components/atoms/buttons/TimerButton/types/Styles";
 import styled from "styled-components";
 
-export const TimerButtonContainer = styled.button<{
-    animstate: "paused" | "running";
-    time: number;
-}>`
+export const TimerButtonContainer = styled.button.withConfig({
+    shouldForwardProp: (prop) => {
+        const PROPS = ["animstate", "time"];
+        return !PROPS.includes(prop);
+    },
+})<TimerButtonContainerInterface>`
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
     width: 100%;
     height: 100%;
-    padding: 1rem;
+    padding: 1rem 0.25rem 0 0.25rem;
     border-radius: 0.5rem;
     color: ${({ theme }) => theme.colours.mainText};
 
@@ -21,6 +24,10 @@ export const TimerButtonContainer = styled.button<{
 
     &:hover {
         background-color: var(--active-color);
+
+        .timer-button-timer {
+            animation-play-state: paused;
+        }
     }
 
     .timer-button-timer {

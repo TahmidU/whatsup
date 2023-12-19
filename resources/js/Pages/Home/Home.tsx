@@ -1,5 +1,6 @@
 import Button from "@/Components/atoms/Button";
 import WorldMap from "@/Components/atoms/WorldMap";
+import FeatureSlide from "@/Components/organisms/home/FeatureSlide";
 import GuestLayout from "@/Components/organisms/layouts/GuestLayout";
 import { HomePageContainer, Hero, Feature } from "@/Pages/Home/styles";
 import PublicImagesUtil from "@/utils/PublicImagesUtil";
@@ -63,7 +64,9 @@ const Home = () => {
                     </Button>
                 </div>
 
-                <div></div>
+                <div>
+                    <FeatureSlide />
+                </div>
             </Feature>
         </HomePageContainer>
     );

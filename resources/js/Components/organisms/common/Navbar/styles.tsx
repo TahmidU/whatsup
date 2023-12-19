@@ -7,7 +7,7 @@ export const NavBarContainer = styled.nav`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 72px;
+    height: var(--navbar-height);
     background: ${({ theme }) => theme.colours.primary};
     padding: 0 3rem;
     box-sizing: border-box;

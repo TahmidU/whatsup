@@ -8,8 +8,8 @@ export const SlideButtonContainer = styled(TimerButton)`
         grid-template-rows: 40% auto;
         grid-auto-flow: row;
         grid-template-areas: "iconimg title" ". info";
-        grid-row-gap: 0.625rem;
-        grid-column-gap: 0.5rem;
+        grid-row-gap: 0.45rem;
+        grid-column-gap: 1.25rem;
         width: 100%;
         height: 100%;
 
@@ -87,7 +87,7 @@ export const SlideButtonContainer = styled(TimerButton)`
             font-size: ${({ theme }) => theme.fonts.md};
             margin: 0 0 1.625rem 0;
             font-weight: 300;
-            padding: 0 1rem 0 0;
+            padding: 0;
             text-align: start;
             overflow: hidden;
             display: -webkit-box;

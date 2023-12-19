@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const GuestLayoutContainer = styled.div`
+    --navbar-height: 72px;
+
     min-height: 100vh;
     height: auto;
     width: 100%;

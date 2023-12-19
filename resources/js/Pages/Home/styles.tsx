@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
+const PAGE_TOP_MARGIN = "5rem";
 export const HomePageContainer = styled.div`
     display: block;
-    margin: 5rem 0 0 0;
+    margin: ${PAGE_TOP_MARGIN} 0 0 0;
     justify-content: center;
     background-color: ${({ theme }) => theme.colours.primary};
     width: 100%;
@@ -19,7 +20,7 @@ export const Hero = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    min-height: calc(100vh - 72px);
+    min-height: calc(100vh - var(--navbar-height) - ${PAGE_TOP_MARGIN});
 
     .hero-intro {
         display: flex;

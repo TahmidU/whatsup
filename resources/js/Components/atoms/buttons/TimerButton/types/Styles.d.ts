@@ -1,4 +1,4 @@
 export interface TimerButtonContainerInterface {
-    animstate: "paused" | "running";
+    animstate: "pause" | "play" | "stop";
     time: number;
 }

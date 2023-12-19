@@ -2,7 +2,7 @@ import { TimerButtonContainer } from "@/Components/atoms/buttons/TimerButton/sty
 import { ComponentProps, ReactNode, useEffect, useRef } from "react";
 
 interface Props extends ComponentProps<"button"> {
-    animState?: "stop" | "play";
+    animState?: "stop" | "play" | "pause";
     time?: number;
     onTimerEnd?: () => void;
     children: ReactNode;
@@ -20,26 +20,18 @@ export default function TimerButton({
         const timerElement = timerRef.current;
 
         if (timerElement) {
-            timerElement.addEventListener("animationend", onTimerEnd);
+            timerElement.addEventListener("animationiteration", onTimerEnd);
         }
 
         return () => {
-            timerElement?.removeEventListener("animationend", onTimerEnd);
+            timerElement?.removeEventListener("animationiteration", onTimerEnd);
         };
     }, [timerRef.current]);
 
     return (
-        <TimerButtonContainer
-            {...restProps}
-            animstate={animState === "play" ? "running" : "paused"}
-            time={time}
-        >
+        <TimerButtonContainer {...restProps} animstate={animState} time={time}>
             {children}
-            <div
-                key={animState}
-                ref={timerRef}
-                className="timer-button-timer"
-            />
+            <div ref={timerRef} className="timer-button-timer" />
         </TimerButtonContainer>
     );
 }

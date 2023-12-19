@@ -20,7 +20,7 @@ export const TimerButtonContainer = styled.button.withConfig({
         theme.cColours.cPrimary.lighten(0.25).toString()};
 
     background-color: ${({ animstate }) =>
-        animstate === "running" ? "var(--active-color)" : "transparent"};
+        animstate === "play" ? "var(--active-color)" : "transparent"};
 
     &:hover {
         background-color: var(--active-color);
@@ -31,14 +31,29 @@ export const TimerButtonContainer = styled.button.withConfig({
     }
 
     .timer-button-timer {
+        ${({ animstate, theme }) => {
+            if (animstate === "play") {
+                return `animation-play-state: running;
+                        background-color: ${theme.colours.accent};`;
+            }
+
+            if (animstate === "stop") {
+                return `animation-play-state: paused;
+                        background-color: transparent;`;
+            }
+
+            if (animstate === "pause") {
+                return `animation-play-state: paused;
+                        background-color: ${theme.colours.accent};`;
+            }
+        }}
+
         height: 2px;
 
         animation-name: buttontimer;
-        animation-play-state: ${({ animstate }) => animstate};
+        animation-iteration-count: infinite;
         animation-duration: ${({ time }) => `${time}s`};
         animation-timing-function: linear;
-
-        background-color: ${({ theme }) => theme.colours.accent};
 
         @keyframes buttontimer {
             from {

@@ -4,10 +4,12 @@ import styled, { ThemeContext } from "styled-components";
 export const SlideButtonContainer = styled(TimerButton)`
     .slide-button-content {
         display: grid;
-        grid-template-columns: 10% auto;
+        grid-template-columns: 7% auto;
         grid-template-rows: 40% auto;
         grid-auto-flow: row;
         grid-template-areas: "iconimg title" ". info";
+        grid-row-gap: 0.625rem;
+        grid-column-gap: 0.5rem;
         width: 100%;
         height: 100%;
 

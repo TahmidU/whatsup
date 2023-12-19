@@ -9,6 +9,8 @@ export const TimerButtonContainer = styled.button.withConfig({
 })<TimerButtonContainerInterface>`
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
     row-gap: 1rem;
     width: 100%;
     height: 100%;
@@ -31,6 +33,9 @@ export const TimerButtonContainer = styled.button.withConfig({
     }
 
     .timer-button-timer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
         ${({ animstate, theme }) => {
             if (animstate === "play") {
                 return `animation-play-state: running;

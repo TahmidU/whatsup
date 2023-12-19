@@ -14,16 +14,13 @@ export type SlidePreviewType = {
     };
 };
 
-export type SlideType = {
+export type PreviewSectionType = {
     [key in PreviewType]: {
-        button: {
-            title: string;
-            desc: string;
-            icon: string;
+        image: {
+            src: string;
+            width: string;
+            height: string;
         };
-        preview: {
-            image: string;
-            desc: string;
-        };
+        desc: string;
     };
 };

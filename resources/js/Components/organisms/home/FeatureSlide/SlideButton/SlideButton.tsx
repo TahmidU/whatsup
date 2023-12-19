@@ -22,7 +22,7 @@ export default function SlideButton({
             animState={animState}
             onTimerEnd={onTimerEnd}
             onClick={onClick}
-            time={2}
+            time={15}
         >
             <div className="slide-button-content">
                 <div className="slide-button-icon">

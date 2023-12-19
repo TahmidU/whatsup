@@ -3,7 +3,7 @@ import { FeatureSlideContainer } from "@/Components/organisms/home/FeatureSlide/
 import {
     PreviewType,
     SlideButtonsType,
-    SlideType,
+    PreviewSectionType,
 } from "@/Components/organisms/home/FeatureSlide/types/Slide";
 import { getPublicImage } from "@/utils/PublicImagesUtil";
 import { useState } from "react";
@@ -38,57 +38,53 @@ export default function FeatureSlide({}: Props) {
             name: "fast",
         },
     ];
-    const orderPreviewChange = slideButtons.map((slideBtn) => slideBtn.name);
 
-    const slides: SlideType = {
+    const previewSection: PreviewSectionType = {
         connect: {
-            button: {
-                title: "Stay Connected",
-                desc: "With our 99.9% guaranteed uptime, you can be rest assured that your conversations won’t be interrupted.",
-                icon: getPublicImage({ type: "assets", name: "globe" }),
+            image: {
+                src: getPublicImage({
+                    type: "assets",
+                    name: "preview_connection",
+                }),
+                width: "580px",
+                height: "420px",
             },
-            preview: {
-                image: "",
-                desc: "Whether it's planning an outing with friends or simply staying on top of your family chats, group conversations should feel effortless.",
-            },
+            desc: "Whether it's planning an outing with friends or simply staying on top of your family chats, group conversations should feel effortless.",
         },
         encrypt: {
-            button: {
-                title: "Encrypted Data",
-                desc: "All conversations and other sensitive data are encrypted.",
-                icon: getPublicImage({ type: "assets", name: "lock" }),
+            image: {
+                src: getPublicImage({ type: "assets", name: "preview_secure" }),
+                width: "602px",
+                height: "403px",
             },
-            preview: {
-                image: "",
-                desc: "With advanced encryption technology, your personal messages and calls are secure.",
-            },
+            desc: "With advanced encryption technology, your personal messages and calls are secure.",
         },
         ai: {
-            button: {
-                title: "AI Powered",
-                desc: "We power your chat with AI to help you find your conversations quicker.",
-                icon: getPublicImage({ type: "assets", name: "brain_ai" }),
+            image: {
+                src: getPublicImage({ type: "assets", name: "preview_search" }),
+                width: "354px",
+                height: "400px",
             },
-            preview: {
-                image: "",
-                desc: "Quickly find your old conversations, images, videos and voice messages without having to endlessly scroll up.",
-            },
+            desc: "Quickly find your old conversations, images, videos and voice messages without having to endlessly scroll up.",
         },
         fast: {
-            button: {
-                title: "Super Fast",
-                desc: "Our services are blazing fast. You can be sure that your messages and calls wouldn’t slow down.",
-                icon: getPublicImage({ type: "assets", name: "fast" }),
+            image: {
+                src: getPublicImage({ type: "assets", name: "preview_fast" }),
+                width: "485px",
+                height: "403px",
             },
-            preview: {
-                image: "",
-                desc: "All our features are super fast. Never experience a delay again.",
-            },
+            desc: "All our features are super fast. Never experience a delay again.",
         },
     };
 
+    const orderPreviewChange = slideButtons.map((slideBtn) => slideBtn.name);
+    const selectedPreviewSection = previewSection[preview];
+
     return (
-        <FeatureSlideContainer>
+        <FeatureSlideContainer
+            $previewImgHeight={selectedPreviewSection.image.height}
+            $previewImgWidth={selectedPreviewSection.image.width}
+        >
             <div className="feature-slide-buttons">
                 {slideButtons.map((slideBtn, index) => {
                     const { title, desc, icon, name } = slideBtn;
@@ -115,7 +111,13 @@ export default function FeatureSlide({}: Props) {
                     );
                 })}
             </div>
-            <div className="feature-slide-preview"></div>
+            <div
+                key={selectedPreviewSection.image.src}
+                className="feature-slide-preview"
+            >
+                <img src={selectedPreviewSection.image.src} />
+                <p>{selectedPreviewSection.desc}</p>
+            </div>
         </FeatureSlideContainer>
     );
 }

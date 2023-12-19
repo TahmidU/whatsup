@@ -7,6 +7,10 @@ export const ASSETS = {
         fast: "img/assets/fast.png",
         lock: "img/assets/lock.png",
         chat_page: "img/assets/chat_dashboard_page.png",
+        preview_connection: "img/assets/preview_connection.png",
+        preview_fast: "img/assets/preview_fast.png",
+        preview_search: "img/assets/preview_search.png",
+        preview_secure: "img/assets/preview_secure.png",
     },
     logo: {
         logo_dark: "/img/logo/logo_dark.png",

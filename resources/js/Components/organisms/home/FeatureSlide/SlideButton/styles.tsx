@@ -85,7 +85,7 @@ export const SlideButtonContainer = styled(TimerButton)`
             justify-self: flex-start;
             align-self: flex-start;
             font-size: ${({ theme }) => theme.fonts.md};
-            margin: 0rem;
+            margin: 0 0 1.625rem 0;
             font-weight: 300;
             padding: 0 1rem 0 0;
             text-align: start;

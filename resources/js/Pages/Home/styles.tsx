@@ -9,6 +9,37 @@ export const HomePageContainer = styled.div`
     width: 100%;
     height: 100%;
     font-family: ${({ theme }) => theme.fontFamilies.inter};
+
+    .common-intro {
+        text-align: center;
+        margin-top: 4rem;
+
+        h1 {
+            font-size: ${({ theme }) => theme.fonts["4xl"]};
+            line-height: normal;
+            margin: 0;
+            text-shadow: 0px 0px 40px
+                ${({ theme }) => theme.cColours.cAccent.alpha(0.2).toString()};
+            color: ${({ theme }) => theme.colours.mainText};
+        }
+
+        span {
+            color: ${({ theme }) => theme.colours.accent};
+        }
+
+        h4 {
+            color: ${({ theme }) => theme.colours.mainText};
+            font-weight: 400;
+            margin-bottom: 2rem;
+            max-width: 954px;
+        }
+
+        button {
+            width: fit-content;
+            padding: 0.5rem 1rem;
+            font-size: ${({ theme }) => theme.fonts.md};
+        }
+    }
 `;
 HomePageContainer.displayName = "HomePageContainer";
 
@@ -32,33 +63,16 @@ export const Hero = styled.div`
         flex-grow: 1;
 
         header {
-            text-align: center;
             z-index: 1;
 
             h1 {
                 font-size: ${({ theme }) => theme.fonts["6xl"]};
-                line-height: normal;
-                margin: 0;
-                text-shadow: 0px 0px 40px
-                    ${({ theme }) =>
-                        theme.cColours.cAccent.alpha(0.2).toString()};
-                color: ${({ theme }) => theme.colours.mainText};
-            }
-
-            span {
-                color: ${({ theme }) => theme.colours.accent};
             }
 
             h2 {
                 color: ${({ theme }) => theme.colours.mainText};
                 font-weight: 400;
-                margin-bottom: 4rem;
-            }
-
-            button {
-                width: 124px;
-                padding: 0.35rem 0.75rem;
-                font-size: ${({ theme }) => theme.fonts.md};
+                margin-bottom: 3rem;
             }
         }
 
@@ -175,45 +189,27 @@ export const Hero = styled.div`
 `;
 Hero.displayName = "Hero";
 
-export const Feature = styled.div`
+export const Feature = styled.section`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    row-gap: 4rem;
+    row-gap: 10rem;
     width: 100%;
     height: 100%;
     min-height: 100vh;
-
-    .feature-intro {
-        text-align: center;
-        margin-top: 4rem;
-
-        h1 {
-            font-size: ${({ theme }) => theme.fonts["4xl"]};
-            line-height: normal;
-            margin: 0;
-            text-shadow: 0px 0px 40px
-                ${({ theme }) => theme.cColours.cAccent.alpha(0.2).toString()};
-
-            color: ${({ theme }) => theme.colours.mainText};
-        }
-
-        span {
-            color: ${({ theme }) => theme.colours.accent};
-        }
-
-        h4 {
-            color: ${({ theme }) => theme.colours.mainText};
-            font-weight: 400;
-            margin-bottom: 2rem;
-        }
-
-        button {
-            width: 154px;
-            padding: 0.35rem 0.75rem;
-            font-size: ${({ theme }) => theme.fonts.md};
-        }
-    }
 `;
 Feature.displayName = "Feature";
+
+export const FinalPrompt = styled.section`
+    min-height: 50vh;
+
+    header {
+        padding: 2.5rem 3.5rem;
+        border-radius: 1rem;
+        background-color: ${({ theme }) =>
+            theme.cColours.cPrimary.lighten(0.4).toString()};
+        width: fit-content;
+        margin: auto;
+    }
+`;
+FinalPrompt.displayName = "FinalPrompt";

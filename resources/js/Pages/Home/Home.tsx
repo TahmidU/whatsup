@@ -2,7 +2,12 @@ import Button from "@/Components/atoms/Button";
 import WorldMap from "@/Components/atoms/WorldMap";
 import FeatureSlide from "@/Components/organisms/home/FeatureSlide";
 import GuestLayout from "@/Components/organisms/layouts/GuestLayout";
-import { HomePageContainer, Hero, Feature } from "@/Pages/Home/styles";
+import {
+    HomePageContainer,
+    Hero,
+    Feature,
+    FinalPrompt,
+} from "@/Pages/Home/styles";
 import DownChevronIcon from "@/icons/DownChevronIcon";
 import PublicImagesUtil from "@/utils/PublicImagesUtil";
 import { useRef } from "react";
@@ -22,7 +27,7 @@ const Home = () => {
                 </div>
 
                 <section className="hero-intro">
-                    <header>
+                    <header className="common-intro">
                         <h1>
                             Next generation web app for{" "}
                             <span>
@@ -66,11 +71,11 @@ const Home = () => {
             </Hero>
 
             <Feature ref={featureSectionRef}>
-                <div className="feature-intro">
+                <header className="common-intro">
                     <h1>
                         Discover the technology that will
                         <span>
-                            <br /> power you chat
+                            <br /> power your chat
                         </span>
                     </h1>
                     <h4>
@@ -80,12 +85,29 @@ const Home = () => {
                     <Button variant="ghost" borderSize="lg">
                         Signup for free
                     </Button>
-                </div>
+                </header>
 
-                <div>
-                    <FeatureSlide />
-                </div>
+                <FeatureSlide />
             </Feature>
+
+            <FinalPrompt>
+                <header className="common-intro">
+                    <h1>
+                        Get started now, everything you
+                        <span>
+                            <br /> need and more
+                        </span>
+                    </h1>
+                    <h4>
+                        Join one of the largest messaging platform out there
+                        with over 120 million registered users and 200 billion
+                        messages delivered per day for free!
+                    </h4>
+                    <Button variant="ghost" borderSize="lg">
+                        Get started for free
+                    </Button>
+                </header>
+            </FinalPrompt>
         </HomePageContainer>
     );
 };

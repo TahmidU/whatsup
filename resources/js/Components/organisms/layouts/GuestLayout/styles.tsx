@@ -14,3 +14,20 @@ export const GuestLayoutContainer = styled.div`
     }
 `;
 GuestLayoutContainer.displayName = "GuestLayoutContainer";
+
+export const Footer = styled.div`
+    height: 100%;
+    background-color: ${({ theme }) =>
+        theme.cColours.cPrimary.lighten(0.2).toString()};
+
+    .footer-logo {
+        width: 3.125rem;
+        height: 3.125rem;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+`;
+Footer.displayName = "Footer";

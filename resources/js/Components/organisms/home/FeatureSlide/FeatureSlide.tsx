@@ -96,6 +96,7 @@ export default function FeatureSlide({}: Props) {
                     return (
                         <SlideButton
                             key={name}
+                            timerKey={preview}
                             animState={preview === name ? "play" : "stop"}
                             title={title}
                             iconSrc={icon}
@@ -105,7 +106,7 @@ export default function FeatureSlide({}: Props) {
                             }}
                             onTimerEnd={() => {
                                 console.log({ preview, name, nextSlide });
-                                // setPreview(nextSlide);
+                                setPreview(nextSlide);
                             }}
                         />
                     );

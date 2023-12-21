@@ -105,7 +105,7 @@ export default function FeatureSlide({}: Props) {
                             }}
                             onTimerEnd={() => {
                                 console.log({ preview, name, nextSlide });
-                                setPreview(nextSlide);
+                                // setPreview(nextSlide);
                             }}
                         />
                     );

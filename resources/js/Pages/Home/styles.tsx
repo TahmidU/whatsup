@@ -29,7 +29,7 @@ export const Hero = styled.div`
         justify-content: flex-start;
         align-items: center;
         width: 100%;
-        height: fit-content;
+        flex-grow: 1;
 
         header {
             text-align: center;
@@ -63,59 +63,95 @@ export const Hero = styled.div`
         }
 
         footer {
-            --preview-border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            flex-grow: 1;
 
-            position: relative;
-            width: 90rem;
-            max-height: 64.25rem;
+            .preview-opacity-gradient {
+                --preview-border-radius: 0.5rem;
 
-            mask-image: linear-gradient(
-                to bottom,
-                black 50%,
-                transparent 80%,
-                transparent 100%
-            );
+                position: relative;
+                width: 90rem;
+                max-height: 64.25rem;
 
-            .preview-border-animation {
-                --border-size: 2px;
-                --border-angle: 0turn;
-
-                border-radius: var(--preview-border-radius);
-
-                background-image: conic-gradient(
-                    from var(--border-angle),
-                    transparent 75%,
-                    ${({ theme }) => theme.colours.accent}
+                mask-image: linear-gradient(
+                    to bottom,
+                    black 50%,
+                    transparent 80%,
+                    transparent 100%
                 );
 
-                animation: bg-spin 8s linear infinite;
-                @keyframes bg-spin {
-                    to {
-                        --border-angle: 1turn;
-                    }
-                }
+                .preview-border-animation {
+                    --border-size: 2px;
+                    --border-angle: 0turn;
 
-                @property --border-angle {
-                    syntax: "<angle>";
-                    inherits: true;
-                    initial-value: 0turn;
+                    @property --border-angle {
+                        syntax: "<angle>";
+                        inherits: true;
+                        initial-value: 0turn;
+                    }
+
+                    border-radius: var(--preview-border-radius);
+
+                    background-image: conic-gradient(
+                        from var(--border-angle),
+                        transparent 75%,
+                        ${({ theme }) => theme.colours.accent}
+                    );
+
+                    animation: bg-spin 8s linear infinite;
+
+                    @keyframes bg-spin {
+                        to {
+                            --border-angle: 1turn;
+                        }
+                    }
+
+                    .preview-container {
+                        --img-padding: 0.15rem;
+
+                        overflow: hidden;
+                        padding: var(--img-padding);
+                        border-radius: calc(
+                            var(--preview-border-radius) +
+                                (var(--img-padding) * 2)
+                        );
+                        width: 1440px;
+                        height: 594px;
+
+                        img {
+                            width: 100%;
+                            height: 1024px;
+                        }
+                    }
                 }
             }
 
-            .preview-container {
-                --img-padding: 0.15rem;
+            .scroll-down {
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                row-gap: 0.25rem;
+                opacity: 0.5;
+                color: ${({ theme }) => theme.colours.mainText};
+                font-size: ${({ theme }) => theme.fonts.lg};
+                text-transform: uppercase;
+                font-weight: 600;
 
-                overflow: hidden;
-                padding: var(--img-padding);
-                border-radius: calc(
-                    var(--preview-border-radius) + (var(--img-padding) * 2)
-                );
-                width: 1440px;
-                height: 594px;
+                &:hover {
+                    opacity: 1;
+                }
 
-                img {
-                    width: 100%;
-                    height: 1024px;
+                svg {
+                    width: 2.625rem;
+                    height: 2.625rem;
+                }
+
+                @media only screen and (max-height: 1000px) {
+                    display: none;
                 }
             }
         }

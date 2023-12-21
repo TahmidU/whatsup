@@ -3,9 +3,17 @@ import WorldMap from "@/Components/atoms/WorldMap";
 import FeatureSlide from "@/Components/organisms/home/FeatureSlide";
 import GuestLayout from "@/Components/organisms/layouts/GuestLayout";
 import { HomePageContainer, Hero, Feature } from "@/Pages/Home/styles";
+import DownChevronIcon from "@/icons/DownChevronIcon";
 import PublicImagesUtil from "@/utils/PublicImagesUtil";
+import { useRef } from "react";
 
 const Home = () => {
+    const featureSectionRef = useRef<HTMLDivElement | null>(null);
+
+    function scrollToFeaturesSection() {
+        featureSectionRef.current?.scrollIntoView?.({ behavior: "smooth" });
+    }
+
     return (
         <HomePageContainer>
             <Hero>
@@ -32,22 +40,32 @@ const Home = () => {
                     </header>
 
                     <footer>
-                        <div className="preview-border-animation">
-                            <div className="preview-container">
-                                <img
-                                    src={PublicImagesUtil.getPublicImage({
-                                        type: "assets",
-                                        name: "chat_page",
-                                    })}
-                                    alt="chat_page"
-                                />
+                        <div className="preview-opacity-gradient">
+                            <div className="preview-border-animation">
+                                <div className="preview-container">
+                                    <img
+                                        src={PublicImagesUtil.getPublicImage({
+                                            type: "assets",
+                                            name: "chat_page",
+                                        })}
+                                        alt="chat_page"
+                                    />
+                                </div>
                             </div>
                         </div>
+
+                        <button
+                            className="scroll-down"
+                            onClick={scrollToFeaturesSection}
+                        >
+                            <DownChevronIcon />
+                            scroll down
+                        </button>
                     </footer>
                 </section>
             </Hero>
 
-            <Feature>
+            <Feature ref={featureSectionRef}>
                 <div className="feature-intro">
                     <h1>
                         Discover the technology that will

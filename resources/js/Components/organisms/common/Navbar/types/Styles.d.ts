@@ -1,4 +1,4 @@
-import { PrefixObjectKeys } from "@/utils/TypeUtils";
+import { PrefixObjectKeys } from "@/types/TypeUtils";
 
 export interface NavLinkStyle {
     selected: boolean;

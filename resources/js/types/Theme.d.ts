@@ -1,6 +1,6 @@
-import { CapitalizeKeys, PrefixObjectKeys } from "@/utils/TypeUtils";
 import Color from "color";
 import { fontFamilies, fonts } from "@/constants/Themes";
+import { CapitalizeKeys, PrefixObjectKeys } from "@/types/TypeUtils";
 
 export type ColourTheme = "dark" | "light";
 

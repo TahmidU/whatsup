@@ -1,4 +1,4 @@
-import { PrefixObjectKeys } from "@/utils/TypeUtils";
+import { PrefixObjectKeys } from "@/types/TypeUtils";
 
 export type Variant = "action" | "danger" | "text" | "ghost";
 export type BorderSizeType = "sm" | "md" | "lg" | "xl";

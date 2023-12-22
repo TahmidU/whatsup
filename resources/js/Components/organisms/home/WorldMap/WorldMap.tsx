@@ -1,6 +1,6 @@
 import MapPoints from "./constants/MapPoints";
 import useMapPoints from "./hooks/useMapPoints";
-import { SVGContainer } from "./style";
+import { SVGContainer } from "./styles";
 
 interface Props {
     selectionInterval?: number;

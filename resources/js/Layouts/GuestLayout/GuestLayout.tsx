@@ -1,12 +1,12 @@
 import Navbar from "@/Components/organisms/common/Navbar";
 import { Footer, GuestLayoutContainer } from "./styles";
 import { ReactNode } from "react";
-import WhatsupIcon from "@/icons/WhatsupIcon";
-import TwitterIcon from "@/icons/TwitterIcon";
-import FacebookIcon from "@/icons/FacebookIcon";
-import InstagramIcon from "@/icons/InstagramIcon";
-import YouTubeIcon from "@/icons/YouTubeIcon";
-import TikTokIcon from "@/icons/TikTokIcon";
+import WhatsupIcon from "@/Icons/WhatsupIcon";
+import TwitterIcon from "@/Icons/TwitterIcon";
+import FacebookIcon from "@/Icons/FacebookIcon";
+import InstagramIcon from "@/Icons/InstagramIcon";
+import YouTubeIcon from "@/Icons/YouTubeIcon";
+import TikTokIcon from "@/Icons/TikTokIcon";
 
 interface Props {
     children: ReactNode;

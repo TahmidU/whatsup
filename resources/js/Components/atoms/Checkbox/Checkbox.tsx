@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef } from "react";
 import { CheckboxContainer, CustomStyleCheckbox } from "./styles";
-import CheckIcon from "@/icons/CheckIcon";
+import CheckIcon from "@/Icons/CheckIcon";
 
 interface Props extends ComponentPropsWithRef<"input"> {
     title: string;

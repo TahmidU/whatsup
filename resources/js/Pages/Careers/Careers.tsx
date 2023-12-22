@@ -1,4 +1,4 @@
-import GuestLayout from "@/Components/organisms/layouts/GuestLayout";
+import GuestLayout from "@/Layouts/GuestLayout";
 import { CareersContainer } from "@/Pages/Careers/styles";
 
 const Careers = () => {

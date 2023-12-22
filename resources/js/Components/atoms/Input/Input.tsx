@@ -1,6 +1,6 @@
 import { HTMLProps, useRef, useState } from "react";
 import { Container, PasswordVisibilityBtn } from "./styles";
-import EyeIcon from "@/icons/EyeIcon";
+import EyeIcon from "@/Icons/EyeIcon";
 
 interface Props extends HTMLProps<HTMLInputElement> {
     dataTestId?: string;

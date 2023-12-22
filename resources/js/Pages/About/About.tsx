@@ -1,4 +1,4 @@
-import GuestLayout from "@/Components/organisms/layouts/GuestLayout";
+import GuestLayout from "@/Layouts/GuestLayout";
 import { AboutContainer } from "@/Pages/About/styles";
 
 const About = () => {

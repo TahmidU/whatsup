@@ -1,4 +1,4 @@
-import GuestLayout from "@/Components/organisms/layouts/GuestLayout";
+import GuestLayout from "@/layouts/GuestLayout";
 import { SafetyContainer } from "@/Pages/Safety/styles";
 
 const Safety = () => {

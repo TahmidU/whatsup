@@ -1,17 +1,12 @@
-import {
-    LINK_NAMES,
-    NAV_LINKS_ROUTES,
-} from "@/Components/organisms/common/Navbar/constants/Links";
+import { NAV_LINKS_ROUTES } from "@/Components/organisms/common/Navbar/constants/Links";
 import { NavBarContainer, NavLink } from "./styles";
-import { PageType } from "@/Components/organisms/common/Navbar/types/Link";
 import { getPublicImage } from "@/utils/PublicImagesUtil";
 import Button from "@/Components/atoms/Button";
-// import route from "ziggy-js";
+import { usePage } from "@inertiajs/react";
 
-interface Props {
-    selectedPage: PageType;
-}
-export default function Navbar({ selectedPage }: Props) {
+export default function Navbar() {
+    const componentPage = usePage().component;
+
     return (
         <NavBarContainer>
             <div className="logo">
@@ -25,9 +20,11 @@ export default function Navbar({ selectedPage }: Props) {
                     return (
                         <li key={link}>
                             <NavLink
+                                preserveScroll
+                                preserveState
                                 title={link}
                                 href={route(linkRoute)}
-                                $selected={selectedPage === link}
+                                $selected={componentPage === link}
                             >
                                 {link}
                             </NavLink>
@@ -35,8 +32,6 @@ export default function Navbar({ selectedPage }: Props) {
                     );
                 })}
             </ul>
-
-            {/* <div className="actions">Test</div> */}
 
             <div className="actions">
                 <Button variant="text">Sign Up</Button>

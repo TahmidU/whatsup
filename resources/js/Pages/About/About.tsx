@@ -1,7 +1,12 @@
 import GuestLayout from "@/Components/organisms/layouts/GuestLayout";
+import { AboutContainer } from "@/Pages/About/styles";
 
 const About = () => {
-    return <div style={{ color: "white" }}></div>;
+    return (
+        <AboutContainer>
+            <h1>Coming Soon</h1>
+        </AboutContainer>
+    );
 };
 
 About.layout = (page: any) => <GuestLayout children={page} />;

@@ -14,7 +14,7 @@ interface Props {
 export default function GuestLayout({ children }: Props) {
     return (
         <GuestLayoutContainer>
-            <Navbar selectedPage="Home" />
+            <Navbar />
             <div className="guest-children-container">{children}</div>
 
             <Footer>

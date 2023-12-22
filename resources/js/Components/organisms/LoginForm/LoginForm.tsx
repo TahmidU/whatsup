@@ -1,8 +1,8 @@
 import { FormEvent, Fragment } from "react";
 import { LoginFormContainer, Form } from "./styles";
 import LabelledInput from "@/Components/molecules/LabelledInput";
-import Button from "@/Components/atoms/Button";
-import LinkButton from "@/Components/atoms/LinkButton";
+import Button from "@/Components/atoms/buttons/Button";
+import LinkButton from "@/Components/atoms/buttons/LinkButton";
 import Checkbox from "@/Components/atoms/Checkbox";
 
 interface Props {}

@@ -1,7 +1,7 @@
 import { NAV_LINKS_ROUTES } from "@/Components/organisms/common/Navbar/constants/Links";
 import { NavBarContainer, NavLink } from "./styles";
 import { getPublicImage } from "@/utils/PublicImagesUtil";
-import Button from "@/Components/atoms/Button";
+import Button from "@/Components/atoms/buttons/Button";
 import { usePage } from "@inertiajs/react";
 
 export default function Navbar() {

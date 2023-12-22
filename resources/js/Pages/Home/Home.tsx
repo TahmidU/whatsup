@@ -1,5 +1,5 @@
 import Button from "@/Components/atoms/Button";
-import WorldMap from "@/Components/atoms/WorldMap";
+import WorldMap from "@/Components/organisms/home/WorldMap";
 import FeatureSlide from "@/Components/organisms/home/FeatureSlide";
 import GuestLayout from "@/Layouts/GuestLayout";
 import {

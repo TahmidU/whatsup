@@ -71,9 +71,6 @@ const Home = () => {
             </Hero>
 
             <Feature ref={featureSectionRef}>
-                <Button as="link" href="Test">
-                    Test
-                </Button>
                 <header className="common-intro">
                     <h1>
                         Discover the technology that will

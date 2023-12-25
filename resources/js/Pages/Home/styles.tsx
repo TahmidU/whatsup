@@ -213,6 +213,11 @@ export const FinalPrompt = styled.section`
 
         border: 1px solid
             ${({ theme }) => theme.cColours.cPrimary.lighten(0.8).toString()};
+
+        h4 {
+            opacity: 0.8;
+            padding: 0 8rem;
+        }
     }
 `;
 FinalPrompt.displayName = "FinalPrompt";

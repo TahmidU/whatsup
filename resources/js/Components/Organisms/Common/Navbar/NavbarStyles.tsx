@@ -1,4 +1,4 @@
-import { NavLinkStyleTransient } from "@/Components/Organisms/Common/Navbar/types/Styles";
+import { NavLinkStyle } from "@/Components/Organisms/Common/Navbar/types/Styles";
 import { REMOVE_LINK_STYLE, REMOVE_LIST_STYLE } from "@/constants/Styles";
 import { Link } from "@inertiajs/react";
 import styled from "styled-components";
@@ -53,7 +53,7 @@ export const NavBarContainer = styled.nav`
 `;
 NavBarContainer.displayName = "NavBarContainer";
 
-export const NavLink = styled(Link)<NavLinkStyleTransient>`
+export const NavLink = styled(Link)<NavLinkStyle>`
     ${REMOVE_LINK_STYLE};
     display: flex;
     flex-direction: column;

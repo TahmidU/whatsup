@@ -1,10 +1,10 @@
-import { PrefixObjectKeys } from "@/types/TypeUtils";
+// import { PrefixObjectKeys } from "@/types/TypeUtils";
 
 export interface SVGContainerStyle {
-    selectionInterval: number;
+    $selectionInterval: number;
 }
 
-export type SVGContainerStyleTransient = PrefixObjectKeys<
-    "$",
-    SVGContainerStyle
->;
+// export type SVGContainerStyleTransient = PrefixObjectKeys<
+//     "$",
+//     SVGContainerStyle
+// >;

@@ -1,4 +1,3 @@
-import { PrefixObjectKeys } from "@/types/TypeUtils";
 import styled from "styled-components";
 import { PasswordVisibilityBtnStyle } from "./types/Styles";
 
@@ -30,7 +29,7 @@ export const Container = styled.div`
 `;
 Container.displayName = "Container";
 
-export const PasswordVisibilityBtn = styled.button<PrefixObjectKeys<"$", PasswordVisibilityBtnStyle>>`
+export const PasswordVisibilityBtn = styled.button<PasswordVisibilityBtnStyle>`
     all: unset;
     cursor: pointer;
     display: flex;

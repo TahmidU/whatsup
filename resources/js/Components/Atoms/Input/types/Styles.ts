@@ -1,3 +1,3 @@
 export interface PasswordVisibilityBtnStyle {
-    showPassword: boolean;
+    $showPassword: boolean;
 }

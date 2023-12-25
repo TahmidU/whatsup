@@ -1,5 +1,5 @@
 import SlideButton from "@/Components/Organisms/Home/FeatureSlide/SlideButton";
-import { FeatureSlideContainer } from "@/Components/Organisms/Home/FeatureSlide/styles";
+import { FeatureSlideContainer } from "@/Components/Organisms/Home/FeatureSlide/FeatureSlideStyles";
 import {
     PreviewType,
     SlideButtonsType,

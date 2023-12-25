@@ -1,6 +1,6 @@
 import MapPoints from "./constants/MapPoints";
 import useMapPoints from "./hooks/useMapPoints";
-import { SVGContainer } from "./styles";
+import { SVGContainer } from "./WorldMapStyles";
 
 interface Props {
     selectionInterval?: number;

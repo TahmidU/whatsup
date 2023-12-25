@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { SVGContainerStyleTransient } from "./types/Styles";
+import { SVGContainerStyle } from "./types/Styles";
 
-export const SVGContainer = styled.svg<SVGContainerStyleTransient>`
+export const SVGContainer = styled.svg<SVGContainerStyle>`
     box-sizing: border-box;
 
     .points-in {

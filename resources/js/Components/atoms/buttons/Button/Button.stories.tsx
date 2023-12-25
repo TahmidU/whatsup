@@ -5,10 +5,21 @@ import { ComponentProps } from "react";
 const payload: MetaPayload<typeof Button> = {
     title: "ATOMS/buttons/Button",
     component: Button,
+    parameters: {
+        controls: {
+            exclude: ["ref", "className", "href"],
+        },
+    },
     argTypes: {
         as: {
-            options: ["button", "link"],
             control: "radio",
+            options: ["button", "link"],
+        },
+        $variant: {
+            name: "variant",
+        },
+        $borderSize: {
+            name: "border size",
         },
     },
 };
@@ -18,9 +29,9 @@ export const Basic = (args: ComponentProps<typeof Button>) => (
     <Button {...args}>Test</Button>
 );
 Basic.args = {
-    as: "link",
+    as: "button",
     href: "",
-    variant: "action",
-    borderSize: "md",
+    $variant: "action",
+    $borderSize: "md",
     disabled: false,
 };

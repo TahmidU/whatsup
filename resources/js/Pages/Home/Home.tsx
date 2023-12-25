@@ -39,7 +39,7 @@ const Home = () => {
                             Easy, reliable, private messaging. Available
                             worldwide
                         </h2>
-                        <Button variant="ghost" borderSize="lg">
+                        <Button $variant="ghost" $borderSize="lg">
                             Get Started
                         </Button>
                     </header>
@@ -71,6 +71,9 @@ const Home = () => {
             </Hero>
 
             <Feature ref={featureSectionRef}>
+                <Button as="link" href="Test">
+                    Test
+                </Button>
                 <header className="common-intro">
                     <h1>
                         Discover the technology that will
@@ -82,7 +85,7 @@ const Home = () => {
                         We aim to optimise our tech to provide a secure and
                         reliable experience
                     </h4>
-                    <Button variant="ghost" borderSize="lg">
+                    <Button $variant="ghost" $borderSize="lg">
                         Signup for free
                     </Button>
                 </header>
@@ -103,7 +106,7 @@ const Home = () => {
                         with over 120 million registered users and 200 billion
                         messages delivered per day for free!
                     </h4>
-                    <Button variant="ghost" borderSize="lg">
+                    <Button $variant="ghost" $borderSize="lg">
                         Get started for free
                     </Button>
                 </header>

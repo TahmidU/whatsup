@@ -2,7 +2,6 @@ import { FormEvent, Fragment } from "react";
 import { LoginFormContainer, Form } from "./styles";
 import LabelledInput from "@/Components/molecules/LabelledInput";
 import Button from "@/Components/atoms/buttons/Button";
-import LinkButton from "@/Components/atoms/buttons/LinkButton";
 import Checkbox from "@/Components/atoms/Checkbox";
 
 interface Props {}
@@ -28,9 +27,9 @@ export default function LoginForm({}: Props) {
                 <Fragment>
                     <span>
                         {"Don't"} have an account?{" "}
-                        <LinkButton href="" className="sign-up-link">
+                        <Button as="link" href="" className="sign-up-link">
                             Sign Up
-                        </LinkButton>
+                        </Button>
                     </span>
                 </Fragment>
             }
@@ -54,11 +53,13 @@ export default function LoginForm({}: Props) {
                             idAttribute="remember-me-login-form"
                             title="Remember me"
                         />
-                        <LinkButton href="">Forgot Password?</LinkButton>
+                        <Button as="link" href="">
+                            Forgot Password?
+                        </Button>
                     </div>
                 </div>
 
-                <Button borderSize="xl">Login</Button>
+                <Button $borderSize="xl">Login</Button>
             </Form>
         </LoginFormContainer>
     );

@@ -2,7 +2,7 @@ import { getTheme } from "../resources/js/utils/ThemeUtils";
 import { ThemeProvider } from "styled-components";
 import { Decorator, Preview } from "@storybook/react";
 import React from "react";
-import GlobalStyle from "../resources/js/Components/atoms/GlobalStyle";
+import GlobalStyle from "../resources/js/configs/GlobalStyle";
 
 export const parameters: Preview = {};
 

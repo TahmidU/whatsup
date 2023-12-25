@@ -1,5 +1,5 @@
 import GuestLayout from "@/Layouts/GuestLayout";
-import { SupportContainer } from "@/Pages/Support/styles";
+import { SupportContainer } from "@/Pages/Support/SupportStyles";
 
 const Support = () => {
     return (

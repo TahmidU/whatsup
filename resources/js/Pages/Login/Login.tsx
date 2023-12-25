@@ -1,5 +1,5 @@
-import LoginForm from "@/Components/organisms/LoginForm";
-import { Container } from "./styles";
+import LoginForm from "@/Components/Organisms/LoginForm";
+import { Container } from "./LoginStyles";
 
 export default function Login() {
     return (

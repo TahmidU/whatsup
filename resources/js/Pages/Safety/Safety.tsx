@@ -1,5 +1,5 @@
-import GuestLayout from "@/layouts/GuestLayout";
-import { SafetyContainer } from "@/Pages/Safety/styles";
+import GuestLayout from "@/Layouts/GuestLayout";
+import { SafetyContainer } from "@/Pages/Safety/SafetyStyles";
 
 const Safety = () => {
     return (

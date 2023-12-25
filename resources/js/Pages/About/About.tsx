@@ -1,5 +1,5 @@
 import GuestLayout from "@/Layouts/GuestLayout";
-import { AboutContainer } from "@/Pages/About/styles";
+import { AboutContainer } from "@/Pages/About/AboutStyles";
 
 const About = () => {
     return (

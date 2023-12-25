@@ -1,13 +1,13 @@
-import Button from "@/Components/atoms/buttons/Button";
-import WorldMap from "@/Components/organisms/home/WorldMap";
-import FeatureSlide from "@/Components/organisms/home/FeatureSlide";
+import Button from "@/Components/Atoms/Buttons/Button";
+import WorldMap from "@/Components/Organisms/Home/WorldMap";
+import FeatureSlide from "@/Components/Organisms/Home/FeatureSlide";
 import GuestLayout from "@/Layouts/GuestLayout";
 import {
     HomePageContainer,
     Hero,
     Feature,
     FinalPrompt,
-} from "@/Pages/Home/styles";
+} from "@/Pages/Home/HomeStyles";
 import DownChevronIcon from "@/Icons/DownChevronIcon";
 import PublicImagesUtil from "@/utils/PublicImagesUtil";
 import { useRef } from "react";

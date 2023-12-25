@@ -1,0 +1,29 @@
+import TimerButton from "@/Components/Atoms/Buttons/TimerButton";
+import { SlideButtonContainer } from "@/Components/Organisms/Home/FeatureSlide/SlideButton/SlideButtonStyles";
+import { ComponentProps } from "react";
+
+interface Props
+    extends Omit<ComponentProps<typeof TimerButton>, "time" | "children"> {
+    iconSrc: string;
+    title: string;
+    content: string;
+}
+export default function SlideButton({
+    iconSrc,
+    title,
+    content,
+    ...restProps
+}: Props) {
+    return (
+        <SlideButtonContainer {...restProps} time={15}>
+            <div className="slide-button-content">
+                <div className="slide-button-icon">
+                    <img src={iconSrc} />
+                </div>
+
+                <h2>{title}</h2>
+                <p>{content}</p>
+            </div>
+        </SlideButtonContainer>
+    );
+}

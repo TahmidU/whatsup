@@ -1,5 +1,5 @@
 import GuestLayout from "@/Layouts/GuestLayout";
-import { CareersContainer } from "@/Pages/Careers/styles";
+import { CareersContainer } from "@/Pages/Careers/CareersStyles";
 
 const Careers = () => {
     return (

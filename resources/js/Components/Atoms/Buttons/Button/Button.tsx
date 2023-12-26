@@ -1,40 +1,49 @@
+import { ComponentProps, ReactNode } from "react";
 import { ButtonContainer, LinkContainer } from "./ButtonStyles";
-import {
-    ButtonInterface,
-    LinkInterface,
-} from "@/Components/Atoms/Buttons/Button/types/Polymorphic";
+import { Link } from "@inertiajs/react";
+import { ButtonDefaultStyles } from "@/Components/Atoms/Buttons/Button/types/Styles";
 
-type Props = ButtonInterface | LinkInterface;
+type ButtonAsType = "button" | "link";
+type ButtonProps<T extends ButtonAsType> = T extends "link"
+    ? ComponentProps<typeof Link>
+    : ComponentProps<"button">;
 
-// Can't destruct `as` from here. Typescript loses the type infer
-export default function Button({
+export interface OwnProps<T extends ButtonAsType> extends ButtonDefaultStyles {
+    as?: T;
+    children?: ReactNode;
+    className?: string;
+}
+
+type Props<T extends ButtonAsType> = OwnProps<T> &
+    Omit<ButtonProps<T>, keyof OwnProps<T>>;
+
+export default function Button<T extends ButtonAsType = "button">({
+    as,
     $variant = "action",
     $borderSize = "sm",
     children,
     className = "",
     ...restProps
-}: Props) {
-    if (restProps.as === "link") {
-        const { as, ...specificProps } = restProps;
+}: Props<T>) {
+    if (as === "link") {
         return (
             <LinkContainer
                 $variant={$variant}
                 $borderSize={$borderSize}
                 className={className}
-                {...specificProps}
+                {...(restProps as unknown as ComponentProps<typeof Link>)}
             >
                 {children}
             </LinkContainer>
         );
     }
 
-    const { as, ...specificProps } = restProps;
     return (
         <ButtonContainer
             $variant={$variant}
             $borderSize={$borderSize}
             className={className}
-            {...specificProps}
+            {...(restProps as unknown as ComponentProps<"button">)}
         >
             {children}
         </ButtonContainer>

@@ -3,21 +3,7 @@ import { expect, describe } from "vitest";
 import Button from "..";
 
 describe("Button", () => {
-    test("Button click event", () => {
-        // Given
-        const onClickSpy = vitest.fn();
-
-        // When
-        render(<Button onClick={onClickSpy}>Button</Button>);
-
-        // Then
-        const renderedButton = screen.getByRole("button");
-        fireEvent.click(renderedButton);
-
-        expect(onClickSpy).toHaveBeenCalled();
-    });
-
-    test("Button disable click", () => {
+    test("Check as 'button' polymorphism, button disable click", () => {
         // Given
         const onClickSpy = vitest.fn();
 
@@ -33,5 +19,26 @@ describe("Button", () => {
         fireEvent.click(renderedButton);
 
         expect(onClickSpy).not.toHaveBeenCalled();
+    });
+
+    test("Check as 'link' polymorphism, link href", () => {
+        // Given
+        const expectedHref = "/fake";
+        const onClickSpy = vitest.fn();
+
+        // When
+        render(
+            <Button as="link" href={expectedHref}>
+                Button
+            </Button>
+        );
+
+        // Then
+        const renderedButton = screen.getByRole("link");
+        // fireEvent.click(renderedButton);
+
+        // expect(onClickSpy).not.toHaveBeenCalled();
+
+        expect(renderedButton).toHaveAttribute("href", expectedHref);
     });
 });

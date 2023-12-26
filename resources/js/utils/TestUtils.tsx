@@ -1,4 +1,4 @@
-import AppContextProvider from "@/app";
+import AppSetup from "@/configs/AppSetup";
 import { cleanup, render } from "@testing-library/react";
 import { afterEach } from "vitest";
 
@@ -8,9 +8,7 @@ afterEach(() => {
 
 const customRender = (ui: React.ReactElement, options = {}) =>
     render(ui, {
-        wrapper: ({ children }) => (
-            <AppContextProvider>{children}</AppContextProvider>
-        ),
+        wrapper: ({ children }) => <AppSetup>{children}</AppSetup>,
         ...options,
     });
 

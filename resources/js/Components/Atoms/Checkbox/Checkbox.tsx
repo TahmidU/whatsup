@@ -6,15 +6,17 @@ interface Props extends ComponentPropsWithRef<"input"> {
     title: string;
     idAttribute?: string;
     className?: string;
+    dataTestId?: string;
 }
 export default function Checkbox({
     title,
     idAttribute,
     className,
+    dataTestId,
     ...restProps
 }: Props) {
     return (
-        <CheckboxContainer className={className}>
+        <CheckboxContainer data-testid={dataTestId} className={className}>
             {/* Hide the default checkbox to maintain its feature. Display a styled pseudo-element */}
             <CustomStyleCheckbox>
                 <input

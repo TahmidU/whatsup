@@ -24,7 +24,6 @@ describe("Button", () => {
     test("Check as 'link' polymorphism, link href", () => {
         // Given
         const expectedHref = "/fake";
-        const onClickSpy = vitest.fn();
 
         // When
         render(
@@ -35,9 +34,6 @@ describe("Button", () => {
 
         // Then
         const renderedButton = screen.getByRole("link");
-        // fireEvent.click(renderedButton);
-
-        // expect(onClickSpy).not.toHaveBeenCalled();
 
         expect(renderedButton).toHaveAttribute("href", expectedHref);
     });

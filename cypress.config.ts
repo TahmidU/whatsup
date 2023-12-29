@@ -6,11 +6,12 @@ export default defineConfig({
             // implement node event listeners here
         },
     },
-
     component: {
         devServer: {
             framework: "react",
             bundler: "vite",
         },
     },
+    viewportHeight: 1080,
+    viewportWidth: 1920,
 });

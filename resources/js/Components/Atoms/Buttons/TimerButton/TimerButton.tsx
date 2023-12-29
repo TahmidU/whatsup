@@ -36,6 +36,7 @@ export default function TimerButton({
         >
             {children}
             <div
+                data-testid="timer-button-timer"
                 key={timerKey}
                 ref={setTimerRef}
                 className="timer-button-timer"

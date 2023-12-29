@@ -14,7 +14,8 @@
         "cypress": "cypress open",
         "cypress:headless:components": "cypress run --component",
         "cypress:headless:e2e": "cypress run --e2e",
-        "cypress:headless": "yarn cypress:headless:components && yarn cypress:headless:e2e"
+        "cypress:headless": "yarn cypress:headless:components && yarn cypress:headless:e2e",
+        "test:unit-component": "yarn vitest run && cypress run --component"
     },
     "devDependencies": {
         "@storybook/addon-actions": "^7.2.3",

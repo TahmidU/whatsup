@@ -17,6 +17,8 @@ body {
     min-height: 100%;
     height: 100%;
     max-height: 100%;
+
+    background-color:${({ theme }) => theme.colours.primary};
 }
 
 button,a{

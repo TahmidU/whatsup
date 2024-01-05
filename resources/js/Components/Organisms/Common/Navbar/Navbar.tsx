@@ -3,9 +3,10 @@ import { NavBarContainer, NavLink } from "./NavbarStyles";
 import { getPublicImage } from "@/utils/PublicImagesUtil";
 import Button from "@/Components/Atoms/Buttons/Button";
 import { usePage } from "@inertiajs/react";
+import useSwappablePage from "@/hooks/useSwappablePage";
 
 export default function Navbar() {
-    const componentPage = usePage().component;
+    const componentPage = useSwappablePage().component;
 
     return (
         <NavBarContainer>

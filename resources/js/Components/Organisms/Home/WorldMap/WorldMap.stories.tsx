@@ -3,7 +3,7 @@ import WorldMap from ".";
 import { ComponentProps } from "react";
 
 const payload: MetaPayload<typeof WorldMap> = {
-    title: "ORGANISMS/FeatureSlide/WorldMap",
+    title: "ORGANISMS/WorldMap",
     component: WorldMap,
 };
 export default payload;

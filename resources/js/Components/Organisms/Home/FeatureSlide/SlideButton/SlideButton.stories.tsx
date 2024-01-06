@@ -11,6 +11,11 @@ const LOCK_SRC = getPublicImage({ type: "assets", name: "lock" });
 const payload: MetaPayload<typeof SlideButton> = {
     title: "ORGANISMS/FeatureSlide/SlideButton",
     component: SlideButton,
+    parameters: {
+        controls: {
+            exclude: ["onTimerEnd", "timerKey"],
+        },
+    },
     argTypes: {
         iconSrc: {
             name: "icon",
@@ -37,7 +42,7 @@ const payload: MetaPayload<typeof SlideButton> = {
 export default payload;
 
 export const Basic = (args: ComponentProps<typeof SlideButton>) => (
-    <div style={{ width: "45%" }}>
+    <div style={{ width: "40rem" }}>
         <SlideButton {...args}>Test</SlideButton>
     </div>
 );

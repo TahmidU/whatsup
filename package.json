@@ -34,7 +34,6 @@
         "cypress": "13.3.0",
         "cypress-real-events": "^1.10.3",
         "eslint-plugin-storybook": "^0.6.13",
-        "jest-styled-components": "^7.1.1",
         "jsdom": "^22.1.0",
         "laravel-vite-plugin": "^0.8.0",
         "react": "^18.2.0",

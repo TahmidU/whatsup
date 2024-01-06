@@ -6,6 +6,7 @@ interface Props extends ComponentProps<"button"> {
     time?: number;
     onTimerEnd?: () => void;
     timerKey?: string;
+    timerTestId?: string;
     children: ReactNode;
 }
 export default function TimerButton({
@@ -13,6 +14,7 @@ export default function TimerButton({
     time = 10,
     onTimerEnd = () => {},
     timerKey,
+    timerTestId,
     children,
     ...restProps
 }: Props) {
@@ -36,7 +38,7 @@ export default function TimerButton({
         >
             {children}
             <div
-                data-testid="timer-button-timer"
+                data-testid={timerTestId ?? "timer-button-timer"}
                 key={timerKey}
                 ref={setTimerRef}
                 className="timer-button-timer"

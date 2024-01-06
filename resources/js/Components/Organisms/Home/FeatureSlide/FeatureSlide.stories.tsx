@@ -5,11 +5,20 @@ import { ComponentProps } from "react";
 const payload: MetaPayload<typeof FeatureSlide> = {
     title: "ORGANISMS/FeatureSlide",
     component: FeatureSlide,
-    argTypes: {},
+    parameters: {
+        controls: {
+            exclude: ["onSlideAutoChange"],
+        },
+    },
+    argTypes: {
+        slideTime: {
+            name: "slide time",
+        },
+    },
 };
 export default payload;
 
-export const Basic = () => (
+export const Basic = (args: ComponentProps<typeof FeatureSlide>) => (
     <div
         style={{
             display: "flex",
@@ -17,7 +26,9 @@ export const Basic = () => (
             alignItems: "center",
         }}
     >
-        <FeatureSlide />
+        <FeatureSlide {...args} />
     </div>
 );
-Basic.args = {};
+Basic.args = {
+    slideTime: 15,
+};

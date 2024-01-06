@@ -32,6 +32,7 @@ export const FeatureSlideContainer = styled.div<FeatureSlideContainerInterface>`
         max-width: 600px;
         max-height: 600px;
         justify-self: flex-end;
+        overflow: hidden;
 
         img {
             width: auto;
@@ -39,8 +40,6 @@ export const FeatureSlideContainer = styled.div<FeatureSlideContainerInterface>`
         }
 
         p {
-            /* margin-top: 2rem; */
-            /* margin: 0; */
             padding: 0 1rem;
             width: 100%;
             color: ${({ theme }) => theme.colours.mainText};

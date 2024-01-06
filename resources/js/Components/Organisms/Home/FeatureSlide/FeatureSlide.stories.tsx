@@ -9,7 +9,15 @@ const payload: MetaPayload<typeof FeatureSlide> = {
 };
 export default payload;
 
-export const Basic = (args: ComponentProps<typeof FeatureSlide>) => (
-    <FeatureSlide {...args}>Some content</FeatureSlide>
+export const Basic = () => (
+    <div
+        style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+        }}
+    >
+        <FeatureSlide />
+    </div>
 );
 Basic.args = {};

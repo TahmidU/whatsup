@@ -8,8 +8,7 @@ import {
 import { getPublicImage } from "@/utils/PublicImagesUtil";
 import { useState } from "react";
 
-interface Props {}
-export default function FeatureSlide({}: Props) {
+export default function FeatureSlide() {
     const [preview, setPreview] = useState<PreviewType>("connect");
 
     const slideButtons: SlideButtonsType[] = [

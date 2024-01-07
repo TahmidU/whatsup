@@ -30,8 +30,10 @@ export default function WorldMap({
                     transform="scale(3.73)"
                     className="inactive"
                 />
+
                 <path
                     key={selectedPoints.in}
+                    data-testid="world-map-points-in"
                     ref={inRef}
                     d={selectedPoints.in}
                     transform="scale(3.73)"
@@ -40,6 +42,7 @@ export default function WorldMap({
 
                 <path
                     key={selectedPoints.out}
+                    data-testid="world-map-points-out"
                     ref={outRef}
                     d={selectedPoints.out}
                     transform="scale(3.73)"

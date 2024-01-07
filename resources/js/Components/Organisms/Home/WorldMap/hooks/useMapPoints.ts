@@ -2,9 +2,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import MapPoints from "../constants/MapPoints";
 import { getRandomInt } from "@/utils/RandomUtils";
+import SVGUtils from "@/utils/SVGUtils";
 
 export default function useMapPoints(selectNum = 50) {
-    const memoMapPoints = useMemo(() => extractSVGMapPoints(MapPoints), []);
+    const memoMapPoints = useMemo(
+        () => SVGUtils.separatePathPoints(MapPoints),
+        []
+    );
     const [selectedPoints, setSelectedPoints] = useState<{
         in: string;
         out?: string;
@@ -13,11 +17,11 @@ export default function useMapPoints(selectNum = 50) {
     const outRef = useRef<SVGPathElement>(null);
     const anim = useRef({ in: false, out: false });
 
-    function extractSVGMapPoints(svgPoints: string) {
-        const regex = /(?=M)/g;
+    // function extractSVGMapPoints(svgPoints: string) {
+    //     const regex = /(?=M)/g;
 
-        return svgPoints.split(regex);
-    }
+    //     return svgPoints.split(regex);
+    // }
 
     function randomlySelectPoints(svgPoints: string[], selectNum = 50) {
         const selectedPoints = [];

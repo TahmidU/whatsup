@@ -6,7 +6,7 @@ import AppSetup from "@/configs/AppSetup";
 createInertiaApp({
     resolve: (name) => {
         const pages = import.meta.glob("./pages/**/*.tsx");
-        return pages[`./Pages/${name}/index.tsx`]();
+        return pages[`./pages/${name}/index.tsx`]();
     },
     setup({ el, App, props }) {
         createRoot(el).render(

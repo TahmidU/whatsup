@@ -1,5 +1,6 @@
-import { PrefixKey } from "@/utils/TypeUtils";
 import Color from "color";
+import { fontFamilies, fonts } from "@/constants/Themes";
+import { CapitalizeKeys, PrefixObjectKeys } from "@/types/TypeUtils";
 
 export type ColourTheme = "dark" | "light";
 
@@ -13,34 +14,20 @@ export interface PrimaryColours {
     info: string;
 }
 
-export type CPrimaryColours = {
-    [key in PrefixKey<"c", Capitalize<keyof PrimaryColours>>]: Color<string>;
-};
-
-export interface Fonts {
-    xs: string;
-    sm: string;
-    md: string;
-    lg: string;
-    xl: string;
-    "2xl": string;
-    "3xl": string;
-}
-
-export interface FontFamilies {
-    arial: string;
-    roboto: string;
-    inter: string;
-}
+export type CPrimaryColours = PrefixObjectKeys<
+    "c",
+    CapitalizeKeys<PrimaryColours, Color<string>>
+>;
 
 export interface ThemeValues {
+    current: ColourTheme;
     colours: PrimaryColours;
     cColours: CPrimaryColours;
-    fonts: Fonts;
-    fontFamilies: FontFamilies;
+    fonts: typeof fonts;
+    fontFamilies: typeof fontFamilies;
 }
 
-export interface useThemeType {
+export interface UseThemeType {
     toggle: () => void;
     current: ColourTheme;
     value: ThemeValues;

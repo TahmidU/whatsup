@@ -1,20 +1,18 @@
 import { createInertiaApp } from "@inertiajs/react";
 import { createRoot } from "react-dom/client";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import AppContextProvider from "./Components/providers/AppContextProvider";
+import AppSetup from "@/configs/AppSetup";
 
 createInertiaApp({
     resolve: (name) => {
-        const pages = import.meta.glob("./Pages/**/*.tsx");
-        return pages[`./Pages/${name}/index.tsx`]();
+        const pages = import.meta.glob("./pages/**/*.tsx");
+        return pages[`./pages/${name}/index.tsx`]();
     },
     setup({ el, App, props }) {
         createRoot(el).render(
-            <AppContextProvider>
-                <ToastContainer />
+            <AppSetup>
                 <App {...props} />
-            </AppContextProvider>
+            </AppSetup>
         );
     },
 });

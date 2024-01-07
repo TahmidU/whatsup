@@ -1,7 +1,7 @@
-import { useThemeType } from "@/types/Theme";
+import { UseThemeType } from "@/types/Theme";
 import { createContext } from "react";
 
-type AppContextType = {
-    theme: useThemeType
+interface AppContextInterface {
+    theme: UseThemeType;
 }
-export default createContext({} as AppContextType);
+export default createContext({} as AppContextInterface);

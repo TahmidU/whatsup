@@ -1,3 +1,0 @@
-interface IconType {
-    className?: string;
-}

@@ -1,0 +1,5 @@
+- Get rid of PrefixObjectKeys in style components - DONE
+- Fix stories
+- Removed some unnecessary unit tests - DONE
+- Add unit tests to new components and utils
+- Combine LinkButton and Button - DONE

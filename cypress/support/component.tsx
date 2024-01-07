@@ -1,7 +1,7 @@
 import { mount } from "cypress/react18";
-import AppContextProvider from "@/Components/providers/AppContextProvider";
 import "cypress-real-events";
+import AppSetup from "@/configs/AppSetup";
 
 Cypress.Commands.add("mount", (component, options) => {
-    return mount(<AppContextProvider>{component}</AppContextProvider>, options);
+    return mount(<AppSetup>{component}</AppSetup>, options);
 });

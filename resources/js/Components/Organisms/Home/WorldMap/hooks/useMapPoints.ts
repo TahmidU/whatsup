@@ -17,12 +17,6 @@ export default function useMapPoints(selectNum = 50) {
     const outRef = useRef<SVGPathElement>(null);
     const anim = useRef({ in: false, out: false });
 
-    // function extractSVGMapPoints(svgPoints: string) {
-    //     const regex = /(?=M)/g;
-
-    //     return svgPoints.split(regex);
-    // }
-
     function randomlySelectPoints(svgPoints: string[], selectNum = 50) {
         const selectedPoints = [];
         for (let i = 0; i < selectNum; i++) {

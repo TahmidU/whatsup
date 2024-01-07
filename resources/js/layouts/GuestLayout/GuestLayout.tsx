@@ -1,4 +1,4 @@
-import Navbar from "@/Components/Organisms/Common/Navbar";
+import Navbar from "@/components/organisms/common/Navbar";
 import { Footer, GuestLayoutContainer } from "./GuestLayoutStyles";
 import { ReactNode } from "react";
 import WhatsupIcon from "@/Icons/WhatsupIcon";

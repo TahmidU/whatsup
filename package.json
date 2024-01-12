@@ -7,7 +7,7 @@
         "preview": "vite preview",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "lint": "eslint resources/js --ext .ts",
+        "lint": "eslint --no-fix --ext .ts,.tsx resources/js",
         "test": "yarn test:unit",
         "test:unit": "vitest",
         "test:unit-util": "vitest --environment node --dir ./resources/js/utils/__tests__",

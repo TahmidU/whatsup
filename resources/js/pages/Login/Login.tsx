@@ -1,4 +1,4 @@
-import LoginForm from "@/components/organisms/LoginForm";
+import LoginForm from "@/components/organisms/login/LoginForm";
 import { Container } from "./LoginStyles";
 
 export default function Login() {

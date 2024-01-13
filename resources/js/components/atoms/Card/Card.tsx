@@ -1,8 +1,7 @@
 import { CardContainer } from "@/components/atoms/Card/CardStyles";
-import { CardContainerStyle } from "@/components/atoms/Card/types/Styles";
 import { ReactNode } from "react";
 
-interface Props extends CardContainerStyle {
+interface Props {
     children: ReactNode;
     className?: string;
 }

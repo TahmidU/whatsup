@@ -1,7 +1,6 @@
-import { CardContainerStyle } from "@/components/atoms/Card/types/Styles";
 import styled from "styled-components";
 
-export const CardContainer = styled.div<CardContainerStyle>`
+export const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;

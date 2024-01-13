@@ -9,11 +9,5 @@ export const CardContainer = styled.div`
     border-radius: 1rem;
     padding: 1rem;
     color: ${({ theme }) => theme.colours.mainText};
-
-    header {
-    }
-
-    footer {
-    }
 `;
 CardContainer.displayName = "CardContainer";

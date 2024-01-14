@@ -5,7 +5,7 @@ export const CardContainer = styled.div`
     flex-direction: column;
     gap: 1rem;
     background-color: ${({ theme }) =>
-        theme.cColours.cPrimary.lighten(0.25).toString()};
+        theme.cColours.cPrimary.lighten(0.15).toString()};
     border-radius: 1rem;
     padding: 1rem;
     color: ${({ theme }) => theme.colours.mainText};

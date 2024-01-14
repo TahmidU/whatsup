@@ -44,8 +44,6 @@ export const ButtonDefaults = css<ButtonDefaultStyles>`
         color: ${({ $variant, theme }) =>
             $variant === "ghost" &&
             theme.cColours.cMainText.negate().toString()};
-
-        font-weight: ${({ $variant }) => $variant === "text" && "500"};
     }
 `;
 
@@ -79,9 +77,6 @@ export const ButtonContainer = styled.button<ButtonDefaultStyles>`
             !disabled &&
             $variant === "ghost" &&
             theme.cColours.cMainText.negate().toString()};
-
-        font-weight: ${({ $variant, disabled }) =>
-            $variant === "text" && !disabled && "500"};
     }
 `;
 ButtonContainer.displayName = "ButtonContainer";

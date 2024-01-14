@@ -7,7 +7,7 @@ export const Container = styled.div`
     align-items: center;
     position: relative;
     width: 100%;
-    height: 36px;
+    height: 34px;
     padding: 0.25rem ${xPadding};
     border: 1px solid
         ${({ theme }) => theme.cColours.cMainText.alpha(0.6).toString()};

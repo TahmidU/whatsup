@@ -4,7 +4,7 @@ export const dark: PrimaryColours = {
     primary: "#16171B",
     secondary: "#1F2125", // TODO: remove
     mainText: "#FFFFFF",
-    accent: "#18b762",
+    accent: "#0d944c",
     danger: "#ed3c4b",
     success: "#1CD774",
     info: "#FFFFFF",

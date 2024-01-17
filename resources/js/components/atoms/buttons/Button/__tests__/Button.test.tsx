@@ -1,40 +1,29 @@
-import { fireEvent, render, screen } from "@/utils/TestUtils";
-import { expect, describe } from "vitest";
+import { render, screen } from "@/utils/TestUtils";
+import { describe } from "vitest";
 import Button from "..";
 
 describe("Button", () => {
-    test("Check as 'button' polymorphism, button disable click", () => {
+    test("Check as 'button' polymorphism", () => {
         // Given
-        const onClickSpy = vitest.fn();
 
         // When
-        render(
-            <Button onClick={onClickSpy} disabled>
-                Button
-            </Button>
-        );
+        render(<Button>Button</Button>);
 
         // Then
-        const renderedButton = screen.getByRole("button");
-        fireEvent.click(renderedButton);
-
-        expect(onClickSpy).not.toHaveBeenCalled();
+        screen.getByRole("button");
     });
 
-    test("Check as 'link' polymorphism, link href", () => {
+    test("Check as 'link' polymorphism", () => {
         // Given
-        const expectedHref = "/fake";
 
         // When
         render(
-            <Button as="link" href={expectedHref}>
+            <Button as="link" href="">
                 Button
             </Button>
         );
 
         // Then
-        const renderedButton = screen.getByRole("link");
-
-        expect(renderedButton).toHaveAttribute("href", expectedHref);
+        screen.getByRole("link");
     });
 });

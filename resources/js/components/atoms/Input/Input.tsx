@@ -1,5 +1,5 @@
 import { HTMLProps, useRef, useState } from "react";
-import { Container, PasswordVisibilityBtn } from "./InputStyles";
+import { InputContainer, PasswordVisibilityBtn } from "./InputStyles";
 import EyeIcon from "@/Icons/EyeIcon";
 
 interface Props extends HTMLProps<HTMLInputElement> {
@@ -25,7 +25,7 @@ export default function Input({ type, dataTestId, ...restProps }: Props) {
     }
 
     return (
-        <Container>
+        <InputContainer>
             <input
                 {...restProps}
                 ref={inputRef}
@@ -43,6 +43,6 @@ export default function Input({ type, dataTestId, ...restProps }: Props) {
                     <EyeIcon />
                 </PasswordVisibilityBtn>
             )}
-        </Container>
+        </InputContainer>
     );
 }

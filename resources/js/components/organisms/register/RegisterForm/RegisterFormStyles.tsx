@@ -43,14 +43,9 @@ export const RegisterFormContainer = styled(Card)`
                     font-weight: 500;
                 }
 
-                span:not(:first-child) {
+                span:last-child {
                     font-weight: 300;
                     font-size: ${({ theme }) => theme.fonts["md"]};
-                }
-
-                span:last-child {
-                    color: ${({ theme }) => theme.colours.danger};
-                    font-size: ${({ theme }) => theme.fonts["sm"]};
                 }
             }
         }
@@ -65,26 +60,35 @@ export const RegisterFormContainer = styled(Card)`
             }
 
             .register-form-tos-pp {
-                display: inline-block;
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                align-items: center;
+                justify-content: flex-start;
                 font-weight: 300;
                 font-size: ${({ theme }) => theme.fonts.sm};
-                vertical-align: middle;
 
                 .register-form-agreement {
-                    display: inline-block;
-                    margin-right: 0.45rem;
                     width: 1rem;
                     height: 1rem;
                 }
+            }
+        }
 
-                button {
-                    display: inline-block;
-                    opacity: 0.625;
-                    padding: 0;
+        footer {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
 
-                    &:hover {
-                        opacity: 1;
-                    }
+            .register-form-login {
+                padding-left: 0;
+                padding-right: 0;
+                font-size: ${({ theme }) => theme.fonts.md};
+                opacity: 0.85;
+
+                &:hover {
+                    opacity: 1;
                 }
             }
         }

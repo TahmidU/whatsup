@@ -4,7 +4,7 @@ import Button from "@/components/atoms/buttons/Button";
 import { RegisterFormContainer } from "@/components/organisms/register/RegisterForm/RegisterFormStyles";
 import { getPublicImage } from "@/utils/PublicImagesUtil";
 import { useForm } from "@inertiajs/react";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 export default function RegisterForm() {
     const formData = useForm({
@@ -19,6 +19,21 @@ export default function RegisterForm() {
         reEnterPassword: false,
         agreement: false,
     });
+
+    function validateAgreement(e: FormEvent<HTMLInputElement>) {
+        setValidation((prev) => ({
+            ...prev,
+            agreement: e.currentTarget.checked,
+        }));
+    }
+
+    function validatePassword(e: FormEvent<HTMLInputElement>) {
+        if (formData.data.password === e.currentTarget.value) {
+            setValidation((prev) => ({ ...prev, reEnterPassword: true }));
+        } else {
+            setValidation((prev) => ({ ...prev, reEnterPassword: false }));
+        }
+    }
 
     const isInvalid =
         !validation.agreement &&
@@ -87,7 +102,7 @@ export default function RegisterForm() {
 
                     <label>
                         Re-enter password
-                        <Input />
+                        <Input onChange={validatePassword} />
                     </label>
 
                     <br />
@@ -96,14 +111,10 @@ export default function RegisterForm() {
                         <Checkbox
                             className="register-form-agreement"
                             checked={validation.agreement}
-                            onChange={(e) => {
-                                setValidation((prev) => ({
-                                    ...prev,
-                                    agreement: e.currentTarget.checked,
-                                }));
-                            }}
+                            onChange={validateAgreement}
                         />
-                        I have not entered in any personal information
+                        I understand not to enter in any personal information in
+                        this website
                     </label>
                 </div>
 

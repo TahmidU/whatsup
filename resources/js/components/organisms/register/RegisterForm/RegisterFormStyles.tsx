@@ -15,6 +15,7 @@ export const RegisterFormContainer = styled(Card)`
         flex-grow: 1;
         flex-direction: column;
         justify-content: space-between;
+
         header {
             .register-form-logo-container {
                 display: flex;

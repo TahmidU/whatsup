@@ -1,5 +1,5 @@
-import FeatureSlide from "@/components/organisms/home/FeatureSlide";
-import { PREVIEW_SECTION } from "@/components/organisms/home/FeatureSlide/constants/SlideDetails";
+import FeatureSlide from "@/components/organisms/common/FeatureSlide";
+import { PREVIEW_SECTION } from "@/components/organisms/common/FeatureSlide/constants/SlideDetails";
 
 describe("FeatureSlide", () => {
     it("Slide auto change, cycle to start", () => {

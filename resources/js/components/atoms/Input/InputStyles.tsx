@@ -2,17 +2,18 @@ import styled from "styled-components";
 import { PasswordVisibilityBtnStyle } from "./types/Styles";
 
 const xPadding = "0.5rem";
-export const Container = styled.div`
+export const InputContainer = styled.div`
     display: flex;
     align-items: center;
     position: relative;
     width: 100%;
-    height: 36px;
+    height: 34px;
     padding: 0.25rem ${xPadding};
     border: 1px solid
         ${({ theme }) => theme.cColours.cMainText.alpha(0.6).toString()};
     border-radius: 0.5rem;
     box-sizing: border-box;
+    cursor: text;
 
     &:focus-within {
         border: 1px solid ${({ theme }) => theme.colours.mainText};
@@ -27,7 +28,7 @@ export const Container = styled.div`
         font-size: ${({ theme }) => theme.fonts.md};
     }
 `;
-Container.displayName = "Container";
+InputContainer.displayName = "InputContainer";
 
 export const PasswordVisibilityBtn = styled.button<PasswordVisibilityBtnStyle>`
     all: unset;

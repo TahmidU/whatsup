@@ -1,5 +1,5 @@
-import { HTMLProps, useRef, useState } from "react";
-import { Container, PasswordVisibilityBtn } from "./InputStyles";
+import { HTMLProps, useRef, useState, MouseEvent } from "react";
+import { InputContainer, PasswordVisibilityBtn } from "./InputStyles";
 import EyeIcon from "@/Icons/EyeIcon";
 
 interface Props extends HTMLProps<HTMLInputElement> {
@@ -10,7 +10,9 @@ export default function Input({ type, dataTestId, ...restProps }: Props) {
     const isPasswordType = type === "password";
     const [showPassword, setShowPassword] = useState(false);
 
-    function togglePasswordVisibility() {
+    function togglePasswordVisibility(e: MouseEvent) {
+        e.preventDefault();
+
         const inputElm = inputRef.current;
 
         if (inputElm) {
@@ -25,7 +27,7 @@ export default function Input({ type, dataTestId, ...restProps }: Props) {
     }
 
     return (
-        <Container>
+        <InputContainer>
             <input
                 {...restProps}
                 ref={inputRef}
@@ -43,6 +45,6 @@ export default function Input({ type, dataTestId, ...restProps }: Props) {
                     <EyeIcon />
                 </PasswordVisibilityBtn>
             )}
-        </Container>
+        </InputContainer>
     );
 }

@@ -1,5 +1,11 @@
-- Get rid of PrefixObjectKeys in style components - DONE
-- Fix stories
-- Removed some unnecessary unit tests - DONE
-- Add unit tests to new components and utils
-- Combine LinkButton and Button - DONE
+----------------- USER CREATION -----------------
+1. Register User
+	1.1. Users enters username for both accounts.
+2. 2 accounts created for new user.
+
+----------------- 'USER' MODEL CHANGES IN DB [DONE] -----------------
+- Change 'name' to
+	- first_name - DONE
+	- last_name - DONE
+- Add 'username' - DONE
+- Removed 'remember_token', 'email_verified_at', 'email', 'name'. - DONE

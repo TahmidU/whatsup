@@ -1,16 +1,12 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect } from "vitest";
 import FeatureSlide from "@/components/organisms/home/FeatureSlide";
 import {
     PREVIEW_SECTION,
     SLIDE_BUTTONS,
 } from "@/components/organisms/home/FeatureSlide/constants/SlideDetails";
-import { cleanup, fireEvent, render, screen } from "@/utils/TestUtils";
+import { fireEvent, render, screen } from "@/utils/TestUtils";
 
 describe("FeatureSlide", () => {
-    afterEach(() => {
-        cleanup();
-    });
-
     test("Change slide on click", () => {
         // Given
         const select = "encrypt";

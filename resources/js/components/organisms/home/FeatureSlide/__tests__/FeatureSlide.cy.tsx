@@ -9,7 +9,7 @@ describe("FeatureSlide", () => {
         // When
         cy.mount(
             <FeatureSlide
-                slideTime={2}
+                slideTime={1}
                 onSlideAutoChange={onSlideAutoChangeSpy}
             />
         );

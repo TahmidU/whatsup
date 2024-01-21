@@ -1,8 +1,17 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
+Route::middleware("auth:sanctum")->group(function (){
+
+    Route::controller(DashboardController::class)->name('dashboard.')->group(function (){
+        Route::get('/dashboard', 'index')->name('index');
+    });
+
+});
 
 Route::get('/', function () {
     return Inertia::render('Home');

@@ -1,4 +1,4 @@
-import { HTMLProps, useRef, useState } from "react";
+import { HTMLProps, useRef, useState, MouseEvent } from "react";
 import { InputContainer, PasswordVisibilityBtn } from "./InputStyles";
 import EyeIcon from "@/Icons/EyeIcon";
 
@@ -10,7 +10,9 @@ export default function Input({ type, dataTestId, ...restProps }: Props) {
     const isPasswordType = type === "password";
     const [showPassword, setShowPassword] = useState(false);
 
-    function togglePasswordVisibility() {
+    function togglePasswordVisibility(e: MouseEvent) {
+        e.preventDefault();
+
         const inputElm = inputRef.current;
 
         if (inputElm) {

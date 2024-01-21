@@ -3,49 +3,67 @@ import Input from "@/components/atoms/Input";
 import Button from "@/components/atoms/buttons/Button";
 import { RegisterFormContainer } from "@/components/organisms/register/RegisterForm/RegisterFormStyles";
 import { getPublicImage } from "@/utils/PublicImagesUtil";
-import { useForm } from "@inertiajs/react";
-import { FormEvent, useState } from "react";
+import { router, useForm } from "@inertiajs/react";
+import { FormEvent, isValidElement, useState } from "react";
 
 export default function RegisterForm() {
-    const formData = useForm({
-        firstName: "",
-        lastName: "",
+    const { data, setData } = useForm({
+        first_name: "",
+        last_name: "",
         username: "",
-        otherUsername: "",
+        other_username: "",
         password: "",
     });
 
     const [validation, setValidation] = useState({
-        reEnterPassword: false,
+        password: false,
         agreement: false,
     });
 
+    function onHandleSubmit(e: FormEvent) {
+        e.preventDefault();
+        router.post(route("user.register"), data, {
+            preserveScroll: true,
+            preserveState: true,
+        });
+    }
+
     function validateAgreement(e: FormEvent<HTMLInputElement>) {
-        setValidation((prev) => ({
-            ...prev,
-            agreement: e.currentTarget.checked,
-        }));
+        const isChecked = e.currentTarget.checked;
+        setValidation((prev) => {
+            return {
+                ...prev,
+                agreement: isChecked,
+            };
+        });
     }
 
     function validatePassword(e: FormEvent<HTMLInputElement>) {
-        if (formData.data.password === e.currentTarget.value) {
-            setValidation((prev) => ({ ...prev, reEnterPassword: true }));
+        if (
+            data.password === e.currentTarget.value &&
+            data.password.length !== 0
+        ) {
+            setValidation((prev) => ({ ...prev, password: true }));
         } else {
-            setValidation((prev) => ({ ...prev, reEnterPassword: false }));
+            setValidation((prev) => ({ ...prev, password: false }));
         }
     }
 
+    const onHandleInputChange =
+        (inputData: keyof typeof data) => (e: FormEvent<HTMLInputElement>) => {
+            setData(inputData, e.currentTarget.value);
+        };
+
     const isInvalid =
-        !validation.agreement &&
-        !validation.reEnterPassword &&
-        !!Object.keys(formData.data).find(
-            (key) =>
-                formData.data[key as keyof typeof formData.data].length === 0
+        !validation.agreement ||
+        !validation.password ||
+        !!Object.keys(data).find(
+            (key) => data[key as keyof typeof data].length === 0
         );
 
     return (
         <RegisterFormContainer>
-            <form>
+            <form onSubmit={onHandleSubmit}>
                 <header>
                     <div className="register-form-logo-container">
                         <img
@@ -67,42 +85,47 @@ export default function RegisterForm() {
                 <div className="register-form-inputs">
                     <label>
                         First name
-                        <Input />
+                        <Input onChange={onHandleInputChange("first_name")} />
                     </label>
 
                     <br />
 
                     <label>
                         Last name
-                        <Input />
+                        <Input onChange={onHandleInputChange("last_name")} />
                     </label>
 
                     <br />
 
                     <label>
                         Username
-                        <Input />
+                        <Input onChange={onHandleInputChange("username")} />
                     </label>
 
                     <br />
 
                     <label>
                         Other username (2nd account)
-                        <Input />
+                        <Input
+                            onChange={onHandleInputChange("other_username")}
+                        />
                     </label>
 
                     <br />
 
                     <label>
                         Password
-                        <Input />
+                        <Input
+                            type="password"
+                            onChange={onHandleInputChange("password")}
+                        />
                     </label>
 
                     <br />
 
                     <label>
                         Re-enter password
-                        <Input onChange={validatePassword} />
+                        <Input type="password" onChange={validatePassword} />
                     </label>
 
                     <br />
@@ -110,7 +133,6 @@ export default function RegisterForm() {
                     <label className="register-form-tos-pp">
                         <Checkbox
                             className="register-form-agreement"
-                            checked={validation.agreement}
                             onChange={validateAgreement}
                         />
                         I understand not to enter in any personal information in

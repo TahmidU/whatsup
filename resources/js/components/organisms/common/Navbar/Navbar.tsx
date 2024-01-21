@@ -34,7 +34,7 @@ export default function Navbar() {
             </ul>
 
             <div className="actions">
-                <Button as="link" href={route("register")} $variant="text">
+                <Button as="link" href={route("user.register")} $variant="text">
                     Sign Up
                 </Button>
                 <Button

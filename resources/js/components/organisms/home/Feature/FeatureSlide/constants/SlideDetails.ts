@@ -1,7 +1,7 @@
 import {
     PreviewSectionType,
     SlideButtonsType,
-} from "@/components/organisms/home/FeatureSlide/types/Slide";
+} from "@/components/organisms/home/Feature/FeatureSlide/types/Slide";
 import { getPublicImage } from "@/utils/PublicImagesUtil";
 
 export const SLIDE_BUTTONS: SlideButtonsType[] = [

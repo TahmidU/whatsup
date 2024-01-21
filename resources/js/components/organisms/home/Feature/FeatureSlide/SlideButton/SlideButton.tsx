@@ -1,5 +1,5 @@
 import TimerButton from "@/components/atoms/buttons/TimerButton";
-import { SlideButtonContainer } from "@/components/organisms/home/FeatureSlide/SlideButton/SlideButtonStyles";
+import { SlideButtonContainer } from "@/components/organisms/home/Feature/FeatureSlide/SlideButton/SlideButtonStyles";
 import { ComponentProps } from "react";
 
 interface Props extends Omit<ComponentProps<typeof TimerButton>, "children"> {

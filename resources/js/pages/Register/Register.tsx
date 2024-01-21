@@ -4,7 +4,7 @@ import { RegisterContainer } from "@/pages/Register/RegisterStyles";
 export default function Register() {
     return (
         <RegisterContainer>
-            <RegisterForm></RegisterForm>
+            <RegisterForm />
         </RegisterContainer>
     );
 }

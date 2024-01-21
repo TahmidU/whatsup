@@ -1,9 +1,9 @@
 import { describe, expect } from "vitest";
-import FeatureSlide from "@/components/organisms/home/FeatureSlide";
+import FeatureSlide from "@/components/organisms/home/Feature/FeatureSlide";
 import {
     PREVIEW_SECTION,
     SLIDE_BUTTONS,
-} from "@/components/organisms/home/FeatureSlide/constants/SlideDetails";
+} from "@/components/organisms/home/Feature/FeatureSlide/constants/SlideDetails";
 import { fireEvent, render, screen } from "@/utils/TestUtils";
 
 describe("FeatureSlide", () => {

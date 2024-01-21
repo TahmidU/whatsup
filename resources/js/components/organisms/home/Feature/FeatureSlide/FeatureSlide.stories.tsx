@@ -1,9 +1,9 @@
 import { MetaPayload } from "@/types/Story";
-import FeatureSlide from "@/components/organisms/home/FeatureSlide";
+import FeatureSlide from "@/components/organisms/home/Feature/FeatureSlide";
 import { ComponentProps } from "react";
 
 const payload: MetaPayload<typeof FeatureSlide> = {
-    title: "ORGANISMS/FeatureSlide",
+    title: "ORGANISMS/Feature/FeatureSlide",
     component: FeatureSlide,
     parameters: {
         controls: {

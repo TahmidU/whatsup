@@ -3,7 +3,7 @@ import WorldMap from ".";
 import { ComponentProps } from "react";
 
 const payload: MetaPayload<typeof WorldMap> = {
-    title: "ORGANISMS/WorldMap",
+    title: "ATOMS/WorldMap",
     component: WorldMap,
     argTypes: {
         selectionInterval: {

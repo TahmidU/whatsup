@@ -9,7 +9,7 @@ const GLOBE_SRC = getPublicImage({ type: "assets", name: "globe" });
 const LOCK_SRC = getPublicImage({ type: "assets", name: "lock" });
 
 const payload: MetaPayload<typeof SlideButton> = {
-    title: "ORGANISMS/FeatureSlide/SlideButton",
+    title: "ORGANISMS/Feature/FeatureSlide/SlideButton",
     component: SlideButton,
     parameters: {
         controls: {

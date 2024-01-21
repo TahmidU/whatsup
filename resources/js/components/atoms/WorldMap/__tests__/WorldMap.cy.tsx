@@ -1,4 +1,4 @@
-import WorldMap from "@/components/organisms/common/WorldMap";
+import WorldMap from "@/components/atoms/WorldMap";
 import SVGUtils from "@/utils/SVGUtils";
 
 describe("WorldMap", () => {

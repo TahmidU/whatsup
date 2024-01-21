@@ -1,5 +1,5 @@
 import Button from "@/components/atoms/buttons/Button";
-import FeatureSlide from "@/components/organisms/common/FeatureSlide";
+import FeatureSlide from "@/components/organisms/home/Feature/FeatureSlide";
 import { FeatureContainer } from "@/components/organisms/home/Feature/FeatureStyles";
 import { Dispatch, SetStateAction } from "react";
 

@@ -1,6 +1,6 @@
 import DownChevronIcon from "@/Icons/DownChevronIcon";
 import Button from "@/components/atoms/buttons/Button";
-import WorldMap from "@/components/organisms/common/WorldMap";
+import WorldMap from "@/components/atoms/WorldMap";
 import { HeroContainer } from "./HeroStyle";
 import PublicImagesUtil from "@/utils/PublicImagesUtil";
 

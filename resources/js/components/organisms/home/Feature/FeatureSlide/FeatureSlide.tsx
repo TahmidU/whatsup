@@ -1,11 +1,11 @@
-import SlideButton from "@/components/organisms/common/FeatureSlide/SlideButton";
-import { FeatureSlideContainer } from "@/components/organisms/common/FeatureSlide/FeatureSlideStyles";
-import { PreviewType } from "@/components/organisms/common/FeatureSlide/types/Slide";
+import SlideButton from "@/components/organisms/home/Feature/FeatureSlide/SlideButton";
+import { FeatureSlideContainer } from "@/components/organisms/home/Feature/FeatureSlide/FeatureSlideStyles";
+import { PreviewType } from "@/components/organisms/home/Feature/FeatureSlide/types/Slide";
 import { useState } from "react";
 import {
     PREVIEW_SECTION,
     SLIDE_BUTTONS,
-} from "@/components/organisms/common/FeatureSlide/constants/SlideDetails";
+} from "@/components/organisms/home/Feature/FeatureSlide/constants/SlideDetails";
 
 interface Props {
     slideTime?: number;

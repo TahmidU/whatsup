@@ -42,8 +42,8 @@ export const NavBarContainer = styled.nav`
     .actions {
         display: flex;
         align-items: center;
-        width: 10rem;
-        gap: 1rem;
+        width: fit-content;
+        gap: 1.5rem;
         font-size: ${({ theme }) => theme.fonts.md};
 
         button {

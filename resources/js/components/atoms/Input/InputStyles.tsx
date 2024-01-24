@@ -15,6 +15,9 @@ export const InputContainer = styled.div`
     box-sizing: border-box;
     cursor: text;
 
+    background-color: ${({ theme }) =>
+        theme.cColours.cPrimary.lighten(0.625).toString()};
+
     &:focus-within {
         border: 1px solid ${({ theme }) => theme.colours.mainText};
     }

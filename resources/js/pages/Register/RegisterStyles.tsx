@@ -52,11 +52,12 @@ export const RegisterContainer = styled.div`
                 font-size: ${({ theme }) => theme.fonts.md};
 
                 li {
-                    color: ${({ theme }) => theme.colours.mainText};
+                    color: ${({ theme }) =>
+                        theme.cColours.cMainText.darken(0.15).toString()};
                 }
                 span {
                     color: ${({ theme }) =>
-                        theme.cColours.cMainText.darken(0.4).toString()};
+                        theme.cColours.cMainText.darken(0.2).toString()};
                 }
             }
         }

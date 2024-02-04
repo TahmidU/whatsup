@@ -6,7 +6,10 @@ import { getPublicImage } from "@/utils/PublicImagesUtil";
 import { router, useForm } from "@inertiajs/react";
 import { FormEvent, isValidElement, useState } from "react";
 
-export default function RegisterForm() {
+interface Props {
+    className?: string;
+}
+export default function RegisterForm({ className = "" }: Props) {
     const { data, setData } = useForm({
         first_name: "",
         last_name: "",
@@ -62,97 +65,85 @@ export default function RegisterForm() {
         );
 
     return (
-        <RegisterFormContainer>
-            <form onSubmit={onHandleSubmit}>
-                <header>
-                    <div className="register-form-logo-container">
-                        <img
-                            src={getPublicImage({
-                                type: "logo",
-                                name: "logo_dark",
-                            })}
-                        />
-                    </div>
-                    <section className="register-form-welcome-segment">
-                        <span>Register your accounts</span>
-                        <span>
-                            This form will create two accounts both of which
-                            will share a limited quota.
-                        </span>
-                    </section>
-                </header>
+        <RegisterFormContainer onSubmit={onHandleSubmit} className={className}>
+            <header>
+                <section className="register-form-welcome-segment">
+                    <span>Register your accounts</span>
+                    <span>
+                        This form will create two accounts both of which will
+                        share a limited quota.
+                    </span>
+                </section>
+            </header>
 
-                <div className="register-form-inputs">
-                    <label>
-                        First name
-                        <Input onChange={onHandleInputChange("first_name")} />
-                    </label>
+            <div className="register-form-inputs">
+                <label>
+                    First name
+                    <Input onChange={onHandleInputChange("first_name")} />
+                </label>
 
-                    <br />
+                <br />
 
-                    <label>
-                        Last name
-                        <Input onChange={onHandleInputChange("last_name")} />
-                    </label>
+                <label>
+                    Last name
+                    <Input onChange={onHandleInputChange("last_name")} />
+                </label>
 
-                    <br />
+                <br />
 
-                    <label>
-                        Username
-                        <Input onChange={onHandleInputChange("username")} />
-                    </label>
+                <label>
+                    Username
+                    <Input onChange={onHandleInputChange("username")} />
+                </label>
 
-                    <br />
+                <br />
 
-                    <label>
-                        Other username (2nd account)
-                        <Input
-                            onChange={onHandleInputChange("other_username")}
-                        />
-                    </label>
+                <label>
+                    Other username (2nd account)
+                    <Input onChange={onHandleInputChange("other_username")} />
+                </label>
 
-                    <br />
+                <br />
 
-                    <label>
-                        Password
-                        <Input
-                            type="password"
-                            onChange={onHandleInputChange("password")}
-                        />
-                    </label>
+                <label>
+                    Password
+                    <Input
+                        type="password"
+                        onChange={onHandleInputChange("password")}
+                    />
+                </label>
 
-                    <br />
+                <br />
 
-                    <label>
-                        Re-enter password
-                        <Input type="password" onChange={validatePassword} />
-                    </label>
+                <label>
+                    Re-enter password
+                    <Input type="password" onChange={validatePassword} />
+                </label>
 
-                    <br />
+                <br />
 
-                    <label className="register-form-tos-pp">
-                        <Checkbox
-                            className="register-form-agreement"
-                            onChange={validateAgreement}
-                        />
-                        I understand not to enter in any personal information in
-                        this website
-                    </label>
-                </div>
+                <label className="register-form-tos-pp">
+                    <Checkbox
+                        className="register-form-agreement"
+                        onChange={validateAgreement}
+                    />
+                    I will and have not entered in any personal information in
+                    this site
+                </label>
+            </div>
 
-                <footer>
-                    <Button
-                        $borderSize="lg"
-                        $variant="text"
-                        className="register-form-login"
-                    >
-                        Already have an account?
-                    </Button>
-                    <Button $borderSize="lg" type="submit" disabled={isInvalid}>
-                        Register
-                    </Button>
-                </footer>
-            </form>
+            <footer>
+                <Button
+                    $borderSize="lg"
+                    $variant="text"
+                    className="register-form-login"
+                >
+                    Already have an account?
+                </Button>
+                <Button $borderSize="lg" type="submit" disabled={isInvalid}>
+                    Register
+                </Button>
+            </footer>
         </RegisterFormContainer>
     );
 }

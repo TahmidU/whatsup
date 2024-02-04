@@ -24,7 +24,7 @@ export const HomePageContainer = styled.div`
         }
 
         span {
-            color: ${({ theme }) => theme.colours.accent};
+            color: ${({ theme }) => theme.colours.success};
         }
 
         h4 {

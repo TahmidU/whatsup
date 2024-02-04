@@ -5,7 +5,8 @@ import { css, styled } from "styled-components";
 export const ButtonDefaults = css<ButtonDefaultStyles>`
     width: fit-content;
     text-align: center;
-    padding: 0.5rem 0.75rem;
+    padding: ${({ $variant }) =>
+        $variant === "text" ? "0.5rem 0rem" : "0.5rem 1.5rem"};
 
     border: ${({ theme, $variant }) =>
         $variant === "ghost" && `1px solid ${theme.colours.mainText}`};

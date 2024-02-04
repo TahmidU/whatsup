@@ -134,6 +134,8 @@ export default function RegisterForm({ className = "" }: Props) {
 
             <footer>
                 <Button
+                    as="link"
+                    href={route("user.login")}
                     $borderSize="lg"
                     $variant="text"
                     className="register-form-login"

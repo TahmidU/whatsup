@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const LoginContainer = styled.div`
     min-height: calc(100vh - 72px);
     max-height: calc(100vh - 72px);
     display: flex;
@@ -10,3 +10,4 @@ export const Container = styled.div`
     width: 100%;
     height: 100%;
 `;
+LoginContainer.displayName = "LoginContainer";

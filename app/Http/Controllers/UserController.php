@@ -46,4 +46,8 @@ class UserController extends Controller
 
         return redirect()->route('dashboard.index');
     }
+
+    public function authenticateUser(){
+        return Inertia::render('Login');
+    }
 }

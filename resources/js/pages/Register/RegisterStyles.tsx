@@ -15,12 +15,15 @@ export const RegisterContainer = styled.div`
             ${({ theme }) => theme.cColours.cPrimary.lighten(0.45).toString()};
 
         .register-float-container {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 40%;
+            left: -49px;
+
             header {
                 display: flex;
                 align-items: center;
-                position: absolute;
-                left: -49px;
-                bottom: 50%;
                 padding: 0.5rem;
 
                 .register-logo-container {
@@ -41,13 +44,12 @@ export const RegisterContainer = styled.div`
             }
 
             ul {
-                position: absolute;
-                bottom: 35%;
-                left: -28px;
                 display: flex;
                 width: 350px;
                 flex-direction: column;
                 gap: 1rem;
+                margin-left: 1.34rem;
+                margin-top: 2rem;
 
                 font-size: ${({ theme }) => theme.fonts.md};
 

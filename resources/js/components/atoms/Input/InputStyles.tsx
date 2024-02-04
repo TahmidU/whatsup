@@ -10,13 +10,13 @@ export const InputContainer = styled.div`
     height: 34px;
     padding: 0.25rem ${xPadding};
     border: 1px solid
-        ${({ theme }) => theme.cColours.cMainText.alpha(0.6).toString()};
+        ${({ theme }) => theme.cColours.cPrimary.lighten(0.6).toString()};
     border-radius: 0.5rem;
     box-sizing: border-box;
     cursor: text;
 
     background-color: ${({ theme }) =>
-        theme.cColours.cPrimary.lighten(0.625).toString()};
+        theme.cColours.cPrimary.lighten(0.35).toString()};
 
     &:focus-within {
         border: 1px solid ${({ theme }) => theme.colours.mainText};

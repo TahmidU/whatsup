@@ -79,7 +79,6 @@ export const ButtonContainer = styled.button<ButtonDefaultStyles>`
 
     &:hover {
         cursor: ${({ disabled }) => disabled && "not-allowed"};
-        /* color: ${({ disabled }) => disabled && "inherit"}; */
     }
 `;
 ButtonContainer.displayName = "ButtonContainer";

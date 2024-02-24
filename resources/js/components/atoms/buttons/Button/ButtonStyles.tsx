@@ -2,14 +2,52 @@ import { Link } from "@inertiajs/react";
 import { ButtonDefaultStyles } from "./types/Styles";
 import { css, styled } from "styled-components";
 
+export const ActionVariant = css`
+    background-color: ${({ theme }) => theme.colours.accent};
+
+    &:hover {
+        background-color: ${({ theme }) =>
+            theme.cColours.cAccent.lighten(0.05).toString()};
+    }
+`;
+
+export const DangerVariant = css`
+    background-color: ${({ theme }) => theme.colours.danger};
+
+    &:hover {
+        background-color: ${({ theme }) =>
+            theme.cColours.cDanger.lighten(0.05).toString()};
+    }
+`;
+
+export const TextVariant = css`
+    padding: 0.5rem 0rem;
+    background-color: transparent;
+
+    &:hover {
+        background-color: transparent;
+    }
+`;
+
+export const GhostVariant = (isDisabled = false) => css`
+    border: ${({ theme }) => `1px solid ${theme.colours.mainText}`};
+    background-color: ${({ theme }) =>
+        theme.cColours.cPrimary.alpha(0.85).toString()};
+
+    &:hover {
+        background-color: ${({ theme }) =>
+            !isDisabled && theme.colours.mainText};
+        color: ${({ theme }) =>
+            !isDisabled && theme.cColours.cMainText.negate().toString()};
+    }
+`;
+
+export const LinkTextVariant = css``;
+
 export const ButtonDefaults = css<ButtonDefaultStyles>`
     width: fit-content;
     text-align: center;
-    padding: ${({ $variant }) =>
-        $variant === "text" ? "0.5rem 0rem" : "0.5rem 1.5rem"};
-
-    border: ${({ theme, $variant }) =>
-        $variant === "ghost" && `1px solid ${theme.colours.mainText}`};
+    padding: 0.5rem 1.5rem;
 
     border-radius: ${({ $borderSize }) =>
         $borderSize === "xl"
@@ -22,67 +60,41 @@ export const ButtonDefaults = css<ButtonDefaultStyles>`
 
     font-family: ${({ theme }) => theme.fontFamilies.inter};
     color: ${({ theme }) => theme.colours.mainText};
-
-    background-color: ${({ $variant, theme }) =>
-        $variant === "action"
-            ? theme.colours.accent
-            : $variant === "danger"
-            ? theme.colours.danger
-            : $variant === "ghost"
-            ? theme.cColours.cPrimary.alpha(0.85).toString()
-            : "transparent"};
-
-    &:hover {
-        background-color: ${({ $variant, theme }) =>
-            $variant === "action"
-                ? theme.cColours.cAccent.lighten(0.05).toString()
-                : $variant === "danger"
-                ? theme.cColours.cDanger.lighten(0.05).toString()
-                : $variant === "ghost"
-                ? theme.colours.mainText
-                : "transparent"};
-
-        color: ${({ $variant, theme }) =>
-            $variant === "ghost" &&
-            theme.cColours.cMainText.negate().toString()};
-    }
 `;
 
 export const ButtonContainer = styled.button<ButtonDefaultStyles>`
     ${ButtonDefaults}
-
-    background-color: ${({ $variant, theme }) =>
+    ${({ $variant, disabled }) =>
         $variant === "action"
-            ? theme.cColours.cAccent.toString()
+            ? ActionVariant
             : $variant === "danger"
-            ? theme.cColours.cDanger.toString()
+            ? DangerVariant
+            : $variant === "text"
+            ? TextVariant
             : $variant === "ghost"
-            ? theme.cColours.cPrimary.alpha(0.85).toString()
-            : "transparent"};
+            ? GhostVariant(disabled)
+            : LinkTextVariant}
 
     opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 
     &:hover {
         cursor: ${({ disabled }) => disabled && "not-allowed"};
-
-        background-color: ${({ $variant, theme }) =>
-            $variant === "action"
-                ? theme.cColours.cAccent.lighten(0.05).toString()
-                : $variant === "danger"
-                ? theme.cColours.cDanger.lighten(0.05).toString()
-                : $variant === "ghost"
-                ? theme.colours.mainText
-                : "transparent"};
-
-        color: ${({ $variant, theme, disabled }) =>
-            !disabled &&
-            $variant === "ghost" &&
-            theme.cColours.cMainText.negate().toString()};
+        /* color: ${({ disabled }) => disabled && "inherit"}; */
     }
 `;
 ButtonContainer.displayName = "ButtonContainer";
 
 export const LinkContainer = styled(Link)<ButtonDefaultStyles>`
     ${ButtonDefaults}
+    ${({ $variant }) =>
+        $variant === "action"
+            ? ActionVariant
+            : $variant === "danger"
+            ? DangerVariant
+            : $variant === "text"
+            ? TextVariant
+            : $variant === "ghost"
+            ? GhostVariant()
+            : LinkTextVariant}
 `;
 LinkContainer.displayName = "LinkContainer";

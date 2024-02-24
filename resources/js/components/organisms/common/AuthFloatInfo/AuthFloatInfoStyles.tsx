@@ -9,7 +9,7 @@ export const AuthFloatInfoContainer = styled.div`
         display: flex;
         flex-direction: column;
         position: absolute;
-        bottom: 40%;
+        bottom: 50%;
         left: -49px;
 
         header {
@@ -29,28 +29,9 @@ export const AuthFloatInfoContainer = styled.div`
             }
 
             h1 {
+                letter-spacing: 0.175rem;
                 color: ${({ theme }) => theme.colours.mainText};
-                font-weight: 300;
-            }
-        }
-
-        ul {
-            display: flex;
-            width: 350px;
-            flex-direction: column;
-            gap: 1rem;
-            margin-left: 1.34rem;
-            margin-top: 2rem;
-
-            font-size: ${({ theme }) => theme.fonts.md};
-
-            li {
-                color: ${({ theme }) =>
-                    theme.cColours.cMainText.darken(0.15).toString()};
-            }
-            span {
-                color: ${({ theme }) =>
-                    theme.cColours.cMainText.darken(0.2).toString()};
+                font-weight: 400;
             }
         }
     }

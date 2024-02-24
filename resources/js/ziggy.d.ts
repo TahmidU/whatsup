@@ -5,11 +5,14 @@ declare module 'ziggy-js' {
     "ignition.healthCheck": [],
     "ignition.executeSolution": [],
     "ignition.updateConfig": [],
+    "dashboard.index": [],
     "home": [],
     "about": [],
     "safety": [],
     "support": [],
-    "careers": []
+    "careers": [],
+    "user.register": [],
+    "user.login": []
 }
 }
 export {};

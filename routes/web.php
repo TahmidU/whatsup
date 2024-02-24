@@ -33,10 +33,6 @@ Route::get('/careers', function () {
     return Inertia::render('Careers');
 })->name('careers');
 
-// Route::get('/login', function () {
-//     return Inertia::render('Login');
-// })->name('login');
-
 Route::controller(UserController::class)->name("user.")->group(function () {
     Route::get('/register', 'create')->name('register');
     Route::get('/login', 'authenticateUser')->name("login");

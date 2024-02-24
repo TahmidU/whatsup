@@ -1,7 +1,8 @@
 import { FormEvent, Fragment } from "react";
-import { LoginFormContainer, Form } from "./LoginFormStyles";
+import { LoginFormContainer } from "./LoginFormStyles";
 // import LabelledInput from "@/Components/Molecules/LabelledInput";
 import Button from "@/components/atoms/buttons/Button";
+import Input from "@/components/atoms/Input";
 // import Checkbox from "@/Components/Atoms/Checkbox";
 
 interface Props {}
@@ -10,7 +11,100 @@ export default function LoginForm({}: Props) {
         e.preventDefault();
     }
 
-    return <>Test</>;
+    return (
+        <LoginFormContainer>
+            <header>
+                <section className="register-form-welcome-segment">
+                    <span>Login</span>
+                    <span>
+                        New to Whatsup?{" "}
+                        <Button
+                            as="link"
+                            $variant="text"
+                            href={route("user.register")}
+                        >
+                            Register.
+                        </Button>
+                    </span>
+                </section>
+            </header>
+
+            <div className="register-form-inputs">
+                <label>
+                    First name
+                    <Input
+                    // onChange={onHandleInputChange("first_name")}
+                    />
+                </label>
+
+                <br />
+
+                <label>
+                    Last name
+                    <Input
+                    // onChange={onHandleInputChange("last_name")}
+                    />
+                </label>
+
+                <br />
+
+                <label>
+                    Username
+                    <Input
+                    // onChange={onHandleInputChange("username")}
+                    />
+                </label>
+
+                <br />
+
+                <label>
+                    Other username (2nd account)
+                    <Input
+                    // onChange={onHandleInputChange("other_username")}
+                    />
+                </label>
+
+                <br />
+
+                <label>
+                    Password
+                    <Input
+                        type="password"
+                        // onChange={onHandleInputChange("password")}
+                    />
+                </label>
+
+                <br />
+
+                <label>
+                    Re-enter password
+                    <Input
+                        type="password"
+                        // onChange={validatePassword}
+                    />
+                </label>
+            </div>
+
+            <footer>
+                <Button
+                    as="link"
+                    href={route("user.login")}
+                    $borderSize="lg"
+                    $variant="text"
+                    className="register-form-login"
+                >
+                    Already have an account?
+                </Button>
+                <Button
+                    $borderSize="lg"
+                    type="submit"
+                    // disabled={isInvalid}
+                >
+                    Login
+                </Button>
+            </footer>
+        </LoginFormContainer>
+    );
 
     // return (
     //     <LoginFormContainer

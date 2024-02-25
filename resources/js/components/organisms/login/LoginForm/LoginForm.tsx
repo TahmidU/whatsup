@@ -14,53 +14,24 @@ export default function LoginForm({}: Props) {
     return (
         <LoginFormContainer>
             <header>
-                <section className="register-form-welcome-segment">
-                    <span>Login</span>
-                    <span>
-                        New to Whatsup?{" "}
-                        <Button
-                            as="link"
-                            $variant="text"
-                            href={route("user.register")}
-                        >
-                            Register.
-                        </Button>
-                    </span>
-                </section>
+                <h2>Login</h2>
+                <p>
+                    <span>New to Whatsup? </span>
+                    <Button
+                        as="link"
+                        $variant="link-text"
+                        href={route("user.register")}
+                    >
+                        Register your accounts here.
+                    </Button>
+                </p>
             </header>
 
             <div className="register-form-inputs">
                 <label>
-                    First name
-                    <Input
-                    // onChange={onHandleInputChange("first_name")}
-                    />
-                </label>
-
-                <br />
-
-                <label>
-                    Last name
-                    <Input
-                    // onChange={onHandleInputChange("last_name")}
-                    />
-                </label>
-
-                <br />
-
-                <label>
                     Username
                     <Input
                     // onChange={onHandleInputChange("username")}
-                    />
-                </label>
-
-                <br />
-
-                <label>
-                    Other username (2nd account)
-                    <Input
-                    // onChange={onHandleInputChange("other_username")}
                     />
                 </label>
 
@@ -73,28 +44,9 @@ export default function LoginForm({}: Props) {
                         // onChange={onHandleInputChange("password")}
                     />
                 </label>
-
-                <br />
-
-                <label>
-                    Re-enter password
-                    <Input
-                        type="password"
-                        // onChange={validatePassword}
-                    />
-                </label>
             </div>
 
             <footer>
-                <Button
-                    as="link"
-                    href={route("user.login")}
-                    $borderSize="lg"
-                    $variant="text"
-                    className="register-form-login"
-                >
-                    Already have an account?
-                </Button>
                 <Button
                     $borderSize="lg"
                     type="submit"

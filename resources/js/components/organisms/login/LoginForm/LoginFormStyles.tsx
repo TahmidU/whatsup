@@ -4,6 +4,28 @@ export const LoginFormContainer = styled.form`
     display: flex;
     flex-direction: column;
     color: ${({ theme }) => theme.colours.mainText};
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+
+    header {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            font-size: ${({ theme }) => theme.fonts["2xl"]};
+            margin-bottom: 0.5rem;
+        }
+
+        span {
+            color: ${({ theme }) =>
+                theme.cColours.cMainText.darken(0.25).toString()};
+        }
+
+        p {
+            margin-top: 0;
+        }
+    }
 `;
 LoginFormContainer.displayName = "LoginFormContainer";
 

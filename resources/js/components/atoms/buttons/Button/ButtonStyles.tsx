@@ -42,12 +42,19 @@ export const GhostVariant = (isDisabled = false) => css`
     }
 `;
 
-export const LinkTextVariant = css``;
+export const LinkTextVariant = css`
+    color: ${({ theme }) => theme.colours.link};
+    padding: 0rem;
+
+    &:hover {
+        opacity: 80%;
+    }
+`;
 
 export const ButtonDefaults = css<ButtonDefaultStyles>`
     width: fit-content;
     text-align: center;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
 
     border-radius: ${({ $borderSize }) =>
         $borderSize === "xl"

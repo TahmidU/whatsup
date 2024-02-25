@@ -12,6 +12,7 @@ export interface PrimaryColours {
     danger: string;
     success: string;
     info: string;
+    link: string;
 }
 
 export type CPrimaryColours = PrefixObjectKeys<

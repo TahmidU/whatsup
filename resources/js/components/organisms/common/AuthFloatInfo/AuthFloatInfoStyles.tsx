@@ -9,7 +9,7 @@ export const AuthFloatInfoContainer = styled.div`
         display: flex;
         flex-direction: column;
         position: absolute;
-        bottom: 50%;
+        bottom: 45%;
         left: -49px;
 
         header {

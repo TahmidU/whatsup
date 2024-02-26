@@ -1,9 +1,8 @@
-import { FormEvent, Fragment } from "react";
+import { FormEvent } from "react";
 import { LoginFormContainer } from "./LoginFormStyles";
-// import LabelledInput from "@/Components/Molecules/LabelledInput";
 import Button from "@/components/atoms/buttons/Button";
 import Input from "@/components/atoms/Input";
-// import Checkbox from "@/Components/Atoms/Checkbox";
+import Checkbox from "@/components/atoms/Checkbox";
 
 interface Props {}
 export default function LoginForm({}: Props) {
@@ -27,29 +26,43 @@ export default function LoginForm({}: Props) {
                 </p>
             </header>
 
-            <div className="register-form-inputs">
-                <label>
-                    Username
-                    <Input
-                    // onChange={onHandleInputChange("username")}
-                    />
-                </label>
+            <div className="login-main">
+                <div className="login-form-inputs">
+                    <label>
+                        Username
+                        <Input
+                        // onChange={onHandleInputChange("username")}
+                        />
+                    </label>
 
-                <br />
+                    <br />
 
-                <label>
-                    Password
-                    <Input
-                        type="password"
-                        // onChange={onHandleInputChange("password")}
-                    />
-                </label>
+                    <label>
+                        Password
+                        <Input
+                            type="password"
+                            // onChange={onHandleInputChange("password")}
+                        />
+                    </label>
+                </div>
+
+                <div className="main-footer">
+                    <label className="remember-me">
+                        <Checkbox className="remember-me-checkbox" />
+                        Remember Me
+                    </label>
+
+                    <Button $variant="link-text" className="forgot-password">
+                        Forgot Password?
+                    </Button>
+                </div>
             </div>
 
             <footer>
                 <Button
                     $borderSize="lg"
                     type="submit"
+                    className="login-btn"
                     // disabled={isInvalid}
                 >
                     Login
@@ -57,58 +70,4 @@ export default function LoginForm({}: Props) {
             </footer>
         </LoginFormContainer>
     );
-
-    // return (
-    //     <LoginFormContainer
-    //         header={
-    //             <Fragment>
-    //                 <div className="logo-container">
-    //                     <img src="logo/logo_alt.png" />
-    //                 </div>
-    //                 <section className="welcome-segment">
-    //                     <span>Welcome back!</span>
-    //                     <span>Please enter your details</span>
-    //                 </section>
-    //             </Fragment>
-    //         }
-    //         footer={
-    //             <Fragment>
-    //                 <span>
-    //                     {"Don't"} have an account?{" "}
-    //                     <Button as="link" href="" className="sign-up-link">
-    //                         Sign Up
-    //                     </Button>
-    //                 </span>
-    //             </Fragment>
-    //         }
-    //     >
-    //         <Form onSubmit={handleSubmit}>
-    //             <div className="login-main-segment">
-    //                 <div className="login-typed-inputs">
-    //                     <LabelledInput
-    //                         labelName="Email"
-    //                         idAttribute="email-login-form"
-    //                         type="email"
-    //                     />
-    //                     <LabelledInput
-    //                         labelName="Password"
-    //                         idAttribute="password-login-form"
-    //                         type="password"
-    //                     />
-    //                 </div>
-    //                 <div className="login-main-options">
-    //                     <Checkbox
-    //                         idAttribute="remember-me-login-form"
-    //                         title="Remember me"
-    //                     />
-    //                     <Button as="link" href="">
-    //                         Forgot Password?
-    //                     </Button>
-    //                 </div>
-    //             </div>
-
-    //             <Button $borderSize="xl">Login</Button>
-    //         </Form>
-    //     </LoginFormContainer>
-    // );
 }

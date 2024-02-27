@@ -7,15 +7,15 @@ export const CheckboxContainer = styled.div`
     position: relative;
     height: 0.75rem;
     width: 0.75rem;
-    border: 1px solid ${({ theme }) => theme.colours.mainText};
+    border: 1px solid
+        ${({ theme }) => theme.cColours.cPrimary.lighten(0.8).toString()};
     border-radius: 0.25rem;
     cursor: pointer;
     overflow: hidden;
 
-    background-color: ${({ theme }) => theme.colours.mainText};
-
     &:has(input[type="checkbox"]:not(:checked)) {
-        background-color: ${({ theme }) => theme.colours.primary};
+        background-color: ${({ theme }) =>
+            theme.cColours.cPrimary.lighten(0.5).toString()};
     }
 
     &:has(input[type="checkbox"]:checked) {

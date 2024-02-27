@@ -79,7 +79,7 @@ export const LoginFormContainer = styled.form`
             font-size: ${({ theme }) => theme.fonts.lg};
             font-family: ${({ theme }) => theme.fontFamilies.inter};
             font-weight: 500;
-            letter-spacing: 0.04rem;
+            letter-spacing: 0.02rem;
         }
     }
 `;

@@ -2,9 +2,8 @@ import Checkbox from "@/components/atoms/Checkbox";
 import Input from "@/components/atoms/Input";
 import Button from "@/components/atoms/buttons/Button";
 import { RegisterFormContainer } from "@/components/organisms/register/RegisterForm/RegisterFormStyles";
-import { getPublicImage } from "@/utils/PublicImagesUtil";
 import { router, useForm } from "@inertiajs/react";
-import { FormEvent, isValidElement, useState } from "react";
+import { FormEvent, useState } from "react";
 
 interface Props {
     className?: string;
@@ -67,13 +66,23 @@ export default function RegisterForm({ className = "" }: Props) {
     return (
         <RegisterFormContainer onSubmit={onHandleSubmit} className={className}>
             <header>
-                <section className="register-form-welcome-segment">
-                    <span>Register your accounts</span>
-                    <span>
+                <h2>Register your accounts</h2>
+                <span>
+                    <p>
+                        Already have an account?{" "}
+                        <Button
+                            as="link"
+                            $variant="link-text"
+                            href={route("user.login")}
+                        >
+                            Login
+                        </Button>
+                    </p>
+                    <p className="info">
                         This form will create two accounts both of which will
                         share a limited quota.
-                    </span>
-                </section>
+                    </p>
+                </span>
             </header>
 
             <div className="register-form-inputs">
@@ -122,27 +131,32 @@ export default function RegisterForm({ className = "" }: Props) {
 
                 <br />
 
-                <label className="register-form-tos-pp">
+                <label className="register-agreement">
                     <Checkbox
-                        className="register-form-agreement"
+                        className="agreement-checkbox"
                         onChange={validateAgreement}
                     />
-                    I will and have not entered in any personal information in
-                    this site
+                    <span className="agreement-text">
+                        By Registering you agree to the{" "}
+                        <Button as="link" href="" $variant="link-text">
+                            Terms of Service
+                        </Button>{" "}
+                        and{" "}
+                        <Button as="link" href="" $variant="link-text">
+                            Privacy Policy
+                        </Button>
+                        .
+                    </span>
                 </label>
             </div>
 
             <footer>
                 <Button
-                    as="link"
-                    href={route("user.login")}
                     $borderSize="lg"
-                    $variant="text"
-                    className="register-form-login"
+                    type="submit"
+                    disabled={isInvalid}
+                    className="register-btn"
                 >
-                    Already have an account?
-                </Button>
-                <Button $borderSize="lg" type="submit" disabled={isInvalid}>
                     Register
                 </Button>
             </footer>

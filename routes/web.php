@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
 
 Route::middleware("auth:sanctum")->group(function (){
 
@@ -33,9 +34,13 @@ Route::get('/careers', function () {
     return Inertia::render('Careers');
 })->name('careers');
 
-Route::controller(UserController::class)->name("user.")->group(function () {
-    Route::get('/register', 'create')->name('register');
-    Route::get('/login', 'authenticateUser')->name("login");
-    Route::post('/register', 'store')->name('register');    
+Route::controller(RegisterController::class)->name("register.")->group(function () {
+    Route::get('/register', 'show')->name('show');
+    Route::post('/register', 'store')->name('store.user');    
+});
+
+Route::controller(LoginController::class)->name('login.')->group(function() {
+    Route::get('/login', 'show')->name('show');
+    Route::post('/login', 'authenticate')->name('auth');
 });
 

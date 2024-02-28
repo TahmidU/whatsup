@@ -11,8 +11,10 @@ declare module 'ziggy-js' {
     "safety": [],
     "support": [],
     "careers": [],
-    "user.register": [],
-    "user.login": []
+    "register.show": [],
+    "register.store.user": [],
+    "login.show": [],
+    "login.auth": []
 }
 }
 export {};

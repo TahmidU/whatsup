@@ -3,15 +3,31 @@ import { LoginFormContainer } from "./LoginFormStyles";
 import Button from "@/components/atoms/buttons/Button";
 import Input from "@/components/atoms/Input";
 import Checkbox from "@/components/atoms/Checkbox";
+import { router, useForm } from "@inertiajs/react";
 
 interface Props {}
 export default function LoginForm({}: Props) {
+    const { data, setData } = useForm({
+        username: "",
+        password: "",
+    });
+
+    const onHandleInputChange =
+        (inputData: keyof typeof data) => (e: FormEvent<HTMLInputElement>) => {
+            setData(inputData, e.currentTarget.value);
+        };
+
     function handleSubmit(e: FormEvent) {
         e.preventDefault();
+
+        router.post(route("login.show"), data, {
+            preserveScroll: true,
+            preserveState: true,
+        });
     }
 
     return (
-        <LoginFormContainer>
+        <LoginFormContainer onSubmit={handleSubmit}>
             <header>
                 <h2>Login</h2>
                 <p>
@@ -19,7 +35,7 @@ export default function LoginForm({}: Props) {
                     <Button
                         as="link"
                         $variant="link-text"
-                        href={route("user.register")}
+                        href={route("register.show")}
                     >
                         Register your accounts here.
                     </Button>
@@ -30,9 +46,7 @@ export default function LoginForm({}: Props) {
                 <div className="login-form-inputs">
                     <label>
                         Username
-                        <Input
-                        // onChange={onHandleInputChange("username")}
-                        />
+                        <Input onChange={onHandleInputChange("username")} />
                     </label>
 
                     <br />
@@ -41,7 +55,7 @@ export default function LoginForm({}: Props) {
                         Password
                         <Input
                             type="password"
-                            // onChange={onHandleInputChange("password")}
+                            onChange={onHandleInputChange("password")}
                         />
                     </label>
                 </div>
@@ -59,12 +73,7 @@ export default function LoginForm({}: Props) {
             </div>
 
             <footer>
-                <Button
-                    $borderSize="lg"
-                    type="submit"
-                    className="login-btn"
-                    // disabled={isInvalid}
-                >
+                <Button $borderSize="lg" type="submit" className="login-btn">
                     Login
                 </Button>
             </footer>

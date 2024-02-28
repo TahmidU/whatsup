@@ -24,7 +24,7 @@ export default function RegisterForm({ className = "" }: Props) {
 
     function onHandleSubmit(e: FormEvent) {
         e.preventDefault();
-        router.post(route("user.register"), data, {
+        router.post(route("register.store.user"), data, {
             preserveScroll: true,
             preserveState: true,
         });
@@ -73,7 +73,7 @@ export default function RegisterForm({ className = "" }: Props) {
                         <Button
                             as="link"
                             $variant="link-text"
-                            href={route("user.login")}
+                            href={route("login.show")}
                         >
                             Login
                         </Button>

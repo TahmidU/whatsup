@@ -20,7 +20,7 @@ export default function LoginForm({}: Props) {
     function handleSubmit(e: FormEvent) {
         e.preventDefault();
 
-        router.post(route("login.show"), data, {
+        router.post(route("auth.create"), data, {
             preserveScroll: true,
             preserveState: true,
         });

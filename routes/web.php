@@ -4,7 +4,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AuthController;
 
 Route::middleware("auth:sanctum")->group(function (){
 
@@ -39,8 +39,9 @@ Route::controller(RegisterController::class)->name("register.")->group(function 
     Route::post('/register', 'store')->name('store.user');    
 });
 
-Route::controller(LoginController::class)->name('login.')->group(function() {
+Route::controller(AuthController::class)->name('auth.')->group(function() {
     Route::get('/login', 'show')->name('show');
-    Route::post('/login', 'authenticate')->name('auth');
+    Route::post('/login', 'authenticate')->name('create');
+    Route::get('/logout', 'logout')->name('destroy');
 });
 

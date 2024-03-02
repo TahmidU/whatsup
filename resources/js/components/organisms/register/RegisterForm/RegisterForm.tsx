@@ -73,7 +73,7 @@ export default function RegisterForm({ className = "" }: Props) {
                         <Button
                             as="link"
                             $variant="link-text"
-                            href={route("login.show")}
+                            href={route("auth.show")}
                         >
                             Login
                         </Button>

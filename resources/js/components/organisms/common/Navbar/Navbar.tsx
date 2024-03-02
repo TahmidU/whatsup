@@ -39,7 +39,7 @@ export default function Navbar() {
                 </Button>
                 <Button
                     as="link"
-                    href={route("login.show")}
+                    href={route("auth.show")}
                     $variant="ghost"
                     $borderSize="lg"
                 >

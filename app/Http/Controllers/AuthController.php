@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
-class LoginController extends Controller
+class AuthController extends Controller
 {
 
     public function show(){
@@ -23,6 +24,12 @@ class LoginController extends Controller
         }
 
         return redirect()->back()->withErrors(['username', 'Invalid Credentials!']);
+    }
+
+    public function logout(){
+        Auth::guard()->logout();
+
+        return redirect()->route('auth.show');
     }
 
 

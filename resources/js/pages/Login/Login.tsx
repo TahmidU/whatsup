@@ -1,10 +1,17 @@
 import LoginForm from "@/components/organisms/login/LoginForm";
-import { Container } from "./LoginStyles";
+import { LoginContainer } from "./LoginStyles";
+import AuthLayout from "@/layouts/AuthLayout";
 
-export default function Login() {
+const Login = () => {
     return (
-        <Container>
+        <LoginContainer>
             <LoginForm />
-        </Container>
+        </LoginContainer>
     );
-}
+};
+
+Login.layout = (page: any) => {
+    return <AuthLayout>{page}</AuthLayout>;
+};
+
+export default Login;

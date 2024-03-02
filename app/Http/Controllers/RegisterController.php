@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 
-class UserController extends Controller
+class RegisterController extends Controller
 {
 
-    public function create(){
+    public function show(){
         return Inertia::render("Register");
     }
 
@@ -22,7 +23,7 @@ class UserController extends Controller
         $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
-            'username' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:users',
             'other_username' => 'required|string|max:255',
             'password' => ['required', Rules\Password::defaults()],
         ]);
@@ -46,4 +47,6 @@ class UserController extends Controller
 
         return redirect()->route('dashboard.index');
     }
+
+
 }

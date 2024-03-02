@@ -5,23 +5,26 @@ export const RegisterFormContainer = styled.form`
     flex-direction: column;
     color: ${({ theme }) => theme.colours.mainText};
 
-    .register-form-welcome-segment {
+    header {
         display: flex;
         flex-direction: column;
         gap: 0.25rem;
-        margin-bottom: 2rem;
+        margin-bottom: 0.25rem;
 
-        span {
-            display: block;
-            width: fit-content;
-        }
-
-        span:first-child {
+        h2 {
             font-size: ${({ theme }) => theme.fonts["2xl"]};
             font-weight: 500;
+            margin-bottom: 0;
         }
 
-        span:last-child {
+        p {
+            margin: 0.5rem 0;
+            color: ${({ theme }) =>
+                theme.cColours.cMainText.darken(0.25).toString()};
+        }
+
+        .info {
+            margin: 1rem 0;
             font-weight: 300;
             font-size: ${({ theme }) => theme.fonts["md"]};
         }
@@ -36,18 +39,23 @@ export const RegisterFormContainer = styled.form`
             font-size: ${({ theme }) => theme.fonts.md};
         }
 
-        .register-form-tos-pp {
+        .register-agreement {
             display: flex;
             flex-direction: row;
             width: 100%;
             align-items: center;
             justify-content: flex-start;
             font-weight: 300;
-            font-size: ${({ theme }) => theme.fonts.sm};
+            font-size: ${({ theme }) => theme.fonts.md};
+            cursor: pointer;
 
-            .register-form-agreement {
+            .agreement-checkbox {
                 width: 1rem;
                 height: 1rem;
+            }
+
+            .agreement-text {
+                pointer-events: none;
             }
         }
     }
@@ -59,19 +67,12 @@ export const RegisterFormContainer = styled.form`
         justify-content: space-between;
         margin-top: 2rem;
 
-        .register-form-login {
-            padding-left: 0;
-            padding-right: 0;
-            font-size: ${({ theme }) => theme.fonts.md};
-            opacity: 0.85;
-
-            &:hover {
-                opacity: 1;
-            }
-        }
-
-        & > button:last-child {
-            font-size: ${({ theme }) => theme.fonts.md};
+        .register-btn {
+            width: 100%;
+            font-size: ${({ theme }) => theme.fonts.lg};
+            font-family: ${({ theme }) => theme.fontFamilies.inter};
+            font-weight: 500;
+            letter-spacing: 0.02rem;
         }
     }
 `;

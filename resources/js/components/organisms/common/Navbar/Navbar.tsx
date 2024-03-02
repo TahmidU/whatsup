@@ -34,12 +34,12 @@ export default function Navbar() {
             </ul>
 
             <div className="actions">
-                <Button as="link" href={route("user.register")} $variant="text">
+                <Button as="link" href={route("register.show")} $variant="text">
                     Sign Up
                 </Button>
                 <Button
                     as="link"
-                    href={route("login")}
+                    href={route("auth.show")}
                     $variant="ghost"
                     $borderSize="lg"
                 >

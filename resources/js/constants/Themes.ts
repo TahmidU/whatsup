@@ -8,6 +8,7 @@ export const dark: PrimaryColours = {
     danger: "#ed3c4b",
     success: "#1CD774",
     info: "#FFFFFF",
+    link: "#47b7f8",
 };
 
 // This will change over time...
@@ -19,6 +20,7 @@ export const light: PrimaryColours = {
     danger: "#ED2939",
     success: "#1CD774",
     info: "#FFFFFF",
+    link: "#47b7f8",
 };
 
 export const fonts = {

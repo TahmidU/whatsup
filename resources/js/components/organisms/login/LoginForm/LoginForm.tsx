@@ -1,68 +1,82 @@
-import { FormEvent, Fragment } from "react";
-import { LoginFormContainer, Form } from "./LoginFormStyles";
-// import LabelledInput from "@/Components/Molecules/LabelledInput";
+import { FormEvent } from "react";
+import { LoginFormContainer } from "./LoginFormStyles";
 import Button from "@/components/atoms/buttons/Button";
-// import Checkbox from "@/Components/Atoms/Checkbox";
+import Input from "@/components/atoms/Input";
+import Checkbox from "@/components/atoms/Checkbox";
+import { router, useForm } from "@inertiajs/react";
 
 interface Props {}
 export default function LoginForm({}: Props) {
+    const { data, setData } = useForm({
+        username: "",
+        password: "",
+    });
+
+    const onHandleInputChange =
+        (inputData: keyof typeof data) => (e: FormEvent<HTMLInputElement>) => {
+            setData(inputData, e.currentTarget.value);
+        };
+
     function handleSubmit(e: FormEvent) {
         e.preventDefault();
+
+        router.post(route("auth.create"), data, {
+            preserveScroll: true,
+            preserveState: true,
+        });
     }
 
-    return <>Test</>;
+    return (
+        <LoginFormContainer onSubmit={handleSubmit}>
+            <header>
+                <h2>Login</h2>
+                <p>
+                    <span>New to Whatsup? </span>
+                    <Button
+                        as="link"
+                        $variant="link-text"
+                        href={route("register.show")}
+                    >
+                        Register your accounts here.
+                    </Button>
+                </p>
+            </header>
 
-    // return (
-    //     <LoginFormContainer
-    //         header={
-    //             <Fragment>
-    //                 <div className="logo-container">
-    //                     <img src="logo/logo_alt.png" />
-    //                 </div>
-    //                 <section className="welcome-segment">
-    //                     <span>Welcome back!</span>
-    //                     <span>Please enter your details</span>
-    //                 </section>
-    //             </Fragment>
-    //         }
-    //         footer={
-    //             <Fragment>
-    //                 <span>
-    //                     {"Don't"} have an account?{" "}
-    //                     <Button as="link" href="" className="sign-up-link">
-    //                         Sign Up
-    //                     </Button>
-    //                 </span>
-    //             </Fragment>
-    //         }
-    //     >
-    //         <Form onSubmit={handleSubmit}>
-    //             <div className="login-main-segment">
-    //                 <div className="login-typed-inputs">
-    //                     <LabelledInput
-    //                         labelName="Email"
-    //                         idAttribute="email-login-form"
-    //                         type="email"
-    //                     />
-    //                     <LabelledInput
-    //                         labelName="Password"
-    //                         idAttribute="password-login-form"
-    //                         type="password"
-    //                     />
-    //                 </div>
-    //                 <div className="login-main-options">
-    //                     <Checkbox
-    //                         idAttribute="remember-me-login-form"
-    //                         title="Remember me"
-    //                     />
-    //                     <Button as="link" href="">
-    //                         Forgot Password?
-    //                     </Button>
-    //                 </div>
-    //             </div>
+            <div className="login-main">
+                <div className="login-form-inputs">
+                    <label>
+                        Username
+                        <Input onChange={onHandleInputChange("username")} />
+                    </label>
 
-    //             <Button $borderSize="xl">Login</Button>
-    //         </Form>
-    //     </LoginFormContainer>
-    // );
+                    <br />
+
+                    <label>
+                        Password
+                        <Input
+                            type="password"
+                            onChange={onHandleInputChange("password")}
+                        />
+                    </label>
+                </div>
+
+                <div className="main-footer">
+                    <label className="remember-me">
+                        <Checkbox className="remember-me-checkbox" />
+                        Remember Me
+                    </label>
+
+                    <Button $variant="link-text" className="forgot-password">
+                        Forgot Password?
+                    </Button>
+                </div>
+            </div>
+
+            <footer>
+                <Button $borderSize="lg" type="submit" className="login-btn">
+                    Login
+                </Button>
+            </footer>
+        </LoginFormContainer>
+    );
 }

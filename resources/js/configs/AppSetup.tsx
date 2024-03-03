@@ -16,7 +16,7 @@ export default function AppSetup({ children }: Props) {
     useEffect(() => {
         window.Echo = new Echo({
             broadcaster: "pusher",
-            key: "",
+            key: import.meta.env.VITE_PUSHER_APP_KEY,
             wsHost: window.location.hostname,
             wsPort: 6001,
             forceTLS: false,

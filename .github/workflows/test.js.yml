@@ -33,7 +33,7 @@ jobs:
       - name: Setup Yarn & install Node packages
         uses: borales/actions-yarn@v4
         with:
-          cmd: install --frozen-lockfile
+          cmd: install --immutable
 
       - name: Run eslint
         run: yarn eslint

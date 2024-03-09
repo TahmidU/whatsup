@@ -30,6 +30,7 @@
         "@testing-library/user-event": "^14.5.1",
         "@types/color": "^3.0.3",
         "@types/react-dom": "^18.2.7",
+        "@types/styled-components": "^5.1.34",
         "@typescript-eslint/eslint-plugin": "^6.18.1",
         "@typescript-eslint/parser": "^6.18.1",
         "axios": "^1.4.0",
@@ -63,5 +64,6 @@
     "resolutions": {
         "styled-components": "^5",
         "jackspeak": "2.1.1"
-    }
+    },
+    "packageManager": "yarn@4.1.1"
 }

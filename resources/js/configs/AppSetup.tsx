@@ -1,4 +1,4 @@
-import "@/../css/fonts.css";
+// import "@/../css/fonts.css";
 import GlobalStyle from "@/configs/GlobalStyle";
 import AppContext from "@/context/AppContext";
 import useTheme from "@/hooks/useTheme";

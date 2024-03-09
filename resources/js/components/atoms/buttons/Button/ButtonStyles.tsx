@@ -1,6 +1,6 @@
 import { Link } from "@inertiajs/react";
 import { ButtonDefaultStyles } from "./types/Styles";
-import { css, styled } from "styled-components";
+import styled, { css } from "styled-components";
 
 export const ActionVariant = css`
     background-color: ${({ theme }) => theme.colours.accent};

@@ -1,4 +1,6 @@
-export default function WhatsupIcon({ className = "" }) {
+import { ComponentProps } from "react";
+
+export default function WhatsupIcon(props: ComponentProps<"svg">) {
     return (
         <svg
             width="100%"
@@ -12,7 +14,7 @@ export default function WhatsupIcon({ className = "" }) {
             clipRule="evenodd"
             strokeLinejoin="round"
             strokeMiterlimit={2}
-            className={className}
+            {...props}
         >
             <g>
                 <path

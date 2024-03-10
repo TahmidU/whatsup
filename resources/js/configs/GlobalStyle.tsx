@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
-html {
+/* html {
     overflow-y: scroll;
 }
 
@@ -36,5 +36,5 @@ span, p, div, button, a{
 
 * {
     box-sizing: border-box;
-}
+} */
 `;

@@ -13,27 +13,27 @@ interface Props {
 }
 export default function GuestLayout({ children }: Props) {
     return (
-        <GuestLayoutContainer>
+        <div className="w-full h-auto min-h-screen bg-primary-950">
             <Navbar />
-            <div className="guest-children-container">{children}</div>
+            <div className="my-0 mx-auto max-w-[2048px]">{children}</div>
 
-            <Footer>
-                <section className="footer-intro">
-                    <header className="footer-logo">
-                        <WhatsupIcon />
+            <footer className="flex w-full h-full pt-16 pb-40 pl-40 pr-40 bg-primary-900 gap-x-40">
+                <section className="flex flex-col gap-y-4">
+                    <header className="w-12 h-12">
+                        <WhatsupIcon className="w-full h-full" />
                     </header>
-                    <div className="footer-social-logos">
+                    <div className="flex gap-x-3 [&>svg]:text-white">
                         <TwitterIcon />
                         <FacebookIcon />
                         <InstagramIcon />
                         <YouTubeIcon />
                         <TikTokIcon />
                     </div>
-                    <footer className="footer-copyright">
+                    <footer className="mt-2 text-sm text-neutral-300">
                         @ 2024 Whatsup. All rights reversed
                     </footer>
                 </section>
-                <div className="footer-options">
+                <div className="grid w-full grid-cols-4 text-white [&>ul]:p-0 [&>ul]:flex [&>ul]:flex-col [&>ul]:gap-y-2 [&>ul]:list-none [&>ul>li]:text-sm [&>ul>li]:cursor-pointer [&>ul>li]:opacity-80 hover:[&>ul>li]:opacity-100">
                     <div className="footer-product">
                         <h4>Product</h4>
                         <ul>
@@ -76,7 +76,7 @@ export default function GuestLayout({ children }: Props) {
                         </ul>
                     </div>
                 </div>
-            </Footer>
-        </GuestLayoutContainer>
+            </footer>
+        </div>
     );
 }
